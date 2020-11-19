@@ -1,0 +1,320 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+{% block styles %}
+    <style>
+        a:link {
+            color:#0400ff;
+        }
+        a:hover {
+            text-color:#007bff;
+            cursor:pointer;
+        }
+        a:active {
+            color: #D11222;
+        }
+    </style>
+{% endblock %}
+
+{% block scripts %}
+
+<script>
+    document.querySelector('[name=priorPB1]').value = 0;
+    document.querySelector('[name=priorPB2]').value = 0;
+    document.querySelector('[name=priorPB3]').value = 0;
+
+    document.querySelector('[name=certaintyPriorsPB1]').value = ;
+    document.querySelector('[name=certaintyPriorsPB2]').value = 0;
+    document.querySelector('[name=certaintyPriorsPB3]').value = 0;
+
+    var x = document.getElementById("definition");
+
+    function show_definition() {
+        if (x.style.display === "none") {
+            x.setAttribute("style", "display:block;");
+        } else {
+            x.setAttribute("style", "display:none;");
+        }
+    }
+
+</script>
+
+{% endblock %}
+{% block content %}
+<!-- ------------------------------- Header -------------------------------- -->
+<div class="outer-head-div">
+    <span class="inner-head-div-text new-title">
+        <!-- Title -->
+    </span>
+
+    <div class="inner-head-div-logo">
+        <img src="{% static 'Hypothesentesten/hd-logo-sw.png' %}" class="logo"/>
+    </div>
+</div>
+<hr style="margin-top:1px; margin-bottom:15px;">
+<!-- ------------------------------- Header -------------------------------- -->
+
+
+<!-- comments -->
+<!-- <div class="comments">
+    - Definition von Polizeigewalt anzeigen?
+</div> -->
+
+
+
+
+
+<h3>
+    Einige kurze Verständnisfragen
+</h3>
+
+<p>
+    Bitte beantworten Sie die folgenden Fragen zu den unten beschriebenen Situationen
+    mit Hilfe der Definition von Polizeigewalt, welche Sie so eben erhalten haben.
+    <br>
+    <!-- <a onclick="show_definition()" style="margin-bottom:70px;">
+    Wenn Sie <b style="color:#0400ff;">hier</b> klicken, können Sie nochmals die Definition von Polizeigewalt sehen.
+    </a> -->
+</p>
+
+
+<div class="definition-box" id="definition" style="border: 1px solid #ccc; padding: 8px; text-align:justify;
+font-size:0.8rem; margin-top: 10px; margin-bottom: 10px; width:50%; margin-left:auto; margin-right:auto;">
+    Nach deutscher Rechtslage sind Polizeivollzugsbeamte im Rahmen ihrer
+    polizeilichen Aufgabenerfüllung ermächtigt, innerhalb der Vorschriften über
+    unmittelbaren Zwang und Notwehr auch physische Gewalt anzuwenden.
+    <br>
+    Zu jeder Zeit haben Polizeivollzugsbeamte das Prinzip der Verhältnismäßigkeit
+    zu wahren. Stärke und Ausmaß der Gewalt und die eingesetzten Mittel müssen
+    im Verhältnis zur Situation und den Umständen der Gewaltanwendung stehen.
+    Sind diese Voraussetzungen nicht gegeben, wird also übermäßig starke Gewalt,
+    oder unverhältnismäßige Gewaltmittel in einem die Gewalt nicht rechtfertigenden
+    Kontext angewendet, spricht man von Polizeigewalt.
+</div>
+
+
+<!-- vertical space -->
+<div style="display:inline-block; height:50px;"></div>
+
+
+
+<p>
+    <b>Situation 1:</b>
+    <br>
+    Bei einer Festnahme wehrt sich die Festgenommene gegen das Anlegen der
+    Handschellen. Nach Fixierung am Boden spuckt ihr eine Polizeibeamte
+    ins Gesicht.
+</p>
+
+<!-- Situation 1 -->
+<div class="multiple-choice-div">
+    <div class="m-c-question" style="font-weight:100;">
+    Handelt es sich hierbei um einen Fall von Polizeigewalt?<br>
+    </div>
+    <input type="radio" id="prior1.1" name="priorPB1" value="1">
+    <div class="m-c-besides-button"></div>
+    <label class="multiple-choice-label" for="prior1.1">Ja</label>
+    <br>
+    <input type="radio" id="prior1.2" name="priorPB1" value="2">
+    <div class="m-c-besides-button"></div>
+    <label class="multiple-choice-label" for="prior1.2">Nein</label>
+</div>
+
+<!-- Slider: how sure are you? -->
+<div class="multiple-choice-div">
+    <div class="m-c-question" style="font-weight:100;">
+    Wie sicher sind Sie sich?<br>
+    </div>
+        <label class="multiple-choice-label" style="margin-bottom: 0px; float:left">sehr unsicher</label>
+        <label class="multiple-choice-label" style="margin-bottom: 0px; float:right;">sehr sicher</label>
+        <br>
+        <input type="range" class="slider" style="width:100%; display:block; margin-left:1.5px;"
+        name="certaintyPriorsPB1"  min="1" max="9" step="1" >
+        <br>
+        <div class="" style="margin-top:-25px; width:100%">
+            <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:1%;">
+                I
+            </div>
+            <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+                I
+            </div>
+            <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+                I
+            </div>
+            <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11.1%;">
+                I
+            </div>
+            <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+                I
+            </div>
+            <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11.1%;">
+                I
+            </div>
+            <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+                I
+            </div>
+            <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11.05%;">
+                I
+            </div>
+            <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+                I
+            </div>
+
+        </div>
+</div>
+<!-- ---------------------------------------------------------------------- -->
+
+
+<!-- vertical space -->
+<div style="display:inline-block; height:50px;"></div>
+<!-- vertical space -->
+<div style="display:inline-block; height:50px;"></div>
+
+
+<p>
+    <b>Situation 2:</b>
+    <br>
+    Bei der Auflösung einer friedlichen Sitzblockade setzen Polizist*innen Pfefferspray
+    und Schlagstöcke ein, um die Demonstrierenden zu zerstreuen.
+</p>
+
+<!-- Situation 2 -->
+<div class="multiple-choice-div">
+    <div class="m-c-question" style="font-weight:100;">
+    Handelt es sich hierbei um einen Fall von Polizeigewalt?<br>
+    </div>
+    <input type="radio" id="comp2.1" name="priorPB2" value="1">
+    <div class="m-c-besides-button"></div>
+    <label class="multiple-choice-label" for="prior2.1">Ja</label>
+    <br>
+    <input type="radio" id="comp2.2" name="priorPB2" value="2">
+    <div class="m-c-besides-button"></div>
+    <label class="multiple-choice-label" for="prior2.2">Nein</label>
+</div>
+
+<!-- Slider: how sure are you? -->
+<div class="multiple-choice-div">
+    <div class="m-c-question" style="font-weight:100;">
+    Wie sicher sind Sie sich?<br>
+    </div>
+        <label class="multiple-choice-label" style="margin-bottom: 0px; float:left">sehr unsicher</label>
+        <label class="multiple-choice-label" style="margin-bottom: 0px; float:right;">sehr sicher</label>
+        <br>
+        <input type="range" class="slider" style="width:100%; display:block; margin-left:1.5px;"
+        name="certaintyPriorsPB2"  min="1" max="9" step="1" >
+        <br>
+        <div class="" style="margin-top:-25px; width:100%">
+            <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:1%;">
+                I
+            </div>
+            <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+                I
+            </div>
+            <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+                I
+            </div>
+            <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11.1%;">
+                I
+            </div>
+            <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+                I
+            </div>
+            <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11.1%;">
+                I
+            </div>
+            <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+                I
+            </div>
+            <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11.05%;">
+                I
+            </div>
+            <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+                I
+            </div>
+
+        </div>
+
+</div>
+<!-- ---------------------------------------------------------------------- -->
+
+
+<!-- vertical space -->
+<div style="display:inline-block; height:50px;"></div>
+<!-- vertical space -->
+<div style="display:inline-block; height:50px;"></div>
+
+
+<p>
+    <b>Situation 3:</b>
+    <br>
+    Vor einem Fußballspiel werden Polizist*innen aus einer Menge von Fans mit
+    Steinen und Flaschen beworfen. Daraufhin setzt die Polizei Wasserwerfer
+    ein, um die Menge auseinander zu treiben.
+</p>
+
+<!-- Situation 3 -->
+<div class="multiple-choice-div">
+    <div class="m-c-question" style="font-weight:100;">
+    Handelt es sich hierbei um einen Fall von Polizeigewalt?<br>
+    </div>
+    <input type="radio" id="comp3.1" name="priorPB3" value="1">
+    <div class="m-c-besides-button"></div>
+    <label class="multiple-choice-label" for="prior3.1">Ja</label>
+    <br>
+    <input type="radio" id="comp3.2" name="priorPB3" value="2">
+    <div class="m-c-besides-button"></div>
+    <label class="multiple-choice-label" for="prior3.2">Nein</label>
+</div>
+
+<!-- Slider: how sure are you? -->
+<div class="multiple-choice-div">
+    <div class="m-c-question" style="font-weight:100;">
+    Wie sicher sind Sie sich?<br>
+    </div>
+        <label class="multiple-choice-label" style="margin-bottom: 0px; float:left">sehr unsicher</label>
+        <label class="multiple-choice-label" style="margin-bottom: 0px; float:right;">sehr sicher</label>
+        <br>
+        <input type="range" class="slider" style="width:100%; display:block; margin-left:1.5px;"
+        name="certaintyPriorsPB3"  min="1" max="9" step="1" >
+        <br>
+        <div class="" style="margin-top:-25px; width:100%">
+            <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:1%;">
+                I
+            </div>
+            <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+                I
+            </div>
+            <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+                I
+            </div>
+            <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11.1%;">
+                I
+            </div>
+            <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+                I
+            </div>
+            <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11.1%;">
+                I
+            </div>
+            <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+                I
+            </div>
+            <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11.05%;">
+                I
+            </div>
+            <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+                I
+            </div>
+
+        </div>
+</div>
+
+
+<!-- ------------------- Next-Button und Bottom-Line ---------------- -->
+
+<br>
+<button class="otree-btn-next btn btn-primary">Weiter</button>
+
+<hr>
+<p> <a href="mailto: lob@stud.uni-heidelberg.de" target="_blank">Aaron Lob</a>, Universität Heidelberg  - 2020</p>
+
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+{% block scripcts %}
+<script>
+</script>
+{% endblock %}
+{% block content %}
+<!-- ------------------------------- Header -------------------------------- -->
+<div class="outer-head-div">
+    <span class="inner-head-div-text new-title">
+        <!-- Title -->
+    </span>
+
+    <div class="inner-head-div-logo">
+        <img src="{% static 'Hypothesentesten/hd-logo-sw.png' %}" class="logo"/>
+    </div>
+</div>
+<hr style="margin-top:1px; margin-bottom:15px;">
+<!-- ------------------------------- Header -------------------------------- -->
+
+
+<h4>Sie haben es fast geschafft! </h4>
+
+<p style="text-align:justify;">
+    Abschließend müssen Sie uns noch mitteilen, ob Sie eine Kompensation für die
+    Teilnahme an der Studie erhalten möchten und falls ja, auf welche Weise.
+    Bitte beachten Sie, dass Sie <b>entweder</b> eine halbe Versuchspersonenstunde oder die 4€ Vergütung erhalten können!
+</p>
+
+{% formfield player.reward %}
+
+<!-- ------------------- Next-Button und Bottom-Line ---------------- -->
+
+<br>
+<button class="otree-btn-next btn btn-primary">Weiter</button>
+
+<hr>
+<p> <a href="mailto: lob@stud.uni-heidelberg.de" target="_blank">Aaron Lob</a>, Universität Heidelberg  - 2020</p>
+
+{% endblock %}

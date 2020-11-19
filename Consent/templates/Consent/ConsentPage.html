@@ -1,0 +1,89 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+{% block scripts %}
+
+<script>
+
+    document.querySelector("[name=consent]").value = "";
+
+</script>
+
+{% endblock %}
+{% block content %}
+<!-- ------------------------------- Header -------------------------------- -->
+<div class="outer-head-div">
+    <span class="inner-head-div-text new-title">
+        <!-- Title -->
+    </span>
+
+    <div class="inner-head-div-logo">
+        <img src="{% static 'Hypothesentesten/hd-logo-sw.png' %}" class="logo"/>
+    </div>
+</div>
+<hr style="margin-top:1px; margin-bottom:15px;">
+<!-- ------------------------------- Header -------------------------------- -->
+
+
+
+<h3>
+    Einwilligung zur Teilnahme
+</h3>
+
+
+<p>
+    Bevor Sie an dieser Studie teilnehmen, nehmen Sie sich bitte kurz Zeit, um
+    folgende Informationen zum Datenschutz und zu Ihren Rechten bzgl. der Teilnahme an dieser Studie durchzulesen.
+</p>
+
+<p>
+    <b>Freiwilligkeit</b>
+    <br>
+    Die Teilnahme an dieser Studie ist freiwillig. Sie können die Teilnahme an der
+    Studie jederzeit und ohne Angabe von Gründen abbrechen, ohne dass Ihnen daraus Nachteile entstehen.
+</p>
+
+<p>
+    <b>Datenschutz</b>
+    <br>
+    Die Teilnahme an der Studie erfolgt anonym. Die erfassten Daten können nicht mit Ihrer
+    Person in Verbindung gebracht werden. Nach Abschluss der Datenerhebung ist keine gezielte
+    Löschung Ihrer Daten möglich, da wir diese nicht zuordnen können. Demographische Angaben
+    (wie ihr Alter) lassen keinen eindeutigen Rückschluss auf Ihre Person zu.
+</p>
+
+<p>
+    <b>Verwendung der anonymisierten Daten</b>
+    <br>
+        Die Ergebnisse dieser Studie werden nur zu wissenschaftlichen Zwecken genutzt.
+        Nach Beendigung der Studie können Sie weitere Informationen über den Hintergrund und die
+        Ziele der Studie erhalten. Bei Fragen zum Forschungsvorhaben oder zu Ihren Rechten als
+        Forschungsteilnehmer*in wenden Sie sich bitte an die unten angegebene Kontaktadresse
+</p>
+
+
+<!-- consent -->
+<div class="form-group" style="padding-top:3rem; float:left;">
+    <label class="col-form-label" for="id_consent">
+        <b>Ich versichere, dass ich mindestens 18 Jahre alt bin, die oben beschriebenen
+            Teilnahmeinformationen gelesen und verstanden habe und diesen zustimme.</b>
+    </label>
+    <div class="controls field-consent" style="float:left; margin-left:0px;">
+        <select name="consent" required="" id="id_consent" class="form-control" style="margin-left:0px;">
+            <option value="" selected="" class="form-control">---------</option>
+            <option value="True" class="form-control">Ja</option>
+            <option value="False" class="form-control">Nein, ich beende die Studie jetzt (Dies ist können Sie nicht rückgängig machen)</option>
+        </select>
+    </div>
+</div>
+
+
+
+<!-- ------------------- Next-Button und Bottom-Line ---------------- -->
+
+<br>
+<button class="otree-btn-next btn btn-primary">Weiter</button>
+
+<hr>
+<p> <a href="mailto: lob@stud.uni-heidelberg.de" target="_blank">Aaron Lob</a>, Universität Heidelberg  - 2020</p>
+
+{% endblock %}

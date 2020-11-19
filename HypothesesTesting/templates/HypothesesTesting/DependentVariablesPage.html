@@ -1,0 +1,644 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+{% block scripts %}
+
+<script>
+    document.querySelector('[name=policeBrutalityProblem]').value = ;
+    document.querySelector('[name=frequencyPoliceBrutality]').value = 0;
+    document.querySelector('[name=actionsAgainstPoliceBrutality]').value = ;
+    document.querySelector('[name=moreCompetencesPolice]').value = ;
+    document.querySelector('[name=moreBrutalityPolice]').value = 99;
+    document.querySelector('[name=confidencePoliceBrutality]').value = 99;
+    document.querySelector('[name=equalitySearchResults]').value = ;
+    document.querySelector('[name=frequencySearchResults]').value = ;
+    document.querySelector('[name=trustArticles]').value = 99;
+    document.querySelector('[name=violenceAttitude1]').value = ;
+    document.querySelector('[name=violenceAttitude2]').value = ;
+    document.querySelector('[name=violenceAttitude3]').value = ;
+
+
+
+</script>
+
+{% endblock %}
+
+{% block content %}
+<!-- ------------------------------- Header -------------------------------- -->
+<div class="outer-head-div">
+    <span class="inner-head-div-text new-title">
+        <!-- Title -->
+    </span>
+
+    <div class="inner-head-div-logo">
+        <img src="{% static 'Hypothesentesten/hd-logo-sw.png' %}" class="logo"/>
+    </div>
+</div>
+<hr style="margin-top:1px; margin-bottom:15px;">
+<!-- ------------------------------- Header -------------------------------- -->
+
+
+<!-- <h1>
+    Ihre Einstellung
+</h1> -->
+
+
+<h5>
+    Bitte schätzen Sie nun die folgenden, etwas generellen Aussagen und Fragen ein.
+</h5>
+
+<div class="blank-space-very-small">  </div>
+
+
+<!-- Police Brutality Attitude Check --------------------------------------- -->
+<div class="multiple-choice-div">
+    <div class="m-c-question" style="font-weight:100;">
+    Polizeigewalt ist ein Problem in Deutschland.<br>
+    </div>
+    <label class="multiple-choice-label" style="margin-bottom: 0px; float:left">Stimme überhaupt nicht zu</label>
+    <label class="multiple-choice-label" style="margin-bottom: 0px; float:right;">Stimme völlig zu</label>
+    <br>
+    <input type="range" class="slider" style="width:100%; display:block; margin-left:1.5px;"
+    name="policeBrutalityProblem" min="1" max="9" step="1" >
+    <br>
+    <div class="" style="margin-top:-25px; width:100%">
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:1%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11.1%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11.1%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11.05%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+
+    </div>
+</div>
+<div class="blank-space-very-small">  </div>
+
+
+<!-- Police Brutality Actions Against it No 1 --------------------------------------- -->
+<div class="multiple-choice-div">
+    <div class="m-c-question" style="font-weight:100;">
+    Es sollte mehr gegen Polizeigewalt in Deutschland unternommen werden.<br>
+    </div>
+    <label class="multiple-choice-label" style="margin-bottom: 0px; float:left">Stimme überhaupt nicht zu</label>
+    <label class="multiple-choice-label" style="margin-bottom: 0px; float:right;">Stimme völlig zu</label>
+    <br>
+    <input type="range" class="slider" style="width:100%; display:block; margin-left:1.5px;"
+    name="actionsAgainstPoliceBrutality" min="1" max="9" step="1" >
+    <br>
+    <div class="" style="margin-top:-25px; width:100%">
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:1%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11.1%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11.1%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11.05%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+
+    </div>
+</div>
+<div class="blank-space-very-small">  </div>
+
+
+<!-- Police get more competencies --------------------------------------- -->
+<div class="multiple-choice-div">
+    <div class="m-c-question" style="font-weight:100;">
+    Die Polizei in Deutschland sollte mehr Gewalt einsetzen dürfen.<br>
+    </div>
+    <label class="multiple-choice-label" style="margin-bottom: 0px; float:left">Stimme überhaupt nicht zu</label>
+    <label class="multiple-choice-label" style="margin-bottom: 0px; float:right;">Stimme völlig zu</label>
+    <br>
+    <input type="range" class="slider" style="width:100%; display:block; margin-left:1.5px;"
+    name="moreBrutalityPolice" min="1" max="9" step="1" >
+    <br>
+    <div class="" style="margin-top:-25px; width:100%">
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:1%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11.1%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11.1%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11.05%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+
+    </div>
+</div>
+<div class="blank-space-medium">  </div>
+
+
+<!-- Police get more competencies --------------------------------------- -->
+<div class="multiple-choice-div">
+    <div class="m-c-question" style="font-weight:100;">
+    Wie sicher sind Sie sich, dass Polizeigewalt in Deutschland ein Problem, bzw. kein Problem ist?<br>
+    </div>
+    <label class="multiple-choice-label" style="margin-bottom: 0px; float:left">Überhaupt nicht sicher</label>
+    <label class="multiple-choice-label" style="margin-bottom: 0px; float:right;">Sehr sicher</label>
+    <br>
+    <input type="range" class="slider" style="width:100%; display:block; margin-left:1.5px;"
+    name="confidencePoliceBrutality" min="1" max="9" step="1" >
+    <br>
+    <div class="" style="margin-top:-25px; width:100%">
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:1%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11.1%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11.1%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11.05%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+
+    </div>
+</div>
+<div class="blank-space-very-small">  </div>
+
+
+
+
+
+<!-- Police Brutality Frequency Question No 1 ------------------------------ -->
+<div class="multiple-choice-div" style="font-size:0.9rem; font-weight:bold;">
+    <div class="m-c-question" style="font-size:1rem; font-weight:100;">
+    Wie häufig kommt es in Deutschland zu Polizeigewalt?<br>
+    </div>
+    <div style="font-size:0.9rem; display:inline; margin-left:165px;">ungefähr einmal ... </div><br>
+    <div class="m-c-between-buttons"></div><br>
+
+    <!-- <label class="multiple-choice-label-left" for="male">am Tag</label> -->
+    <div class="m-c-between-buttons"></div><!--<div class="m-c-between-buttons"></div> -->
+    <input type="radio" id="fPB6" name="frequencyPoliceBrutality" value="0" style="float:left; margin-left:30px;">
+    <!-- nie -->
+    <div class="m-c-between-buttons"></div>
+    <div class="m-c-between-buttons"></div>
+    <div class="m-c-between-buttons"></div>
+    <div class="m-c-between-buttons"></div>
+    <input type="radio" id="fPB1" name="frequencyPoliceBrutality" value="1">
+    <!-- am Tag -->
+    <div class="m-c-between-buttons"></div>
+    <input type="radio" id="fPB2" name="frequencyPoliceBrutality" value="2" style="margin-left:55px;">
+    <!-- in der Woche -->
+    <div class="m-c-between-buttons"></div>
+    <input type="radio" id="fPB3" name="frequencyPoliceBrutality" value="3" style="margin-left:55px;">
+    <!-- im Monat -->
+    <div class="m-c-between-buttons"></div>
+    <input type="radio" id="fPB4" name="frequencyPoliceBrutality" value="4" style="margin-left:55px;">
+    <!-- im Jahr -->
+    <div class="m-c-between-buttons"></div>
+    <input type="radio" id="fPB5" name="frequencyPoliceBrutality" value="5" style="margin-left:55px;">
+    <!-- alle 10 Jahre -->
+    <div class="m-c-between-buttons"></div>
+
+    <br>
+
+    <div class="m-c-between-buttons"></div><!--<div class="m-c-between-buttons"></div> -->
+    <div style="float:left; margin-left:30px;">nie</div>
+    <div class="m-c-between-buttons"></div>
+    <div class="m-c-between-buttons"></div>
+    <div class="m-c-between-buttons"></div>
+    <div class="m-c-rotated-label" style="margin-left:18px; vertical-align:top;">am Tag</div>
+    <div class="m-c-between-buttons"></div>
+    <div class="m-c-rotated-label" style="margin-left:23px;">in der <br>Woche</div>
+    <div class="m-c-between-buttons"></div>
+    <div class="m-c-rotated-label" style="margin-left:23px; vertical-align:top;">im Monat</div>
+    <div class="m-c-between-buttons"></div>
+    <div class="m-c-rotated-label" style="margin-left:8px; vertical-align:top;">im Jahr</div>
+    <div class="m-c-between-buttons"></div>
+    <div class="m-c-rotated-label" style="margin-left:20px;">alle <br>10 Jahre</div>
+    <div class="m-c-between-buttons"></div>
+    <!-- <input type="radio" id="fPB7" name="frequencyPoliceBrutality" value="7">
+    <div class="m-c-between-buttons"></div><div class="m-c-between-buttons"></div>
+    <label class="multiple-choice-label-right" for="male">alle 10 Jahre </label><br> -->
+</div>
+<div class="blank-space-very-small">  </div>
+
+
+<!-- Befugnisse der Polizei --------------------------------------- -->
+<div class="multiple-choice-div">
+    <div class="m-c-question" style="font-weight:100;">
+    Besitzt die Polizei in Deutschland ausreichend Befugnisse Gewalt anzuwenden, um ihre Aufgaben zu erfüllen?<br>
+    </div>
+    <label class="multiple-choice-label" style="margin-bottom: 0px; float:left">Zu wenige</label>
+    <label class="multiple-choice-label" style="margin-bottom: 0px; float:right;">Zu viele</label>
+    <br>
+    <input type="range" class="slider" style="width:100%; display:block; margin-left:1.5px;"
+    name="moreCompetencesPolice" min="1" max="9" step="1" >
+    <br>
+    <div class="" style="margin-top:-25px; width:100%">
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:1%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11.1%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11.1%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11.05%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+
+    </div>
+</div>
+<div class="blank-space-very-small">  </div>
+<div class="blank-space-medium">
+</div>
+
+
+
+<!-- Attitude towards violence --------------------------------------- -->
+<div class="multiple-choice-div">
+    <div class="m-c-question" style="font-weight:100;">
+    Ich versuche mich von Orten, an denen es wahrscheinlich zu Gewalt kommt, fern zu halten.<br>
+    </div>
+    <label class="multiple-choice-label" style="margin-bottom: 0px; float:left">Stimme überhaupt nicht zu</label>
+    <label class="multiple-choice-label" style="margin-bottom: 0px; float:right;">Stimme völlig zu</label>
+    <br>
+    <input type="range" class="slider" style="width:100%; display:block; margin-left:1.5px;"
+    name="violenceAttitude1" min="1" max="9" step="1" >
+    <br>
+    <div class="" style="margin-top:-25px; width:100%">
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:1%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11.1%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11.1%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11.05%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+
+    </div>
+</div>
+<div class="blank-space-very-small">  </div>
+
+
+<!-- Attitude towards violence --------------------------------------- -->
+<div class="multiple-choice-div">
+    <div class="m-c-question" style="font-weight:100;">
+    Menschen, die Gewalt einsetzen, werden respektiert.<br>
+    </div>
+    <label class="multiple-choice-label" style="margin-bottom: 0px; float:left">Stimme überhaupt nicht zu</label>
+    <label class="multiple-choice-label" style="margin-bottom: 0px; float:right;">Stimme völlig zu</label>
+    <br>
+    <input type="range" class="slider" style="width:100%; display:block; margin-left:1.5px;"
+    name="violenceAttitude2" min="1" max="9" step="1" >
+    <br>
+    <div class="" style="margin-top:-25px; width:100%">
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:1%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11.1%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11.1%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11.05%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+
+    </div>
+</div>
+<div class="blank-space-very-small">  </div>
+
+<!-- Attitude towards violence --------------------------------------- -->
+<div class="multiple-choice-div">
+    <div class="m-c-question" style="font-weight:100;">
+    Wenn dir eine Person wehtut, solltest Du zurückschlagen. <br>
+    </div>
+    <label class="multiple-choice-label" style="margin-bottom: 0px; float:left">Stimme überhaupt nicht zu</label>
+    <label class="multiple-choice-label" style="margin-bottom: 0px; float:right;">Stimme völlig zu</label>
+    <br>
+    <input type="range" class="slider" style="width:100%; display:block; margin-left:1.5px;"
+    name="violenceAttitude3" min="1" max="9" step="1" >
+    <br>
+    <div class="" style="margin-top:-25px; width:100%">
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:1%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11.1%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11.1%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11.05%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+
+    </div>
+</div>
+<div class="blank-space-very-small">  </div>
+
+
+
+
+
+
+<div class="blank-space-medium">
+
+</div>
+
+<h5>
+    Zu den ausgewählten Suchergebnissen:
+</h5>
+
+
+<!-- Ausgeglichenheit der Suche --------------------------------------- -->
+<div class="multiple-choice-div">
+    <div class="m-c-question">
+        {% if player.singleplayer == 0 %}
+        Die von uns angesehenen Suchergebnisse empfand <b>ich persönlich</b> als: <br>
+        {% elif player.singleplayer == 1 %}
+        Die von mir angesehenen Suchergebnisse empfand <b>ich persönlich</b> als: <br>
+        {% endif %}
+    </div>
+    <label class="multiple-choice-label" style="margin-bottom: 0px; float:left">einseitig <br>zu Gunsten <br>der Polizei</label>
+    <label class="multiple-choice-label" style="margin-bottom: 0px; float:right; text-align:right;">einseitig <br>zu Gunsten <br>der Demonstrierenden</label>
+    <br>
+    <input type="range" class="slider" style="width:100%; display:block; margin-left:1.5px;"
+    name="equalitySearchResults" min="1" max="9" step="1" >
+    <br>
+    <div class="" style="margin-top:-25px; width:100%">
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:1%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11.1%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11.1%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11.05%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+
+    </div>
+</div>
+<div class="blank-space-very-small">  </div>
+
+
+
+
+
+<!-- Einseitigkeit der Suchergebnisse --------------------------------------- -->
+<div class="multiple-choice-div">
+    <div class="m-c-question">
+        Wie beurteilen Sie die Anzahl der zur Verfügung stehenden Suchergebnisse? <br>
+    </div>
+    <label class="multiple-choice-label" style="margin-bottom: 0px; float:left">Es waren mehr vorhanden, <br>die <u>einen Fall</u> von <br>Polizeigewalt beschrieben</label>
+    <label class="multiple-choice-label" style="margin-bottom: 0px; float:right; text-align:right;">Es waren mehr vorhanden, <br>die <u>keinen Fall</u> von <br>Polizeigewalt beschrieben</label>
+    <br>
+    <input type="range" class="slider" style="width:100%; display:block; margin-left:1.5px;"
+    name="frequencySearchResults" min="1" max="9" step="1" >
+    <br>
+    <div class="" style="margin-top:-25px; width:100%">
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:1%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11.1%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11.1%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11.05%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+
+    </div>
+</div>
+<div class="blank-space-very-small">  </div>
+
+
+<!-- Trustworthiness of articles --------------------------------------- -->
+<div class="multiple-choice-div">
+    <div class="m-c-question">
+        {% if player.singleplayer == 0 %}
+        Die Suchergebnisse, welche wir zu sehen bekommen haben, waren alle gleich vertrauenswürdig.
+        <br>
+        {% elif player.singleplayer == 1 %}
+        Die Suchergebnisse, welche ich zu sehen bekommen habe, waren alle gleich vertrauenswürdig.
+        <br>
+        {% endif %}
+    </div>
+    <label class="multiple-choice-label" style="margin-bottom: 0px; float:left">Stimme überhaupt nicht zu</label>
+    <label class="multiple-choice-label" style="margin-bottom: 0px; float:right; text-align:right;">Stimme völlig zu</label>
+    <br>
+    <input type="range" class="slider" style="width:100%; display:block; margin-left:1.5px;"
+    name="trustArticles" min="1" max="9" step="1" >
+    <br>
+    <div class="" style="margin-top:-25px; width:100%">
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:1%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11.1%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11.1%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11.05%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+
+    </div>
+</div>
+<div class="blank-space-very-small">  </div>
+
+
+
+
+<!-- ------------------- Next-Button und Bottom-Line ---------------- -->
+
+<br>
+<button class="otree-btn-next btn btn-primary">Weiter</button>
+
+<hr>
+<p> <a href="mailto: lob@stud.uni-heidelberg.de" target="_blank">Aaron Lob</a>, Universität Heidelberg  - 2020</p>
+
+{% endblock %}

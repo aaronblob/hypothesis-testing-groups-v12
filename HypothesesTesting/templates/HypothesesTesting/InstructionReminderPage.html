@@ -1,0 +1,76 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+{% block scripts %}
+<script type="text/javascript">
+
+    var weiterButton = document.getElementById("weiterButton");
+    var weiterDisclaimer = document.getElementById("weiterDisclaimer");
+
+    setTimeout(function(){weiterDisclaimer.setAttribute("style","display:none;");}, 10000);
+    setTimeout(function(){weiterButton.setAttribute("style","display:block;");}, 10000);
+
+</script>
+{% endblock %}
+{% block styles %}
+
+<style media="screen">
+    .otree-timer {
+        display:none;
+    }
+</style>
+
+{% endblock %}
+{% block content %}
+<!-- ------------------------------- Header -------------------------------- -->
+<div class="outer-head-div">
+    <span class="inner-head-div-text new-title">
+        <!-- Title -->
+    </span>
+
+    <div class="inner-head-div-logo">
+        <img src="{% static 'Hypothesentesten/hd-logo-sw.png' %}" class="logo"/>
+    </div>
+</div>
+<hr style="margin-top:1px; margin-bottom:15px;">
+<!-- ------------------------------- Header -------------------------------- -->
+
+
+<h3>
+    Nochmal in Kürze:
+</h3>
+
+<p>
+    <ul>
+        <li>Mit Suchergebnissen informieren Sie sich</li>
+        <li>Durch Auswahl des Suchergebnisses sehen Sie die vollen Informationen</li>
+        <li>Pro Runde (6 Runden) können Sie nur ein Sucherbenis auswählen</li>
+        <li>Suchergebnisse unterscheiden sich nicht in Echtheit und Verlässlichkeit</li>
+
+    </ul>
+
+
+{% if player.singleplayer == 0 %}
+<p>
+    <b>Bitte denken Sie daran:</b>
+    <br>
+    Sie werden gleich mit einer*einem anderen Studienteilnehmer*in chatten. Um eine Entscheidung für eines der
+    Suchergebnisse
+    treffen zu können <b>müssen Sie sich einigen</b> - nutzen Sie die Gelegenheit und tauschen Sie sich dafür
+    aus, wenn Sie sich nicht einigen konnten, müssen Sie die Auswahl nochmals durchführen!
+    Bitte bleiben Sie dabei höflich und nett, Sie können nur gemeinsam als Gruppe eine
+    Entscheidung treffen.
+</p>
+{% endif %}
+
+
+
+<!-- ------------------- Next-Button und Bottom-Line ---------------- -->
+
+<br>
+<p style="display:block;float:right;color:#0400ff;" id="weiterDisclaimer"><i>Gleich erscheint der Weiter-Button</i></p>
+<button class="otree-btn-next btn btn-primary" id="weiterButton" style="display:none;">Weiter</button>
+
+<hr>
+<p> <a href="mailto: lob@stud.uni-heidelberg.de" target="_blank">Aaron Lob</a>, Universität Heidelberg  - 2020</p>
+
+{% endblock %}

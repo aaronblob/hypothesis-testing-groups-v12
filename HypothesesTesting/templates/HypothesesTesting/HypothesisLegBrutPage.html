@@ -1,0 +1,72 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+{% block scripts %}
+<script type="text/javascript">
+
+    var weiterButton = document.getElementById("weiterButton");
+    var weiterDisclaimer = document.getElementById("weiterDisclaimer");
+
+    setTimeout(function(){weiterDisclaimer.setAttribute("style","display:none;");}, 15000);
+    setTimeout(function(){weiterButton.setAttribute("style","display:block;");}, 15000);
+
+</script>
+{% endblock %}
+{% block styles %}
+
+<style media="screen">
+    .otree-timer {
+        display:none;
+    }
+</style>
+
+{% endblock %}
+{% block content %}
+<!-- ------------------------------- Header -------------------------------- -->
+<div class="outer-head-div">
+    <span class="inner-head-div-text new-title">
+        <!-- Title -->
+    </span>
+
+    <div class="inner-head-div-logo">
+        <img src="{% static 'Hypothesentesten/hd-logo-sw.png' %}" class="logo"/>
+    </div>
+</div>
+<hr style="margin-top:1px; margin-bottom:15px;">
+<!-- ------------------------------- Header -------------------------------- -->
+
+
+
+
+
+<h5>
+    Ihre Aufgabe
+</h5>
+
+
+
+<p>
+    Bitte prüfen Sie - mit Hilfe der Suchergebnisse auf den
+    nächsten Seiten - die folgende Hypothese:
+</p>
+
+
+
+<h3>
+    Deutschland <u>hat kein</u> Problem mit Polizeigewalt.
+</h3>
+
+
+
+
+
+
+<!-- ------------------- Next-Button und Bottom-Line ---------------- -->
+
+<br>
+<p style="display:block;float:right;color:#0400ff;" id="weiterDisclaimer"><i>Gleich erscheint der Weiter-Button</i></p>
+<button class="otree-btn-next btn btn-primary" id="weiterButton" style="display:none;">Weiter</button>
+
+<hr>
+<p> <a href="mailto: lob@stud.uni-heidelberg.de" target="_blank">Aaron Lob</a>, Universität Heidelberg  - 2020</p>
+
+{% endblock %}

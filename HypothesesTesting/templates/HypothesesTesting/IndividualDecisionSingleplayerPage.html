@@ -1,0 +1,167 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+{% block scripcts %}
+<script>
+    document.querySelector('[name=individualDecision]').value = 0;
+    document.querySelector('[name=certaintyIndDec]').value = 0;
+
+</script>
+{% endblock %}
+{% block content %}
+<!-- ------------------------------- Header -------------------------------- -->
+<div class="outer-head-div">
+    <span class="inner-head-div-text new-title">
+        <!-- Title -->
+    </span>
+
+    <div class="inner-head-div-logo">
+        <img src="{% static 'Hypothesentesten/hd-logo-sw.png' %}" class="logo"/>
+    </div>
+</div>
+<hr style="margin-top:1px; margin-bottom:15px;">
+<!-- ------------------------------- Header -------------------------------- -->
+
+
+<h3>
+    Ihre Einschätzung
+</h3>
+
+
+<p>
+    Bitte geben Sie nun eine Einschätzung ab.
+</p>
+
+
+<div class="blank-space-small">
+
+
+
+<h3>Deutschland hat ein Problem mit Polizeigewalt.</h3>
+
+
+</div>
+
+<!-- Police Brutality Priors -->
+<div class="multiple-choice-div">
+    <div class="m-c-question" style="font-weight:100;">
+    Die These halte ich für:<br>
+    </div>
+    <label class="multiple-choice-label" style="margin-bottom: 0px; float:left">völlig unberechtigt</label>
+    <label class="multiple-choice-label" style="margin-bottom: 0px; float:right;">völlig berechtigt</label>
+    <br>
+    <input type="range" class="slider" style="width:100%; display:block; margin-left:1.5px;"
+    name="individualDecision" min="1" max="9" step="1" >
+    <br>
+    <div class="" style="margin-top:-25px; width:100%">
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:1%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11.1%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11.1%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11.05%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+
+    </div>
+</div>
+
+
+<!-- Police Brutality Priors -->
+<!-- <div class="multiple-choice-div">
+    <div class="m-c-question" style="font-weight:100;">
+        Die These, <i>Deutschland habe ein Problem mit Polizeigewalt</i> ist...<br>
+    </div>
+    <label class="multiple-choice-label-left" for="male">völlig unberechtigt</label>
+    <div class="m-c-between-buttons"></div><div class="m-c-between-buttons"></div>
+    <input type="radio" id="indDec1" name="individualDecision" value="1">
+    <div class="m-c-between-buttons"></div>
+    <input type="radio" id="indDec2" name="individualDecision" value="2">
+    <div class="m-c-between-buttons"></div>
+    <input type="radio" id="indDec3" name="individualDecision" value="3">
+    <div class="m-c-between-buttons"></div>
+    <input type="radio" id="indDec4" name="individualDecision" value="4">
+    <div class="m-c-between-buttons"></div>
+    <input type="radio" id="indDec5" name="individualDecision" value="5">
+    <div class="m-c-between-buttons"></div>
+    <input type="radio" id="indDec6" name="individualDecision" value="6">
+    <div class="m-c-between-buttons"></div>
+    <input type="radio" id="indDec7" name="individualDecision" value="7">
+    <div class="m-c-between-buttons"></div><div class="m-c-between-buttons"></div>
+    <label class="multiple-choice-label-right" for="male">völlig berechtigt</label><br>
+</div> -->
+
+
+<!-- Slider: how large is the problem? -->
+<div class="multiple-choice-div">
+    <div class="m-c-question" style="font-weight:100;">
+    Wie sicher sind Sie sich bei dieser Einschätzung?<br>
+    </div>
+        <label class="multiple-choice-label" style="margin-bottom: 0px; float:left">sehr unsicher</label>
+        <label class="multiple-choice-label" style="margin-bottom: 0px; float:right;">sehr sicher</label>
+        <br>
+        <input type="range" class="slider" style="width:100%; display:block; margin-left:1.5px;"
+        name="certaintyIndDec"  min="1" max="9" step="1" >
+        <br>
+        <div class="" style="margin-top:-25px; width:100%">
+            <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:1%;">
+                I
+            </div>
+            <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+                I
+            </div>
+            <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+                I
+            </div>
+            <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11.1%;">
+                I
+            </div>
+            <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+                I
+            </div>
+            <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11.1%;">
+                I
+            </div>
+            <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+                I
+            </div>
+            <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11.05%;">
+                I
+            </div>
+            <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+                I
+            </div>
+
+        </div>
+</div>
+
+
+
+
+<!-- ------------------- Next-Button und Bottom-Line ---------------- -->
+
+<br>
+<button class="otree-btn-next btn btn-primary">Weiter</button>
+
+<hr>
+<p> <a href="mailto: lob@stud.uni-heidelberg.de" target="_blank">Aaron Lob</a>, Universität Heidelberg  - 2020</p>
+
+{% endblock %}

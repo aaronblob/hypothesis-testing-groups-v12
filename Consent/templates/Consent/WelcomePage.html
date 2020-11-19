@@ -1,0 +1,142 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+{% block scripts %}
+<script type="text/javascript">
+
+    var mobileVersion = document.getElementById("mobileVersion");
+
+    document.querySelector('[name=mobileVersion]').value = 0;
+    document.querySelector('[name=prolific]').value = 1;
+    document.querySelector('[name=prolificID]').value = "";
+    document.querySelector('[name=GermanMothertongueNiveau]').value = 1;
+
+    if (screen.width <= 799) {
+        mobileVersion.value = 1;
+    } else if (screen.width > 799) {
+        mobileVersion.value = 0;
+    }
+
+</script>
+{% endblock %}
+{% block content %}
+<!-- ------------------------------- Header -------------------------------- -->
+<div class="outer-head-div">
+    <span class="inner-head-div-text new-title">
+        <!-- Title -->
+    </span>
+
+    <div class="inner-head-div-logo">
+        <img src="{% static 'Hypothesentesten/hd-logo-sw.png' %}" class="logo"/>
+    </div>
+</div>
+<hr style="margin-top:1px; margin-bottom:15px;">
+<!-- ------------------------------- Header -------------------------------- -->
+
+
+<h3>
+    Herzlich Willkommen
+</h3>
+
+
+<h5>
+    Liebe*r Studienteilnehmer*in!
+</h5>
+
+
+<p>
+    Vielen Dank, dass Sie hier sind! Durch Ihre Teilnahme an unserer Studie
+    unterstützen Sie die sozialpsychologische Forschung an der Universität Heidelberg!
+    <br>
+    In den nächsten 30 Minuten werden Sie an einer Studie teilnehmen, welche zur
+    Erforschung von Gruppen- und Einzeleinschätzungen entworfen wurde.
+</p>
+<!-- <p>
+    Am Ende werden Sie auch die Möglichkeit haben, sich ihre Studienteilnahme
+    bescheinigen zu lassen (VPN-Stunden) <b style="color:red;">oder ihre Paypal-Daten zur Auszahlung
+    der Teilnahmekompensation angeben zu können.</b> Dort dürfen Sie auch, sofern
+    Sie mögen, Ihre Email-Adresse angeben, um etwas über die Forschungsfragen
+    dieser Arbeit zu erfahren!
+</p> -->
+
+<p>
+    Bitte drücken Sie jetzt auf Ihrer Tastatur die Taste <b>F11</b> an, um das Browser-Fenster zu maximieren.
+    Nach Ende der Studie, können Sie wieder mit F11 den Volldbildmodus verlassen.
+</p>
+
+
+
+<div class="blank-space-small"></div>
+
+
+
+<!-- Prolific -->
+<div class="multiple-choice-div">
+    <div class="m-c-question">
+    Sind Sie bei Prolific angemeldet und nehmen an dieser Studie über Prolific teil?<br>
+    </div>
+    <input type="radio" id="prolific1" name="prolific" value="1">
+    <div class="m-c-besides-button"></div>
+    <label class="multiple-choice-label" for="prolific1">Ja</label>
+    <br>
+    <input type="radio" id="prolific2" name="prolific" value="2">
+    <div class="m-c-besides-button"></div>
+    <label class="multiple-choice-label" for="prolific2">Nein (z.B. über Studienportal)</label>
+</div>
+
+
+<div class="blank-space-very-small">  </div>
+
+
+
+<!-- Prolific ID -->
+<div class="multiple-choice-div">
+    <div class="m-c-question">
+    Wie lautet Ihre Prolific ID (falls Sie keine haben bitte frei lassen)?<br>
+    </div>
+    <b>Prolific ID:</b> <input type="text" id="prolificID" name="prolificID" value="">
+</div>
+
+
+<!-- German -->
+<div class="multiple-choice-div">
+    <div class="m-c-question">
+    Sprechen Sie Deutsch auf muttersprachlichem Niveau?<br>
+    </div>
+    <input type="radio" id="GermanMothertongueNiveau1" name="GermanMothertongueNiveau" value="1">
+    <div class="m-c-besides-button"></div>
+    <label class="multiple-choice-label" for="GermanMuttersprache1">Ja</label>
+    <br>
+    <input type="radio" id="GermanMothertongueNiveau2" name="GermanMothertongueNiveau" value="2">
+    <div class="m-c-besides-button"></div>
+    <label class="multiple-choice-label" for="GermanMothertongueNiveau2">Nein</label>
+</div>
+
+
+<div class="blank-space-very-small">  </div>
+
+
+<p>
+    Wenn Sie mit der Studie beginnen möchten, klicken Sie bitte auf <b>Weiter</b>.
+</p>
+
+
+
+
+
+
+
+
+
+
+<input type="number" name="mobileVersion" id="mobileVersion" value="" style="display:none;">
+
+
+<!-- ------------------- Next-Button und Bottom-Line ---------------- -->
+
+<br>
+<button class="otree-btn-next btn btn-primary" id="weiterButton">Weiter</button>
+
+<hr>
+<p> <a href="mailto: lob@stud.uni-heidelberg.de" target="_blank">Aaron Lob</a>, Universität Heidelberg  - 2020</p>
+
+{% endblock %}

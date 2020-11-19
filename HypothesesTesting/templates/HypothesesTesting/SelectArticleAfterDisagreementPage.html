@@ -1,0 +1,744 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+
+<!-- ----------------------------------------------------------------------- -->
+<!-- -----------------Java Script at the bottom of page!-------------------- -->
+<!-- ----------------------------------------------------------------------- -->
+
+
+{% block styles %}
+<style>
+    /* hide sending option to only show chat messages */
+    .otree-chat__input {
+        display:none;
+    }
+    .otree-chat__btn-send {
+        display:none;
+    }
+</style>
+{% endblock %}
+{% block content %}
+<!-- ------------------------------- Header -------------------------------- -->
+<div class="outer-head-div">
+    <span class="inner-head-div-text new-title">
+        <!-- Title -->
+    </span>
+
+    <div class="inner-head-div-logo">
+        <img src="{% static 'Hypothesentesten/hd-logo-sw.png' %}" class="logo"/>
+    </div>
+</div>
+<hr style="margin-top:1px; margin-bottom:15px;">
+<!-- ------------------------------- Header -------------------------------- -->
+
+<h3>
+    Achtung!
+</h3>
+
+
+<h5>
+    Sie haben sich nicht gemeinsam entschieden! Bitte wählen Sie den Artikel
+    aus, für den Sie sich als <b>Gruppe</b> entschieden haben!
+</h5>
+
+
+{% chat %}
+
+<p>
+    <i>Sie können erst in der nächsten Runde wieder chatten - bitte wählen Sie das
+    Suchergebnis aus, auf das Sie sich soeben geeinigt haben. </i>
+</p>
+
+<div class="blank-space-small">
+
+</div>
+
+<p>
+    Dies sind die verfügbaren Suchergebnisse, bedenken Sie: Es gibt keine Unterschiede in der
+    Verlässlichkeit der Artikel, die Quellen sind alle gleich vertrauenswürdig.
+    <br>
+    Wie bei der Präsentation von Suchergebnissen üblich, ist nur ein Ausschnitt
+    der vollen Information zu sehen - den gesamten Text können Sie lesen, wenn
+    Sie das Suchergebnis auswählen.
+</p>
+
+
+<!-- Track the selected article  -->
+<!-- invisible input-field transmitting the selection -->
+<div style="display:none;">
+    <input type="text" id="selectedSR" name="selectedSR" value="">
+</div>
+
+
+
+<!-- blank space -->
+<div class="blank-space-medium">
+</div>
+
+<div class="heading-fake-search-page">
+    <div class="fake-search-field">
+        <div class="fake-search-word">
+            Suchen
+        </div>
+        <i class="fa fa-search"></i>
+    </div>
+    <div class="fake-options-bar-outer-div">
+        <div class="fake-options-bar"></div>
+        <div class="fake-options-bar"></div>
+        <div class="fake-options-bar"></div>
+    </div>
+</div>
+
+
+
+
+<!-- list of possible articles to choose from -->
+<div class="article-list">
+
+    <!-- Suchergebnis 1 -->
+    <div class="article-preview" onclick="selectArticle1()" id="article1">
+        <div class="article-preview-heading" id="header1">
+            {{ group.head1 }}
+        </div>
+        <span class="article-preview-text" id="text1">
+
+        </span>
+        <!-- <span class="article-preview-text" id="text2" style="display:none;">
+            Text 2
+        </span>
+        <span class="article-preview-text" id="text3" style="display:none;">
+            Text 3
+        </span>
+        <span class="article-preview-text" id="text4" style="display:none;">
+            Text 4
+        </span> -->
+
+
+
+    </div>
+    <!-- Suchergebnis 2 -->
+    <div class="article-preview" onclick="selectArticle2()" id="article2">
+        <div class="article-preview-heading" id="header2">
+            {{ group.head2 }}
+        </div>
+        <span class="article-preview-text" id="text2">
+
+        </span>
+    </div>
+
+    <!-- Suchergebnis 3 -->
+    <div class="article-preview" onclick="selectArticle3()" id="article3">
+        <div class="article-preview-heading" id="header3">
+            {{ group.head3 }}
+        </div>
+        <span class="article-preview-text" id="text3">
+
+        </span>
+    </div>
+
+    <!-- Suchergebnis 4 -->
+    <div class="article-preview" onclick="selectArticle4()" id="article4">
+        <div class="article-preview-heading" id="header4">
+            {{ group.head4 }}
+        </div>
+        <span class="article-preview-text" id="text4">
+
+        </span>
+    </div>
+
+</div>
+
+
+<p style="font-size:0.8rem"><i>Auswahl des Suchergebnisses durch Klicken und Bestätigen mit "Weiter"</i></p>
+
+
+<!-- Warnin Message -->
+<div id="warningMessage" class="warning-timeout-message">
+    <p style="text-align:center; font-size:1.7rem; color:#0400ff; font-weight:bold;">Achtung!</p>
+
+    <p>Ihre Zeit ist fast abgelaufen, bitte einigen <br> Sie sich innerhalb der nächsten Minute <br> auf eines der Suchergebnisse!</p>
+    <button type="button" class="btn btn-primary" onclick="hidePopUp()" style="display:inline-block; background-color:#0400ff; border-color:#ffffff; color:#ffffff; float:right">Alles klar!</button>
+</div>
+
+
+
+<!-- article chosen by timeout -->
+<input type="number" name="SRbyTimeout" value="0" style="display:none;" id="SRbyTimeout">
+
+
+
+
+<!-- ------------------- Next-Button und Bottom-Line ---------------- -->
+
+<br>
+<button class="otree-btn-next btn btn-primary">Weiter</button>
+
+<hr>
+<p> <a href="mailto: lob@stud.uni-heidelberg.de" target="_blank">Aaron Lob</a>, Universität Heidelberg  - 2020</p>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+
+    var header1 = document.getElementById("header1").innerText;
+    var header2 = document.getElementById("header2").innerText;
+    var header3 = document.getElementById("header3").innerText;
+    var header4 = document.getElementById("header4").innerText;
+
+    var text1 = document.getElementById("text1").innerText;
+    var text2 = document.getElementById("text2").innerText;
+    var text3 = document.getElementById("text3").innerText;
+    var text4 = document.getElementById("text4").innerText;
+
+    var selectedSR = document.getElementById("selectedSR");
+
+    function selectArticle1() {
+        document.getElementById("article1").classList.add("article-preview-selected");
+        document.getElementById("article2").classList.remove("article-preview-selected");
+        document.getElementById("article3").classList.remove("article-preview-selected");
+        document.getElementById("article4").classList.remove("article-preview-selected");
+
+        if (header1 == "Polizist schlägt Demonstranten ins Gesicht") {
+            selectedSR.value = "1";
+        } else if (header1 == "Szenen wie in Minneapolis") {
+            selectedSR.value = "2";
+        } else if (header1 == "Polizist*innen attackieren Demonstrierende") {
+            selectedSR.value = "3";
+        } else if (header1 == "Räumung eines Straßenzugs eskaliert") {
+            selectedSR.value = "4";
+        } else if (header1 == "Demonstration am Samstag: Gewalt durch Beamte") {
+            selectedSR.value = "5";
+        } else if (header1 == "Schwere Verletzungen nach Polizeieinsatz") {
+            selectedSR.value = "6";
+        } else if (header1 == "Fragwürdige Festnahmemethoden") {
+            selectedSR.value = "7";
+        } else if (header1 == "Neuer Videoausschnitt der Großdemonstration aufgetaucht") {
+            selectedSR.value = "8";
+        } else if (header1 == "Polizei treibt Demonstrierende in die Enge") {
+            selectedSR.value = "9";
+        } else if (header1 == "Friedliche Proteste von Polizei aufgelöst") {
+            selectedSR.value = "10";
+        } else if (header1 == "Video dokumentiert Polizeieinsatz") {
+            selectedSR.value = "11";
+        } else if (header1 == "Sitzblockade mit Pfefferspray aufgelöst") {
+            selectedSR.value = "12";
+        } else if (header1 == "Vermummte Demonstrierende festgesetzt") {
+            selectedSR.value = "13";
+        } else if (header1 == "Polizei setzt Wasserwerfer ein") {
+            selectedSR.value = "14";
+        } else if (header1 == "Eskalation verhindert") {
+            selectedSR.value = "15";
+        } else if (header1 == "Polizei setzt sich zur Wehr") {
+            selectedSR.value = "16";
+        } else if (header1 == "Polizei in Straßenkämpfe verwickelt") {
+            selectedSR.value = "17";
+        } else if (header1 == "Demonstration aufgelöst") {
+            selectedSR.value = "18";
+        } else if (header1 == "Polizei muss brutal reagieren") {
+            selectedSR.value = "19";
+        } else if (header1 == "Gewalt eskaliert bei Demonstration") {
+            selectedSR.value = "20";
+        } else if (header1 == "Wasserwerfer und Schlagstöcke kommen zum Einsatz") {
+            selectedSR.value = "21";
+        } else if (header1 == "Kontrolle nur mühsam erkämpft - Polizei setzt Gewalt ein") {
+            selectedSR.value = "22";
+        } else if (header1 == "Polizei-Reaktion auf Flaschenwürfe") {
+            selectedSR.value = "23";
+        } else if (header1 == "Polizeieinsatz am Samstag: Verletzte auf beiden Seiten") {
+            selectedSR.value = "24";
+        }
+    }
+
+    function selectArticle2() {
+        document.getElementById("article2").classList.add("article-preview-selected");
+        document.getElementById("article1").classList.remove("article-preview-selected");
+        document.getElementById("article3").classList.remove("article-preview-selected");
+        document.getElementById("article4").classList.remove("article-preview-selected");
+
+        if (header2 == "Polizist schlägt Demonstranten ins Gesicht") {
+            selectedSR.value = "1";
+        } else if (header2 == "Szenen wie in Minneapolis") {
+            selectedSR.value = "2";
+        } else if (header2 == "Polizist*innen attackieren Demonstrierende") {
+            selectedSR.value = "3";
+        } else if (header2 == "Räumung eines Straßenzugs eskaliert") {
+            selectedSR.value = "4";
+        } else if (header2 == "Demonstration am Samstag: Gewalt durch Beamte") {
+            selectedSR.value = "5";
+        } else if (header2 == "Schwere Verletzungen nach Polizeieinsatz") {
+            selectedSR.value = "6";
+        } else if (header2 == "Fragwürdige Festnahmemethoden") {
+            selectedSR.value = "7";
+        } else if (header2 == "Neuer Videoausschnitt der Großdemonstration aufgetaucht") {
+            selectedSR.value = "8";
+        } else if (header2 == "Polizei treibt Demonstrierende in die Enge") {
+            selectedSR.value = "9";
+        } else if (header2 == "Friedliche Proteste von Polizei aufgelöst") {
+            selectedSR.value = "10";
+        } else if (header2 == "Video dokumentiert Polizeieinsatz") {
+            selectedSR.value = "11";
+        } else if (header2 == "Sitzblockade mit Pfefferspray aufgelöst") {
+            selectedSR.value = "12";
+        } else if (header2 == "Vermummte Demonstrierende festgesetzt") {
+            selectedSR.value = "13";
+        } else if (header2 == "Polizei setzt Wasserwerfer ein") {
+            selectedSR.value = "14";
+        } else if (header2 == "Eskalation verhindert") {
+            selectedSR.value = "15";
+        } else if (header2 == "Polizei setzt sich zur Wehr") {
+            selectedSR.value = "16";
+        } else if (header2 == "Polizei in Straßenkämpfe verwickelt") {
+            selectedSR.value = "17";
+        } else if (header2 == "Demonstration aufgelöst") {
+            selectedSR.value = "18";
+        } else if (header2 == "Polizei muss brutal reagieren") {
+            selectedSR.value = "19";
+        } else if (header2 == "Gewalt eskaliert bei Demonstration") {
+            selectedSR.value = "20";
+        } else if (header2 == "Wasserwerfer und Schlagstöcke kommen zum Einsatz") {
+            selectedSR.value = "21";
+        } else if (header2 == "Kontrolle nur mühsam erkämpft - Polizei setzt Gewalt ein") {
+            selectedSR.value = "22";
+        } else if (header2 == "Polizei-Reaktion auf Flaschenwürfe") {
+            selectedSR.value = "23";
+        } else if (header2 == "Polizeieinsatz am Samstag: Verletzte auf beiden Seiten") {
+            selectedSR.value = "24";
+        }
+    }
+
+    function selectArticle3() {
+        document.getElementById("article3").classList.add("article-preview-selected");
+        document.getElementById("article2").classList.remove("article-preview-selected");
+        document.getElementById("article1").classList.remove("article-preview-selected");
+        document.getElementById("article4").classList.remove("article-preview-selected");
+
+        if (header3 == "Polizist schlägt Demonstranten ins Gesicht") {
+            selectedSR.value = "1";
+        } else if (header3 == "Szenen wie in Minneapolis") {
+            selectedSR.value = "2";
+        } else if (header3 == "Polizist*innen attackieren Demonstrierende") {
+            selectedSR.value = "3";
+        } else if (header3 == "Räumung eines Straßenzugs eskaliert") {
+            selectedSR.value = "4";
+        } else if (header3 == "Demonstration am Samstag: Gewalt durch Beamte") {
+            selectedSR.value = "5";
+        } else if (header3 == "Schwere Verletzungen nach Polizeieinsatz") {
+            selectedSR.value = "6";
+        } else if (header3 == "Fragwürdige Festnahmemethoden") {
+            selectedSR.value = "7";
+        } else if (header3 == "Neuer Videoausschnitt der Großdemonstration aufgetaucht") {
+            selectedSR.value = "8";
+        } else if (header3 == "Polizei treibt Demonstrierende in die Enge") {
+            selectedSR.value = "9";
+        } else if (header3 == "Friedliche Proteste von Polizei aufgelöst") {
+            selectedSR.value = "10";
+        } else if (header3 == "Video dokumentiert Polizeieinsatz") {
+            selectedSR.value = "11";
+        } else if (header3 == "Sitzblockade mit Pfefferspray aufgelöst") {
+            selectedSR.value = "12";
+        } else if (header3 == "Vermummte Demonstrierende festgesetzt") {
+            selectedSR.value = "13";
+        } else if (header3 == "Polizei setzt Wasserwerfer ein") {
+            selectedSR.value = "14";
+        } else if (header3 == "Eskalation verhindert") {
+            selectedSR.value = "15";
+        } else if (header3 == "Polizei setzt sich zur Wehr") {
+            selectedSR.value = "16";
+        } else if (header3 == "Polizei in Straßenkämpfe verwickelt") {
+            selectedSR.value = "17";
+        } else if (header3 == "Demonstration aufgelöst") {
+            selectedSR.value = "18";
+        } else if (header3 == "Polizei muss brutal reagieren") {
+            selectedSR.value = "19";
+        } else if (header3 == "Gewalt eskaliert bei Demonstration") {
+            selectedSR.value = "20";
+        } else if (header3 == "Wasserwerfer und Schlagstöcke kommen zum Einsatz") {
+            selectedSR.value = "21";
+        } else if (header3 == "Kontrolle nur mühsam erkämpft - Polizei setzt Gewalt ein") {
+            selectedSR.value = "22";
+        } else if (header3 == "Polizei-Reaktion auf Flaschenwürfe") {
+            selectedSR.value = "23";
+        } else if (header3 == "Polizeieinsatz am Samstag: Verletzte auf beiden Seiten") {
+            selectedSR.value = "24";
+        }
+    }
+
+    function selectArticle4() {
+        document.getElementById("article4").classList.add("article-preview-selected");
+        document.getElementById("article2").classList.remove("article-preview-selected");
+        document.getElementById("article3").classList.remove("article-preview-selected");
+        document.getElementById("article1").classList.remove("article-preview-selected");
+
+        if (header4 == "Polizist schlägt Demonstranten ins Gesicht") {
+            selectedSR.value = "1";
+        } else if (header4 == "Szenen wie in Minneapolis") {
+            selectedSR.value = "2";
+        } else if (header4 == "Polizist*innen attackieren Demonstrierende") {
+            selectedSR.value = "3";
+        } else if (header4 == "Räumung eines Straßenzugs eskaliert") {
+            selectedSR.value = "4";
+        } else if (header4 == "Demonstration am Samstag: Gewalt durch Beamte") {
+            selectedSR.value = "5";
+        } else if (header4 == "Schwere Verletzungen nach Polizeieinsatz") {
+            selectedSR.value = "6";
+        } else if (header4 == "Fragwürdige Festnahmemethoden") {
+            selectedSR.value = "7";
+        } else if (header4 == "Neuer Videoausschnitt der Großdemonstration aufgetaucht") {
+            selectedSR.value = "8";
+        } else if (header4 == "Polizei treibt Demonstrierende in die Enge") {
+            selectedSR.value = "9";
+        } else if (header4 == "Friedliche Proteste von Polizei aufgelöst") {
+            selectedSR.value = "10";
+        } else if (header4 == "Video dokumentiert Polizeieinsatz") {
+            selectedSR.value = "11";
+        } else if (header4 == "Sitzblockade mit Pfefferspray aufgelöst") {
+            selectedSR.value = "12";
+        } else if (header4 == "Vermummte Demonstrierende festgesetzt") {
+            selectedSR.value = "13";
+        } else if (header4 == "Polizei setzt Wasserwerfer ein") {
+            selectedSR.value = "14";
+        } else if (header4 == "Eskalation verhindert") {
+            selectedSR.value = "15";
+        } else if (header4 == "Polizei setzt sich zur Wehr") {
+            selectedSR.value = "16";
+        } else if (header4 == "Polizei in Straßenkämpfe verwickelt") {
+            selectedSR.value = "17";
+        } else if (header4 == "Demonstration aufgelöst") {
+            selectedSR.value = "18";
+        } else if (header4 == "Polizei muss brutal reagieren") {
+            selectedSR.value = "19";
+        } else if (header4 == "Gewalt eskaliert bei Demonstration") {
+            selectedSR.value = "20";
+        } else if (header4 == "Wasserwerfer und Schlagstöcke kommen zum Einsatz") {
+            selectedSR.value = "21";
+        } else if (header4 == "Kontrolle nur mühsam erkämpft - Polizei setzt Gewalt ein") {
+            selectedSR.value = "22";
+        } else if (header4 == "Polizei-Reaktion auf Flaschenwürfe") {
+            selectedSR.value = "23";
+        } else if (header4 == "Polizeieinsatz am Samstag: Verletzte auf beiden Seiten") {
+            selectedSR.value = "24";
+        }
+    }
+
+    // function that evaluates which article is displayed and returns the text matching to this article
+    window.onload = function() {
+        switch (header1) { // -------------- div 1 ----------------------------
+            case "Polizist schlägt Demonstranten ins Gesicht":
+                document.getElementById("text1").innerText = "... letzten Samstag, schlug ein Polizist grundlos einem 19-Jährigen Demonstranten ...";
+                break;
+            case "Szenen wie in Minneapolis":
+                document.getElementById("text1").innerText = "... Zwei Polizisten knien auf ihm, immer wieder ist das Tackern von Elektro-Tasern ...";
+                break;
+            case "Polizist*innen attackieren Demonstrierende":
+                document.getElementById("text1").innerText = "... über 100 Demonstrant*innen verletzt wurden, sind sieben Beamte vom Dienst suspendiert ...";
+                break;
+            case "Räumung eines Straßenzugs eskaliert":
+                document.getElementById("text1").innerText = "... Polizist hatte einer Frau ohne Grund Pfefferspray ins Gesicht gesprüht ...";
+                break;
+            case "Demonstration am Samstag: Gewalt durch Beamte":
+                document.getElementById("text1").innerText = "... werfen sie zu Boden, schlagen einzelnen Demonstrant*innen mehrfach ins Gesicht und in den Bauch ...";
+                break;
+            case "Schwere Verletzungen nach Polizeieinsatz":
+                document.getElementById("text1").innerText = "... der offenbar am Boden liegend von einem Polizisten getreten wurde ...";
+                break;
+            case "Fragwürdige Festnahmemethoden":
+                document.getElementById("text1").innerText = "... Polizist bei der Festnahme einer Demonstrantin sein Knie auf den Kopf- und Halsbereich ...";
+                break;
+            case "Neuer Videoausschnitt der Großdemonstration aufgetaucht":
+                document.getElementById("text1").innerText = "... Man sieht, wie Polizist*innen auf friedliche Demonstrant*innen einschlagen ... ";
+                break;
+            case "Polizei treibt Demonstrierende in die Enge":
+                document.getElementById("text1").innerText = "... Videos zeigen den Einsatz von Schlagstöcken und Pfefferspray an beiden Ausgängen ... ";
+                break;
+            case "Friedliche Proteste von Polizei aufgelöst":
+                document.getElementById("text1").innerText = "... kesselten Demonstrant*innen ein und verwendeten Wasserwerfer und Pfefferspray um ...";
+                break;
+            case "Video dokumentiert Polizeieinsatz":
+                document.getElementById("text1").innerText = "... zwei Polizisten einen Demonstranten (…) auf den Boden drücken und mit dem Kopf unter ein Auto zerren. Als der Wagen ...";
+                break;
+            case "Sitzblockade mit Pfefferspray aufgelöst":
+                document.getElementById("text1").innerText = "... Beamter steht mit einer Sprühflasche vor der Gruppe und sprüht Pfefferspray auf ...";
+                break;
+            case "Vermummte Demonstrierende festgesetzt":
+                document.getElementById("text1").innerText = "... Demonstrant*innen versucht, Absperrungen zu überwinden und Sturmhauben aufgezogen ...";
+                break;
+            case "Polizei setzt Wasserwerfer ein":
+                document.getElementById("text1").innerText = "... Attacken von Demonstrant*innen auf Polizeibeamte. Polizist*innen sind aus einer Menschenmenge ... ";
+                break;
+            case "Eskalation verhindert":
+                document.getElementById("text1").innerText = "... bei einer Demonstration zu Übergriffen einiger Demonstrant*innen auf die Polizei ...";
+                break;
+            case "Polizei setzt sich zur Wehr":
+                document.getElementById("text1").innerText = "... eine Polizeiblockade durchbrechen, Feuerwerkskörper auf Sicherheitskräfte abgeschossen sowie ...";
+                break;
+            case "Polizei in Straßenkämpfe verwickelt":
+                document.getElementById("text1").innerText = "... Zum Schutz unbeteiligter Passant*innen sowie Autos und Ladenflächen, musste ...";
+                break;
+            case "Demonstration aufgelöst":
+                document.getElementById("text1").innerText = "... einen brennenden Einkaufswagen in eine Einheit der anwesenden Polizei zu schieben ...";
+                break;
+            case "Polizei muss brutal reagieren":
+                document.getElementById("text1").innerText = "... Polizist*innen unter anderem mit Flaschen, Steinen, Stangen, Haushaltsgegenständen beworfen ...";
+                break;
+            case "Gewalt eskaliert bei Demonstration":
+                document.getElementById("text1").innerText = "... Mülltonnen angezündet und brennende Barrikaden auf der Straße errichtet. Insgesamt wurden sechs Polizist*innen verletzt ...";
+                break;
+            case "Wasserwerfer und Schlagstöcke kommen zum Einsatz":
+                document.getElementById("text1").innerText = "... am Samstag kam es erneut zu Ausschreitungen, welche von der Polizei gewaltsam unterbunden werden mussten ...";
+                break;
+            case "Kontrolle nur mühsam erkämpft - Polizei setzt Gewalt ein":
+                document.getElementById("text1").innerText = "... wütender Mob zündete Barrikaden an, plünderte Geschäfte, verwüstete große Teile des Viertels ...";
+                break;
+            case "Polizei-Reaktion auf Flaschenwürfe":
+                document.getElementById("text1").innerText = "... wurden die Einsatzkräfte aus der Menge mit Flaschen angegriffen. Mindestens sechs Beamte wurden verletzt ...";
+                break;
+            case "Polizeieinsatz am Samstag: Verletzte auf beiden Seiten":
+                document.getElementById("text1").innerText = "... Sicherheitskräfte enormer Aggressivität und auch Gewalt durch Demonstrant*innen ausgesetzt ...";
+                break;
+        }
+        switch (header2) { // -------------- div 2 ----------------------------
+            case "Polizist schlägt Demonstranten ins Gesicht":
+                document.getElementById("text2").innerText = "... letzten Samstag, schlug ein Polizist grundlos einem 19-Jährigen Demonstranten ...";
+                break;
+            case "Szenen wie in Minneapolis":
+                document.getElementById("text2").innerText = "... Zwei Polizisten knien auf ihm, immer wieder ist das Tackern von Elektro-Tasern ...";
+                break;
+            case "Polizist*innen attackieren Demonstrierende":
+                document.getElementById("text2").innerText = "... über 100 Demonstrant*innen verletzt wurden, sind sieben Beamte vom Dienst suspendiert ...";
+                break;
+            case "Räumung eines Straßenzugs eskaliert":
+                document.getElementById("text2").innerText = "... Polizist hatte einer Frau ohne Grund Pfefferspray ins Gesicht gesprüht ...";
+                break;
+            case "Demonstration am Samstag: Gewalt durch Beamte":
+                document.getElementById("text2").innerText = "... werfen sie zu Boden, schlagen einzelnen Demonstrant*innen mehrfach ins Gesicht und in den Bauch ...";
+                break;
+            case "Schwere Verletzungen nach Polizeieinsatz":
+                document.getElementById("text2").innerText = "... der offenbar am Boden liegend von einem Polizisten getreten wurde ...";
+                break;
+            case "Fragwürdige Festnahmemethoden":
+                document.getElementById("text2").innerText = "... Polizist bei der Festnahme einer Demonstrantin sein Knie auf den Kopf- und Halsbereich ...";
+                break;
+            case "Neuer Videoausschnitt der Großdemonstration aufgetaucht":
+                document.getElementById("text2").innerText = "... Man sieht, wie Polizist*innen auf friedliche Demonstrant*innen einschlagen ... ";
+                break;
+            case "Polizei treibt Demonstrierende in die Enge":
+                document.getElementById("text2").innerText = "... Videos zeigen den Einsatz von Schlagstöcken und Pfefferspray an beiden Ausgängen ... ";
+                break;
+            case "Friedliche Proteste von Polizei aufgelöst":
+                document.getElementById("text2").innerText = "... kesselten Demonstrant*innen ein und verwendeten Wasserwerfer und Pfefferspray um ...";
+                break;
+            case "Video dokumentiert Polizeieinsatz":
+                document.getElementById("text2").innerText = "... zwei Polizisten einen Demonstranten (…) auf den Boden drücken und mit dem Kopf unter ein Auto zerren. Als der Wagen ...";
+                break;
+            case "Sitzblockade mit Pfefferspray aufgelöst":
+                document.getElementById("text2").innerText = "... Beamter steht mit einer Sprühflasche vor der Gruppe und sprüht Pfefferspray auf ...";
+                break;
+            case "Vermummte Demonstrierende festgesetzt":
+                document.getElementById("text2").innerText = "... Demonstrant*innen versucht, Absperrungen zu überwinden und Sturmhauben aufgezogen ...";
+                break;
+            case "Polizei setzt Wasserwerfer ein":
+                document.getElementById("text2").innerText = "... Attacken von Demonstrant*innen auf Polizeibeamte. Polizist*innen sind aus einer Menschenmenge ... ";
+                break;
+            case "Eskalation verhindert":
+                document.getElementById("text2").innerText = "... bei einer Demonstration zu Übergriffen einiger Demonstrant*innen auf die Polizei ...";
+                break;
+            case "Polizei setzt sich zur Wehr":
+                document.getElementById("text2").innerText = "... eine Polizeiblockade durchbrechen, Feuerwerkskörper auf Sicherheitskräfte abgeschossen sowie ...";
+                break;
+            case "Polizei in Straßenkämpfe verwickelt":
+                document.getElementById("text2").innerText = "... Zum Schutz unbeteiligter Passant*innen sowie Autos und Ladenflächen, musste ...";
+                break;
+            case "Demonstration aufgelöst":
+                document.getElementById("text2").innerText = "... einen brennenden Einkaufswagen in eine Einheit der anwesenden Polizei zu schieben ...";
+                break;
+            case "Polizei muss brutal reagieren":
+                document.getElementById("text2").innerText = "... Polizist*innen unter anderem mit Flaschen, Steinen, Stangen, Haushaltsgegenständen beworfen ...";
+                break;
+            case "Gewalt eskaliert bei Demonstration":
+                document.getElementById("text2").innerText = "... Mülltonnen angezündet und brennende Barrikaden auf der Straße errichtet. Insgesamt wurden sechs Polizist*innen verletzt ...";
+                break;
+            case "Wasserwerfer und Schlagstöcke kommen zum Einsatz":
+                document.getElementById("text2").innerText = "... am Samstag kam es erneut zu Ausschreitungen, welche von der Polizei gewaltsam unterbunden werden mussten ...";
+                break;
+            case "Kontrolle nur mühsam erkämpft - Polizei setzt Gewalt ein":
+                document.getElementById("text2").innerText = "... wütender Mob zündete Barrikaden an, plünderte Geschäfte, verwüstete große Teile des Viertels ...";
+                break;
+            case "Polizei-Reaktion auf Flaschenwürfe":
+                document.getElementById("text2").innerText = "... wurden die Einsatzkräfte aus der Menge mit Flaschen angegriffen. Mindestens sechs Beamte wurden verletzt ...";
+                break;
+            case "Polizeieinsatz am Samstag: Verletzte auf beiden Seiten":
+                document.getElementById("text2").innerText = "... Sicherheitskräfte enormer Aggressivität und auch Gewalt durch Demonstrant*innen ausgesetzt ...";
+                break;
+        }
+        switch (header3) { // -------------- div 3 ----------------------------
+            case "Polizist schlägt Demonstranten ins Gesicht":
+                document.getElementById("text3").innerText = "... letzten Samstag, schlug ein Polizist grundlos einem 19-Jährigen Demonstranten ...";
+                break;
+            case "Szenen wie in Minneapolis":
+                document.getElementById("text3").innerText = "... Zwei Polizisten knien auf ihm, immer wieder ist das Tackern von Elektro-Tasern ...";
+                break;
+            case "Polizist*innen attackieren Demonstrierende":
+                document.getElementById("text3").innerText = "... über 100 Demonstrant*innen verletzt wurden, sind sieben Beamte vom Dienst suspendiert ...";
+                break;
+            case "Räumung eines Straßenzugs eskaliert":
+                document.getElementById("text3").innerText = "... Polizist hatte einer Frau ohne Grund Pfefferspray ins Gesicht gesprüht ...";
+                break;
+            case "Demonstration am Samstag: Gewalt durch Beamte":
+                document.getElementById("text3").innerText = "... werfen sie zu Boden, schlagen einzelnen Demonstrant*innen mehrfach ins Gesicht und in den Bauch ...";
+                break;
+            case "Schwere Verletzungen nach Polizeieinsatz":
+                document.getElementById("text3").innerText = "... der offenbar am Boden liegend von einem Polizisten getreten wurde ...";
+                break;
+            case "Fragwürdige Festnahmemethoden":
+                document.getElementById("text3").innerText = "... Polizist bei der Festnahme einer Demonstrantin sein Knie auf den Kopf- und Halsbereich ...";
+                break;
+            case "Neuer Videoausschnitt der Großdemonstration aufgetaucht":
+                document.getElementById("text3").innerText = "... Man sieht, wie Polizist*innen auf friedliche Demonstrant*innen einschlagen ... ";
+                break;
+            case "Polizei treibt Demonstrierende in die Enge":
+                document.getElementById("text3").innerText = "... Videos zeigen den Einsatz von Schlagstöcken und Pfefferspray an beiden Ausgängen ... ";
+                break;
+            case "Friedliche Proteste von Polizei aufgelöst":
+                document.getElementById("text3").innerText = "... kesselten Demonstrant*innen ein und verwendeten Wasserwerfer und Pfefferspray um ...";
+                break;
+            case "Video dokumentiert Polizeieinsatz":
+                document.getElementById("text3").innerText = "... zwei Polizisten einen Demonstranten (…) auf den Boden drücken und mit dem Kopf unter ein Auto zerren. Als der Wagen ...";
+                break;
+            case "Sitzblockade mit Pfefferspray aufgelöst":
+                document.getElementById("text3").innerText = "... Beamter steht mit einer Sprühflasche vor der Gruppe und sprüht Pfefferspray auf ...";
+                break;
+            case "Vermummte Demonstrierende festgesetzt":
+                document.getElementById("text3").innerText = "... Demonstrant*innen versucht, Absperrungen zu überwinden und Sturmhauben aufgezogen ...";
+                break;
+            case "Polizei setzt Wasserwerfer ein":
+                document.getElementById("text3").innerText = "... Attacken von Demonstrant*innen auf Polizeibeamte. Polizist*innen sind aus einer Menschenmenge ... ";
+                break;
+            case "Eskalation verhindert":
+                document.getElementById("text3").innerText = "... bei einer Demonstration zu Übergriffen einiger Demonstrant*innen auf die Polizei ...";
+                break;
+            case "Polizei setzt sich zur Wehr":
+                document.getElementById("text3").innerText = "... eine Polizeiblockade durchbrechen, Feuerwerkskörper auf Sicherheitskräfte abgeschossen sowie ...";
+                break;
+            case "Polizei in Straßenkämpfe verwickelt":
+                document.getElementById("text3").innerText = "... Zum Schutz unbeteiligter Passant*innen sowie Autos und Ladenflächen, musste ...";
+                break;
+            case "Demonstration aufgelöst":
+                document.getElementById("text3").innerText = "... einen brennenden Einkaufswagen in eine Einheit der anwesenden Polizei zu schieben ...";
+                break;
+            case "Polizei muss brutal reagieren":
+                document.getElementById("text3").innerText = "... Polizist*innen unter anderem mit Flaschen, Steinen, Stangen, Haushaltsgegenständen beworfen ...";
+                break;
+            case "Gewalt eskaliert bei Demonstration":
+                document.getElementById("text3").innerText = "... Mülltonnen angezündet und brennende Barrikaden auf der Straße errichtet. Insgesamt wurden sechs Polizist*innen verletzt ...";
+                break;
+            case "Wasserwerfer und Schlagstöcke kommen zum Einsatz":
+                document.getElementById("text3").innerText = "... am Samstag kam es erneut zu Ausschreitungen, welche von der Polizei gewaltsam unterbunden werden mussten ...";
+                break;
+            case "Kontrolle nur mühsam erkämpft - Polizei setzt Gewalt ein":
+                document.getElementById("text3").innerText = "... wütender Mob zündete Barrikaden an, plünderte Geschäfte, verwüstete große Teile des Viertels ...";
+                break;
+            case "Polizei-Reaktion auf Flaschenwürfe":
+                document.getElementById("text3").innerText = "... wurden die Einsatzkräfte aus der Menge mit Flaschen angegriffen. Mindestens sechs Beamte wurden verletzt ...";
+                break;
+            case "Polizeieinsatz am Samstag: Verletzte auf beiden Seiten":
+                document.getElementById("text3").innerText = "... Sicherheitskräfte enormer Aggressivität und auch Gewalt durch Demonstrant*innen ausgesetzt ...";
+                break;
+        }
+        switch (header4) { // -------------- div 4 ----------------------------
+            case "Polizist schlägt Demonstranten ins Gesicht":
+                document.getElementById("text4").innerText = "... letzten Samstag, schlug ein Polizist grundlos einem 19-Jährigen Demonstranten ...";
+                break;
+            case "Szenen wie in Minneapolis":
+                document.getElementById("text4").innerText = "... Zwei Polizisten knien auf ihm, immer wieder ist das Tackern von Elektro-Tasern ...";
+                break;
+            case "Polizist*innen attackieren Demonstrierende":
+                document.getElementById("text4").innerText = "... über 100 Demonstrant*innen verletzt wurden, sind sieben Beamte vom Dienst suspendiert ...";
+                break;
+            case "Räumung eines Straßenzugs eskaliert":
+                document.getElementById("text4").innerText = "... Polizist hatte einer Frau ohne Grund Pfefferspray ins Gesicht gesprüht ...";
+                break;
+            case "Demonstration am Samstag: Gewalt durch Beamte":
+                document.getElementById("text4").innerText = "… werfen sie zu Boden, schlagen einzelnen Demonstrant*innen mehrfach ins Gesicht und in den Bauch …";
+                break;
+            case "Schwere Verletzungen nach Polizeieinsatz":
+                document.getElementById("text4").innerText = "... der offenbar am Boden liegend von einem Polizisten getreten wurde ...";
+                break;
+            case "Fragwürdige Festnahmemethoden":
+                document.getElementById("text4").innerText = "... Polizist bei der Festnahme einer Demonstrantin sein Knie auf den Kopf- und Halsbereich ...";
+                break;
+            case "Neuer Videoausschnitt der Großdemonstration aufgetaucht":
+                document.getElementById("text4").innerText = "... Man sieht, wie Polizist*innen auf friedliche Demonstrant*innen einschlagen ... ";
+                break;
+            case "Polizei treibt Demonstrierende in die Enge":
+                document.getElementById("text4").innerText = "... Videos zeigen den Einsatz von Schlagstöcken und Pfefferspray an beiden Ausgängen ... ";
+                break;
+            case "Friedliche Proteste von Polizei aufgelöst":
+                document.getElementById("text4").innerText = "... kesselten Demonstrant*innen ein und verwendeten Wasserwerfer und Pfefferspray um ...";
+                break;
+            case "Video dokumentiert Polizeieinsatz":
+                document.getElementById("text4").innerText = "... zwei Polizisten einen Demonstranten (…) auf den Boden drücken und mit dem Kopf unter ein Auto zerren. Als der Wagen ...";
+                break;
+            case "Sitzblockade mit Pfefferspray aufgelöst":
+                document.getElementById("text4").innerText = "... Beamter steht mit einer Sprühflasche vor der Gruppe und sprüht Pfefferspray auf ...";
+                break;
+            case "Vermummte Demonstrierende festgesetzt":
+                document.getElementById("text4").innerText = "... Demonstrant*innen versucht, Absperrungen zu überwinden und Sturmhauben aufgezogen ...";
+                break;
+            case "Polizei setzt Wasserwerfer ein":
+                document.getElementById("text4").innerText = "... Attacken von Demonstrant*innen auf Polizeibeamte. Polizist*innen sind aus einer Menschenmenge ... ";
+                break;
+            case "Eskalation verhindert":
+                document.getElementById("text4").innerText = "... bei einer Demonstration zu Übergriffen einiger Demonstrant*innen auf die Polizei ...";
+                break;
+            case "Polizei setzt sich zur Wehr":
+                document.getElementById("text4").innerText = "... eine Polizeiblockade durchbrechen, Feuerwerkskörper auf Sicherheitskräfte abgeschossen sowie ...";
+                break;
+            case "Polizei in Straßenkämpfe verwickelt":
+                document.getElementById("text4").innerText = "... Zum Schutz unbeteiligter Passant*innen sowie Autos und Ladenflächen, musste ...";
+                break;
+            case "Demonstration aufgelöst":
+                document.getElementById("text4").innerText = "... einen brennenden Einkaufswagen in eine Einheit der anwesenden Polizei zu schieben ...";
+                break;
+            case "Polizei muss brutal reagieren":
+                document.getElementById("text4").innerText = "... Polizist*innen unter anderem mit Flaschen, Steinen, Stangen, Haushaltsgegenständen beworfen ...";
+                break;
+            case "Gewalt eskaliert bei Demonstration":
+                document.getElementById("text4").innerText = "... Mülltonnen angezündet und brennende Barrikaden auf der Straße errichtet. Insgesamt wurden sechs Polizist*innen verletzt ...";
+                break;
+            case "Wasserwerfer und Schlagstöcke kommen zum Einsatz":
+                document.getElementById("text4").innerText = "... am Samstag kam es erneut zu Ausschreitungen, welche von der Polizei gewaltsam unterbunden werden mussten ...";
+                break;
+            case "Kontrolle nur mühsam erkämpft - Polizei setzt Gewalt ein":
+                document.getElementById("text4").innerText = "... wütender Mob zündete Barrikaden an, plünderte Geschäfte, verwüstete große Teile des Viertels ...";
+                break;
+            case "Polizei-Reaktion auf Flaschenwürfe":
+                document.getElementById("text4").innerText = "... wurden die Einsatzkräfte aus der Menge mit Flaschen angegriffen. Mindestens sechs Beamte wurden verletzt ...";
+                break;
+            case "Polizeieinsatz am Samstag: Verletzte auf beiden Seiten":
+                document.getElementById("text4").innerText = "... Sicherheitskräfte enormer Aggressivität und auch Gewalt durch Demonstrant*innen ausgesetzt ...";
+                break;
+        }
+    };
+
+
+    // select the randomly chosen article 2 shortly before time is expiring
+    setTimeout(selectArticle2, 29000);
+
+    // register that article was chosen by timeout
+    setTimeout(function(){document.getElementById("SRbyTimeout").value = 1;},29000)
+
+
+    // function to hide expiring messafe
+    function hidePopUp() {
+        var x = document.getElementById("warningMessage");
+            x.style.display = "none";
+    }
+
+
+
+
+
+</script>
+{% endblock %}

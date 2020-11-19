@@ -1,0 +1,54 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+{% block content %}
+<!-- ------------------------------- Header -------------------------------- -->
+<div class="outer-head-div">
+    <span class="inner-head-div-text new-title">
+        <!-- Title -->
+    </span>
+
+    <div class="inner-head-div-logo">
+        <img src="{% static 'Hypothesentesten/hd-logo-sw.png' %}" class="logo"/>
+    </div>
+</div>
+<hr style="margin-top:1px; margin-bottom:15px;">
+<!-- ------------------------------- Header -------------------------------- -->
+
+
+<h3>
+    Es geht los!
+</h3>
+
+
+<p>
+    Bitte konzentrieren Sie sich ab jetzt voll und ganz auf die Anweisungen
+    auf dem Bildschirm. Es ist <b>sehr wichtig</b>, dass Sie die komplette Zeit mit Ihrer
+    Aufmerksamkeit auf dem Bildschirm bleiben und nichts anderes tun!
+    <br>
+    Auf der nächsten Seite werden Sie eine Definition lesen.
+    Wir bitten Sie, diese <b>aufmerksam</b> und <b>gründlich</b> durchzulesen!
+    Sie werden danach dazu aufgefordert werden, einige Fragen zu beantworten,
+    welche Sie <b>nur mit Hilfe</b> der Informationen in der Definition beantworten
+    können.
+</p>
+
+<p>
+    Es ist wichtig, dass wenn Sie nun fortfahren, Sie <b>bis zum Ende der Studie teilnehmen</b>,
+    da Sie mit anderen Teilnehmenden zusammenarbeiten und diese auf Sie angewiesen sind - so wie Sie umgekehrt auch.
+</p>
+
+
+<p>
+    Wenn Sie bereit sind zu starten, klicken Sie bitte auf <b>Weiter</b>.
+</p>
+
+
+<!-- ------------------- Next-Button und Bottom-Line ---------------- -->
+
+<br>
+<button class="otree-btn-next btn btn-primary">Weiter</button>
+
+<hr>
+<p> <a href="mailto: lob@stud.uni-heidelberg.de" target="_blank">Aaron Lob</a>, Universität Heidelberg  - 2020</p>
+
+{% endblock %}

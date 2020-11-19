@@ -1,0 +1,2159 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+{% block styles %}
+
+<style media="screen">
+    .otree-timer {
+        display:none;
+    }
+</style>
+
+{% endblock %}
+{% block content %}
+<!-- ------------------------------- Header -------------------------------- -->
+<div class="outer-head-div">
+    <span class="inner-head-div-text new-title">
+        <!-- Title -->
+    </span>
+
+    <div class="inner-head-div-logo">
+        <img src="{% static 'Hypothesentesten/hd-logo-sw.png' %}" class="logo"/>
+    </div>
+</div>
+<hr style="margin-top:1px; margin-bottom:15px;">
+<!-- ------------------------------- Header -------------------------------- -->
+
+
+<h5>
+    Ihr ausgewähltes Suchergebnis
+</h5>
+
+
+
+<!-- ---------------------------------------------------------------------- -->
+{% if player.selectedSR == 1 and player.article1ChosenByChance == 0 and player.article1ChosenByMajority == 0 and player.lastArticleChosenByTimeout == 0 %}
+
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+        Polizist schlägt Demonstranten ins Gesicht
+    <div class="full-article-text">
+        In einem Fall, geschehen bei einer Großdemonstration letzten Samstag,
+        schlägt ein Polizist grundlos einem 19-Jährigen Demonstranten ins Gesicht.
+        Der Leiter der örtlichen Polizeiinspektion bezeichnet die Tat als „menschlich verständlich“.
+        Das Opfer habe schließlich provoziert und den späteren Schläger als „Spacko“ beschimpft.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 1 and player.article1ChosenByMajority == 1 %}
+
+
+<p>
+    Sie waren sich bei der Auswahl nicht einig, die Mehrheit entschied sich für diesen Artikel:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+        Polizist schlägt Demonstranten ins Gesicht
+    <div class="full-article-text">
+        In einem Fall, geschehen bei einer Großdemonstration letzten Samstag,
+        schlägt ein Polizist grundlos einem 19-Jährigen Demonstranten ins Gesicht.
+        Der Leiter der örtlichen Polizeiinspektion bezeichnet die Tat als „menschlich verständlich“.
+        Das Opfer habe schließlich provoziert und den späteren Schläger als „Spacko“ beschimpft.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 1 and player.article1ChosenByChance == 1 %}
+
+
+<p>
+    Sie waren sich bei der Auswahl nicht einig, dieser Artikel wurde zufällig für Sie ausgewählt:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+        Polizist schlägt Demonstranten ins Gesicht
+    <div class="full-article-text">
+        In einem Fall, geschehen bei einer Großdemonstration letzten Samstag,
+        schlägt ein Polizist grundlos einem 19-Jährigen Demonstranten ins Gesicht.
+        Der Leiter der örtlichen Polizeiinspektion bezeichnet die Tat als „menschlich verständlich“.
+        Das Opfer habe schließlich provoziert und den späteren Schläger als „Spacko“ beschimpft.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 1 and player.lastArticleChosenByTimeout == 1 %}
+
+
+<p>
+    Sie haben sich nicht rechtzeitig entschieden, dieser Artikel wurde zufällig für Sie ausgewählt:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+        Polizist schlägt Demonstranten ins Gesicht
+    <div class="full-article-text">
+        In einem Fall, geschehen bei einer Großdemonstration letzten Samstag,
+        schlägt ein Polizist grundlos einem 19-Jährigen Demonstranten ins Gesicht.
+        Der Leiter der örtlichen Polizeiinspektion bezeichnet die Tat als „menschlich verständlich“.
+        Das Opfer habe schließlich provoziert und den späteren Schläger als „Spacko“ beschimpft.
+    </div>
+</div>
+
+
+{% endif %}
+
+
+
+<!-- ---------------------------------------------------------------------- -->
+{% if player.selectedSR == 2 and player.article2ChosenByChance == 0 and player.article2ChosenByMajority == 0 and player.lastArticleChosenByTimeout == 0 %}
+
+
+<!-- Nr. 1 -->
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+        Szenen wie in Minneapolis
+    <div class="full-article-text">
+        „Bitte, bitte“, fleht ein Demonstrant. Zwei Polizisten knien auf ihm,
+        immer wieder ist das Tackern von Elektro-Tasern zu hören. Umstehende Passanten filmen die Szene,
+        rufen den Polizisten zu: „Hört auf!“, und „Wir nehmen das auf.“
+        Am Dienstag teilten die Ermittler mit: Der Demonstrant sei anschließend verprügelt worden.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 2 and player.article2ChosenByMajority == 1 %}
+
+
+<!-- Nr. 2 -->
+<p>
+    Sie waren sich bei der Auswahl nicht einig, die Mehrheit entschied sich für diesen Artikel:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Szenen wie in Minneapolis
+    <div class="full-article-text">
+        „Bitte, bitte“, fleht ein Demonstrant. Zwei Polizisten knien auf ihm,
+        immer wieder ist das Tackern von Elektro-Tasern zu hören. Umstehende Passanten filmen die Szene,
+        rufen den Polizisten zu: „Hört auf!“, und „Wir nehmen das auf.“
+        Am Dienstag teilten die Ermittler mit: Der Demonstrant sei anschließend verprügelt worden.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 2 and player.article2ChosenByChance == 1 %}
+
+
+<!-- Nr. 3 -->
+<p>
+    Sie waren sich bei der Auswahl nicht einig, dieser Artikel wurde zufällig für Sie ausgewählt:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Szenen wie in Minneapolis
+    <div class="full-article-text">
+        „Bitte, bitte“, fleht ein Demonstrant. Zwei Polizisten knien auf ihm,
+        immer wieder ist das Tackern von Elektro-Tasern zu hören. Umstehende Passanten filmen die Szene,
+        rufen den Polizisten zu: „Hört auf!“, und „Wir nehmen das auf.“
+        Am Dienstag teilten die Ermittler mit: Der Demonstrant sei anschließend verprügelt worden.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 2 and player.lastArticleChosenByTimeout == 1 %}
+
+
+<!-- Nr. 4 -->
+<p>
+    Sie haben sich nicht rechtzeitig entschieden, dieser Artikel wurde zufällig für Sie ausgewählt:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Szenen wie in Minneapolis
+    <div class="full-article-text">
+        „Bitte, bitte“, fleht ein Demonstrant. Zwei Polizisten knien auf ihm,
+        immer wieder ist das Tackern von Elektro-Tasern zu hören. Umstehende Passanten filmen die Szene,
+        rufen den Polizisten zu: „Hört auf!“, und „Wir nehmen das auf.“
+        Am Dienstag teilten die Ermittler mit: Der Demonstrant sei anschließend verprügelt worden.
+    </div>
+</div>
+
+
+{% endif %}
+
+
+<!-- ---------------------------------------------------------------------- -->
+{% if player.selectedSR == 3 and player.article3ChosenByChance == 0 and player.article3ChosenByMajority == 0 and player.lastArticleChosenByTimeout == 0 %}
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+        Polizist*innen attackieren Demonstrierende
+    <div class="full-article-text">
+        Bei einem Polizeieinsatz bei einer Demonstration am Wochenende, in dessen
+        Folge über 100 Demonstrant*innen verletzt wurden, sind sieben Beamte vom Dienst suspendiert worden.
+        Der Zwischenfall habe sich am Rande der Proteste ereignet, berichtet die Bürgermeisterin.
+        Ein Video zeigt, wie mehrere Polizisten unbewaffnete Demonstrant*innen mit Pfefferspray
+        und Schlagstöcken attackieren. Die Demonstrant*innen hatten die Sicherheitskräfte zuvor beschimpft und bespuckt.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 3 and player.article3ChosenByMajority == 1 %}
+
+
+<!-- Nr. 2 -->
+<p>
+    Sie waren sich bei der Auswahl nicht einig, die Mehrheit entschied sich für diesen Artikel:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Polizist*innen attackieren Demonstrierende
+    <div class="full-article-text">
+        Bei einem Polizeieinsatz bei einer Demonstration am Wochenende, in dessen
+        Folge über 100 Demonstrant*innen verletzt wurden, sind sieben Beamte vom Dienst suspendiert worden.
+        Der Zwischenfall habe sich am Rande der Proteste ereignet, berichtet die Bürgermeisterin.
+        Ein Video zeigt, wie mehrere Polizisten unbewaffnete Demonstrant*innen mit Pfefferspray
+        und Schlagstöcken attackieren. Die Demonstrant*innen hatten die Sicherheitskräfte zuvor beschimpft und bespuckt.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 3 and player.article3ChosenByChance == 1 %}
+
+
+<!-- Nr. 3 -->
+<p>
+    Sie waren sich bei der Auswahl nicht einig, dieser Artikel wurde zufällig für Sie ausgewählt:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Polizist*innen attackieren Demonstrierende
+    <div class="full-article-text">
+        Bei einem Polizeieinsatz bei einer Demonstration am Wochenende, in dessen
+        Folge über 100 Demonstrant*innen verletzt wurden, sind sieben Beamte vom Dienst suspendiert worden.
+        Der Zwischenfall habe sich am Rande der Proteste ereignet, berichtet die Bürgermeisterin.
+        Ein Video zeigt, wie mehrere Polizisten unbewaffnete Demonstrant*innen mit Pfefferspray
+        und Schlagstöcken attackieren. Die Demonstrant*innen hatten die Sicherheitskräfte zuvor beschimpft und bespuckt.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 3 and player.lastArticleChosenByTimeout == 1 %}
+
+
+<!-- Nr. 4 -->
+<p>
+    Sie haben sich nicht rechtzeitig entschieden, dieser Artikel wurde zufällig für Sie ausgewählt:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Polizist*innen attackieren Demonstrierende
+    <div class="full-article-text">
+        Bei einem Polizeieinsatz bei einer Demonstration am Wochenende, in dessen
+        Folge über 100 Demonstrant*innen verletzt wurden, sind sieben Beamte vom Dienst suspendiert worden.
+        Der Zwischenfall habe sich am Rande der Proteste ereignet, berichtet die Bürgermeisterin.
+        Ein Video zeigt, wie mehrere Polizisten unbewaffnete Demonstrant*innen mit Pfefferspray
+        und Schlagstöcken attackieren. Die Demonstrant*innen hatten die Sicherheitskräfte zuvor beschimpft und bespuckt.
+    </div>
+</div>
+
+
+{% endif %}
+
+
+<!-- ---------------------------------------------------------------------- -->
+{% if player.selectedSR == 4 and player.article4ChosenByChance == 0 and player.article4ChosenByMajority == 0 and player.lastArticleChosenByTimeout == 0 %}
+
+
+<!-- Nr. 1 -->
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+        Räumung eines Straßenzugs eskaliert
+    <div class="full-article-text">
+        Bei der Räumung eines Straßenabschnitts am Samstag bei einer Großdemonstration
+        wurden mehrere Demonstrierende durch polizeiliche Maßnahmen verletzt.
+        Ein Polizist hatte einer Frau ohne Grund Pfefferspray ins Gesicht gesprüht
+        und wurde von der Bereitschaftspolizei angezeigt. Vor der Demonstration schlug
+        ein Polizist einen Mann mit dem Schlagstock ins Gesicht und verletzte den Demonstranten schwer am Auge und der Nase.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 4 and player.article4ChosenByMajority == 1 %}
+
+
+<!-- Nr. 2 -->
+<p>
+    Sie waren sich bei der Auswahl nicht einig, die Mehrheit entschied sich für diesen Artikel:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Räumung eines Straßenzugs eskaliert
+    <div class="full-article-text">
+        Bei der Räumung eines Straßenabschnitts am Samstag bei einer Großdemonstration
+        wurden mehrere Demonstrierende durch polizeiliche Maßnahmen verletzt.
+        Ein Polizist hatte einer Frau ohne Grund Pfefferspray ins Gesicht gesprüht
+        und wurde von der Bereitschaftspolizei angezeigt. Vor der Demonstration schlug
+        ein Polizist einen Mann mit dem Schlagstock ins Gesicht und verletzte den Demonstranten schwer am Auge und der Nase.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 4 and player.article4ChosenByChance == 1 %}
+
+
+<!-- Nr. 3 -->
+<p>
+    Sie waren sich bei der Auswahl nicht einig, dieser Artikel wurde zufällig für Sie ausgewählt:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Räumung eines Straßenzugs eskaliert
+    <div class="full-article-text">
+        Bei der Räumung eines Straßenabschnitts am Samstag bei einer Großdemonstration
+        wurden mehrere Demonstrierende durch polizeiliche Maßnahmen verletzt.
+        Ein Polizist hatte einer Frau ohne Grund Pfefferspray ins Gesicht gesprüht
+        und wurde von der Bereitschaftspolizei angezeigt. Vor der Demonstration schlug
+        ein Polizist einen Mann mit dem Schlagstock ins Gesicht und verletzte den Demonstranten schwer am Auge und der Nase.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 4 and player.lastArticleChosenByTimeout == 1 %}
+
+
+<!-- Nr. 4 -->
+<p>
+    Sie haben sich nicht rechtzeitig entschieden, dieser Artikel wurde zufällig für Sie ausgewählt:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Räumung eines Straßenzugs eskaliert
+    <div class="full-article-text">
+        Bei der Räumung eines Straßenabschnitts am Samstag bei einer Großdemonstration
+        wurden mehrere Demonstrierende durch polizeiliche Maßnahmen verletzt.
+        Ein Polizist hatte einer Frau ohne Grund Pfefferspray ins Gesicht gesprüht
+        und wurde von der Bereitschaftspolizei angezeigt. Vor der Demonstration schlug
+        ein Polizist einen Mann mit dem Schlagstock ins Gesicht und verletzte den Demonstranten schwer am Auge und der Nase.
+    </div>
+</div>
+
+
+{% endif %}
+
+
+
+<!-- ---------------------------------------------------------------------- -->
+{% if player.selectedSR == 5 and player.article5ChosenByChance == 0 and player.article5ChosenByMajority == 0 and player.lastArticleChosenByTimeout == 0 %}
+
+
+<!-- Nr. 1 -->
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+        Demonstration am Samstag: Gewalt durch Beamte
+    <div class="full-article-text">
+        Am Samstag versammeln sich die Demonstrant*innen, wie vorher mit den Behörden abgestimmt, auf einem zentralen Platz.
+        Eine halbe Stunde später trifft die Polizei ein, mehrere Demonstrant*innen filmen dies mit ihren Handys.
+        Die Polizei schlägt daraufhin mehreren das Smartphone aus der Hand. Beamte werfen sie zu Boden,
+        schlagen einzelnen Demonstrant*innen mehrfach ins Gesicht und in den Bauch.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 5 and player.article5ChosenByMajority == 1 %}
+
+
+<!-- Nr. 2 -->
+<p>
+    Sie waren sich bei der Auswahl nicht einig, die Mehrheit entschied sich für diesen Artikel:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Demonstration am Samstag: Gewalt durch Beamte
+    <div class="full-article-text">
+        Am Samstag versammeln sich die Demonstrant*innen, wie vorher mit den Behörden abgestimmt, auf einem zentralen Platz.
+        Eine halbe Stunde später trifft die Polizei ein, mehrere Demonstrant*innen filmen dies mit ihren Handys.
+        Die Polizei schlägt daraufhin mehreren das Smartphone aus der Hand. Beamte werfen sie zu Boden,
+        schlagen einzelnen Demonstrant*innen mehrfach ins Gesicht und in den Bauch.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 5 and player.article5ChosenByChance == 1 %}
+
+
+<!-- Nr. 3 -->
+<p>
+    Sie waren sich bei der Auswahl nicht einig, dieser Artikel wurde zufällig für Sie ausgewählt:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Demonstration am Samstag: Gewalt durch Beamte
+    <div class="full-article-text">
+        Am Samstag versammeln sich die Demonstrant*innen, wie vorher mit den Behörden abgestimmt, auf einem zentralen Platz.
+        Eine halbe Stunde später trifft die Polizei ein, mehrere Demonstrant*innen filmen dies mit ihren Handys.
+        Die Polizei schlägt daraufhin mehreren das Smartphone aus der Hand. Beamte werfen sie zu Boden,
+        schlagen einzelnen Demonstrant*innen mehrfach ins Gesicht und in den Bauch.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 5 and player.lastArticleChosenByTimeout == 1 %}
+
+
+<!-- Nr. 4 -->
+<p>
+    Sie haben sich nicht rechtzeitig entschieden, dieser Artikel wurde zufällig für Sie ausgewählt:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Demonstration am Samstag: Gewalt durch Beamte
+    <div class="full-article-text">
+        Am Samstag versammeln sich die Demonstrant*innen, wie vorher mit den Behörden abgestimmt, auf einem zentralen Platz.
+        Eine halbe Stunde später trifft die Polizei ein, mehrere Demonstrant*innen filmen dies mit ihren Handys.
+        Die Polizei schlägt daraufhin mehreren das Smartphone aus der Hand. Beamte werfen sie zu Boden,
+        schlagen einzelnen Demonstrant*innen mehrfach ins Gesicht und in den Bauch.
+    </div>
+</div>
+
+
+{% endif %}
+
+
+
+<!-- ---------------------------------------------------------------------- -->
+{% if player.selectedSR == 6 and player.article6ChosenByChance == 0 and player.article6ChosenByMajority == 0 and player.lastArticleChosenByTimeout == 0 %}
+
+
+<!-- Nr. 1 -->
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+        Schwere Verletzungen nach Polizeieinsatz
+    <div class="full-article-text">
+        Im Fall eines verhafteten Mannes, der offenbar am Boden liegend von einem Polizisten getreten wurde,
+        ist ein weiteres Video aufgetaucht. Es erhärtet den Verdacht der Polizeigewalt.
+        Der Polizei ist eine Personengruppe aufgefallen, die "sehr schnell, sehr aggressiv"
+        gegenüber den Polizisten auftrat. Eine Person habe ein unzumutbares Verhalten gegenüber den
+        Polizisten an den Tag gelegt und sich dann der Festnahme gewaltsam widersetzt.
+        Dabei hat ein Polizist den Mann "an die Schulter und vor den Kopf" getreten - dies sei "nicht mit der vorigen Situation zu rechtfertigen gewesen".
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 6 and player.article6ChosenByMajority == 1 %}
+
+
+<!-- Nr. 2 -->
+<p>
+    Sie waren sich bei der Auswahl nicht einig, die Mehrheit entschied sich für diesen Artikel:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Schwere Verletzungen nach Polizeieinsatz
+    <div class="full-article-text">
+        Im Fall eines verhafteten Mannes, der offenbar am Boden liegend von einem Polizisten getreten wurde,
+        ist ein weiteres Video aufgetaucht. Es erhärtet den Verdacht der Polizeigewalt.
+        Der Polizei ist eine Personengruppe aufgefallen, die "sehr schnell, sehr aggressiv"
+        gegenüber den Polizisten auftrat. Eine Person habe ein unzumutbares Verhalten gegenüber den
+        Polizisten an den Tag gelegt und sich dann der Festnahme gewaltsam widersetzt.
+        Dabei hat ein Polizist den Mann "an die Schulter und vor den Kopf" getreten - dies sei "nicht mit der vorigen Situation zu rechtfertigen gewesen".
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 6 and player.article6ChosenByChance == 1 %}
+
+
+<!-- Nr. 3 -->
+<p>
+    Sie waren sich bei der Auswahl nicht einig, dieser Artikel wurde zufällig für Sie ausgewählt:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Schwere Verletzungen nach Polizeieinsatz
+    <div class="full-article-text">
+        Im Fall eines verhafteten Mannes, der offenbar am Boden liegend von einem Polizisten getreten wurde,
+        ist ein weiteres Video aufgetaucht. Es erhärtet den Verdacht der Polizeigewalt.
+        Der Polizei ist eine Personengruppe aufgefallen, die "sehr schnell, sehr aggressiv"
+        gegenüber den Polizisten auftrat. Eine Person habe ein unzumutbares Verhalten gegenüber den
+        Polizisten an den Tag gelegt und sich dann der Festnahme gewaltsam widersetzt.
+        Dabei hat ein Polizist den Mann "an die Schulter und vor den Kopf" getreten - dies sei "nicht mit der vorigen Situation zu rechtfertigen gewesen".
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 6 and player.lastArticleChosenByTimeout == 1 %}
+
+
+<!-- Nr. 4 -->
+<p>
+    Sie haben sich nicht rechtzeitig entschieden, dieser Artikel wurde zufällig für Sie ausgewählt:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Schwere Verletzungen nach Polizeieinsatz
+    <div class="full-article-text">
+        Im Fall eines verhafteten Mannes, der offenbar am Boden liegend von einem Polizisten getreten wurde,
+        ist ein weiteres Video aufgetaucht. Es erhärtet den Verdacht der Polizeigewalt.
+        Der Polizei ist eine Personengruppe aufgefallen, die "sehr schnell, sehr aggressiv"
+        gegenüber den Polizisten auftrat. Eine Person habe ein unzumutbares Verhalten gegenüber den
+        Polizisten an den Tag gelegt und sich dann der Festnahme gewaltsam widersetzt.
+        Dabei hat ein Polizist den Mann "an die Schulter und vor den Kopf" getreten - dies sei "nicht mit der vorigen Situation zu rechtfertigen gewesen".
+    </div>
+</div>
+
+
+{% endif %}
+
+
+
+<!-- ---------------------------------------------------------------------- -->
+{% if player.selectedSR == 7 and player.article7ChosenByChance == 0 and player.article7ChosenByMajority == 0 and player.lastArticleChosenByTimeout == 0 %}
+
+
+<!-- Nr. 1 -->
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+        Fragwürdige Festnahmemethoden
+    <div class="full-article-text">
+        Die Polizei zeigt sich optimistisch, bereits Ende dieser Woche einen ersten Bericht zu dem Vorfall
+        mutmaßlicher Polizeigewalt bei einer Demonstration am Samstag, schicken zu können.
+        Die Beamten der Nachbarstadt sollen klären, was sich genau am Samstagabend zugetragen hat.
+        Ein kurzes Video des Vorfalls zeigt, dass ein Polizist bei der Festnahme einer Demonstrantin sein
+        Knie auf den Kopf- und Halsbereich der am Boden liegenden drückt, obwohl diese laut deutlich macht, dass sie keine Luft bekäme.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 7 and player.article7ChosenByMajority == 1 %}
+
+
+<!-- Nr. 2 -->
+<p>
+    Sie waren sich bei der Auswahl nicht einig, die Mehrheit entschied sich für diesen Artikel:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Fragwürdige Festnahmemethoden
+    <div class="full-article-text">
+        Die Polizei zeigt sich optimistisch, bereits Ende dieser Woche einen ersten Bericht zu dem F
+        all mutmaßlicher Polizeigewalt bei einer Demonstration am Samstag, schicken zu können.
+        Die Beamten der Nachbarstadt sollen klären, was sich genau am Samstagabend zugetragen hat.
+        Ein kurzes Video des Vorfalls zeigt, dass ein Polizist bei der Festnahme einer Demonstrantin sein
+        Knie auf den Kopf- und Halsbereich der am Boden liegenden drückt, obwohl diese laut deutlich macht, dass sie keine Luft bekäme.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 7 and player.article7ChosenByChance == 1 %}
+
+
+<!-- Nr. 3 -->
+<p>
+    Sie waren sich bei der Auswahl nicht einig, dieser Artikel wurde zufällig für Sie ausgewählt:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Fragwürdige Festnahmemethoden
+    <div class="full-article-text">
+        Die Polizei zeigt sich optimistisch, bereits Ende dieser Woche einen ersten Bericht zu dem F
+        all mutmaßlicher Polizeigewalt bei einer Demonstration am Samstag, schicken zu können.
+        Die Beamten der Nachbarstadt sollen klären, was sich genau am Samstagabend zugetragen hat.
+        Ein kurzes Video des Vorfalls zeigt, dass ein Polizist bei der Festnahme einer Demonstrantin sein
+        Knie auf den Kopf- und Halsbereich der am Boden liegenden drückt, obwohl diese laut deutlich macht, dass sie keine Luft bekäme.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 7 and player.lastArticleChosenByTimeout == 1 %}
+
+
+<!-- Nr. 4 -->
+<p>
+    Sie haben sich nicht rechtzeitig entschieden, dieser Artikel wurde zufällig für Sie ausgewählt:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Fragwürdige Festnahmemethoden
+    <div class="full-article-text">
+        Die Polizei zeigt sich optimistisch, bereits Ende dieser Woche einen ersten Bericht zu dem F
+        all mutmaßlicher Polizeigewalt bei einer Demonstration am Samstag, schicken zu können.
+        Die Beamten der Nachbarstadt sollen klären, was sich genau am Samstagabend zugetragen hat.
+        Ein kurzes Video des Vorfalls zeigt, dass ein Polizist bei der Festnahme einer Demonstrantin sein
+        Knie auf den Kopf- und Halsbereich der am Boden liegenden drückt, obwohl diese laut deutlich macht, dass sie keine Luft bekäme.
+    </div>
+</div>
+
+
+{% endif %}
+
+
+
+<!-- ---------------------------------------------------------------------- -->
+{% if player.selectedSR == 8 and player.article8ChosenByChance == 0 and player.article8ChosenByMajority == 0 and player.lastArticleChosenByTimeout == 0 %}
+
+
+<!-- Nr. 1 -->
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+        Neuer Videoausschnitt der Großdemonstration aufgetaucht
+    <div class="full-article-text">
+        Auch im Netz kursieren Berichte und Videos der Demonstration von letztem Samstag.
+        Viel geteilt wird ein Zusammenschnitt. Man sieht, wie Polizist*innen auf friedliche
+        Demonstrant*innen einschlagen oder sie mit Pfefferspray besprühen.
+        Ein Beamter schlägt mit der Faust mehrfach in das Gesicht eines Mannes.
+        Andere Polizisten treten Menschen, die am Boden liegen und sich weder wehren noch weglaufen.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 8 and player.article8ChosenByMajority == 1 %}
+
+
+<!-- Nr. 2 -->
+<p>
+    Sie waren sich bei der Auswahl nicht einig, die Mehrheit entschied sich für diesen Artikel:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Neuer Videoausschnitt der Großdemonstration aufgetaucht
+    <div class="full-article-text">
+        Auch im Netz kursieren Berichte und Videos der Demonstration von letztem Samstag.
+        Viel geteilt wird ein Zusammenschnitt. Man sieht, wie Polizist*innen auf friedliche
+        Demonstrant*innen einschlagen oder sie mit Pfefferspray besprühen.
+        Ein Beamter schlägt mit der Faust mehrfach in das Gesicht eines Mannes.
+        Andere Polizisten treten Menschen, die am Boden liegen und sich weder wehren noch weglaufen.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 8 and player.article8ChosenByChance == 1 %}
+
+
+<!-- Nr. 3 -->
+<p>
+    Sie waren sich bei der Auswahl nicht einig, dieser Artikel wurde zufällig für Sie ausgewählt:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Neuer Videoausschnitt der Großdemonstration aufgetaucht
+    <div class="full-article-text">
+        Auch im Netz kursieren Berichte und Videos der Demonstration von letztem Samstag.
+        Viel geteilt wird ein Zusammenschnitt. Man sieht, wie Polizist*innen auf friedliche
+        Demonstrant*innen einschlagen oder sie mit Pfefferspray besprühen.
+        Ein Beamter schlägt mit der Faust mehrfach in das Gesicht eines Mannes.
+        Andere Polizisten treten Menschen, die am Boden liegen und sich weder wehren noch weglaufen.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 8 and player.lastArticleChosenByTimeout == 1 %}
+
+
+<!-- Nr. 4 -->
+<p>
+    Sie haben sich nicht rechtzeitig entschieden, dieser Artikel wurde zufällig für Sie ausgewählt:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Neuer Videoausschnitt der Großdemonstration aufgetaucht
+    <div class="full-article-text">
+        Auch im Netz kursieren Berichte und Videos der Demonstration von letztem Samstag.
+        Viel geteilt wird ein Zusammenschnitt. Man sieht, wie Polizist*innen auf friedliche
+        Demonstrant*innen einschlagen oder sie mit Pfefferspray besprühen.
+        Ein Beamter schlägt mit der Faust mehrfach in das Gesicht eines Mannes.
+        Andere Polizisten treten Menschen, die am Boden liegen und sich weder wehren noch weglaufen.
+    </div>
+</div>
+
+
+{% endif %}
+
+
+
+<!-- ---------------------------------------------------------------------- -->
+{% if player.selectedSR == 9 and player.article9ChosenByChance == 0 and player.article9ChosenByMajority == 0 and player.lastArticleChosenByTimeout == 0 %}
+
+
+<!-- Nr. 1 -->
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+        Polizei treibt Demonstrierende in die Enge
+    <div class="full-article-text">
+        Direkt nach Ankunft der Demonstrant*innen am Bahnhof wurden etwa 100 von
+        ihnen von der Polizei in einen eingezäunten Bereich getrieben.
+        Videos zeigen den Einsatz von Schlagstöcken und Pfefferspray an beiden Ausgängen.
+        Menschen schreien. Auch Polizist*innen sind auf Videos innerhalb der Absperrungen zu erkennen.
+        Sie schreien und schlagen mit ihren Schlagstöcken gegen den Zaun. Sämtliche Zeug*innen sagen,
+        sie wüssten nicht, warum die Polizei sie dort hinein drückte. Es sei nichts vorgefallen.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 9 and player.article9ChosenByMajority == 1 %}
+
+
+<!-- Nr. 2 -->
+<p>
+    Sie waren sich bei der Auswahl nicht einig, die Mehrheit entschied sich für diesen Artikel:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Polizei treibt Demonstrierende in die Enge
+    <div class="full-article-text">
+        Direkt nach Ankunft der Demonstrant*innen am Bahnhof wurden etwa 100 von
+        ihnen von der Polizei in einen eingezäunten Bereich getrieben.
+        Videos zeigen den Einsatz von Schlagstöcken und Pfefferspray an beiden Ausgängen.
+        Menschen schreien. Auch Polizist*innen sind auf Videos innerhalb der Absperrungen zu erkennen.
+        Sie schreien und schlagen mit ihren Schlagstöcken gegen den Zaun. Sämtliche Zeu¬g*innen sagen,
+        sie wüssten nicht, warum die Polizei sie dort hinein drückte. Es sei nichts vorgefallen.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 9 and player.article9ChosenByChance == 1 %}
+
+
+<!-- Nr. 3 -->
+<p>
+    Sie waren sich bei der Auswahl nicht einig, dieser Artikel wurde zufällig für Sie ausgewählt:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Polizei treibt Demonstrierende in die Enge
+    <div class="full-article-text">
+        Direkt nach Ankunft der Demonstrant*innen am Bahnhof wurden etwa 100 von
+        ihnen von der Polizei in einen eingezäunten Bereich getrieben.
+        Videos zeigen den Einsatz von Schlagstöcken und Pfefferspray an beiden Ausgängen.
+        Menschen schreien. Auch Polizist*innen sind auf Videos innerhalb der Absperrungen zu erkennen.
+        Sie schreien und schlagen mit ihren Schlagstöcken gegen den Zaun. Sämtliche Zeu¬g*innen sagen,
+        sie wüssten nicht, warum die Polizei sie dort hinein drückte. Es sei nichts vorgefallen.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 9 and player.lastArticleChosenByTimeout == 1 %}
+
+
+<!-- Nr. 4 -->
+<p>
+    Sie haben sich nicht rechtzeitig entschieden, dieser Artikel wurde zufällig für Sie ausgewählt:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Polizei treibt Demonstrierende in die Enge
+    <div class="full-article-text">
+        Direkt nach Ankunft der Demonstrant*innen am Bahnhof wurden etwa 100 von
+        ihnen von der Polizei in einen eingezäunten Bereich getrieben.
+        Videos zeigen den Einsatz von Schlagstöcken und Pfefferspray an beiden Ausgängen.
+        Menschen schreien. Auch Polizist*innen sind auf Videos innerhalb der Absperrungen zu erkennen.
+        Sie schreien und schlagen mit ihren Schlagstöcken gegen den Zaun. Sämtliche Zeu¬g*innen sagen,
+        sie wüssten nicht, warum die Polizei sie dort hinein drückte. Es sei nichts vorgefallen.
+    </div>
+</div>
+
+
+{% endif %}
+
+
+
+<!-- ---------------------------------------------------------------------- -->
+{% if player.selectedSR == 10 and player.article10ChosenByChance == 0 and player.article10ChosenByMajority == 0 and player.lastArticleChosenByTimeout == 0 %}
+
+
+<!-- Nr. 1 -->
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+        Friedliche Proteste von Polizei aufgelöst
+    <div class="full-article-text">
+        Polizist*innen sind mit massiver Gewalt gegen friedlich demonstrierende Menschen vorgegangen.
+        Bei den Protesten am Samstag, an denen sich Tausende beteiligten, gab es nach unterschiedlichen Angaben rund 70 Festnahmen.
+        Sicherheitskräfte kesselten Demonstrant*innen ein und verwendeten Wasserwerfer und Pfefferspray um,
+        nach eigenen Angaben, „die Menge an gewaltsamen Ausschreitungen zu hindern“.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 10 and player.article10ChosenByMajority == 1 %}
+
+
+<!-- Nr. 2 -->
+<p>
+    Sie waren sich bei der Auswahl nicht einig, die Mehrheit entschied sich für diesen Artikel:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Friedliche Proteste von Polizei aufgelöst
+    <div class="full-article-text">
+        Polizist*innen sind mit massiver Gewalt gegen friedlich demonstrierende Menschen vorgegangen.
+        Bei den Protesten am Samstag, an denen sich Tausende beteiligten, gab es nach unterschiedlichen Angaben rund 70 Festnahmen.
+        Sicherheitskräfte kesselten Demonstrant*innen ein und verwendeten Wasserwerfer und Pfefferspray um,
+        nach eigenen Angaben, „die Menge an gewaltsamen Ausschreitungen zu hindern“.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 10 and player.article10ChosenByChance == 1 %}
+
+
+<!-- Nr. 3 -->
+<p>
+    Sie waren sich bei der Auswahl nicht einig, dieser Artikel wurde zufällig für Sie ausgewählt:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Friedliche Proteste von Polizei aufgelöst
+    <div class="full-article-text">
+        Polizist*innen sind mit massiver Gewalt gegen friedlich demonstrierende Menschen vorgegangen.
+        Bei den Protesten am Samstag, an denen sich Tausende beteiligten, gab es nach unterschiedlichen Angaben rund 70 Festnahmen.
+        Sicherheitskräfte kesselten Demonstrant*innen ein und verwendeten Wasserwerfer und Pfefferspray um,
+        nach eigenen Angaben, „die Menge an gewaltsamen Ausschreitungen zu hindern“.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 10 and player.lastArticleChosenByTimeout == 1 %}
+
+
+<p>
+    Sie haben sich nicht rechtzeitig entschieden, dieser Artikel wurde zufällig für Sie ausgewählt:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+        Friedliche Proteste von Polizei aufgelöst
+    <div class="full-article-text">
+        Polizist*innen sind mit massiver Gewalt gegen friedlich demonstrierende Menschen vorgegangen.
+        Bei den Protesten am Samstag, an denen sich Tausende beteiligten, gab es nach unterschiedlichen Angaben rund 70 Festnahmen.
+        Sicherheitskräfte kesselten Demonstrant*innen ein und verwendeten Wasserwerfer und Pfefferspray um,
+        nach eigenen Angaben, „die Menge an gewaltsamen Ausschreitungen zu hindern“.
+    </div>
+</div>
+
+
+{% endif %}
+
+
+
+<!-- ---------------------------------------------------------------------- -->
+{% if player.selectedSR == 11 and player.article11ChosenByChance == 0 and player.article11ChosenByMajority == 0 and player.lastArticleChosenByTimeout == 0 %}
+
+
+<!-- Nr. 1 -->
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+        Video dokumentiert Polizeieinsatz
+    <div class="full-article-text">
+        Am Montagabend machte ein Video die Runde, auf dem zwei Polizisten einen
+        Demonstranten der Demo von letztem Samstag auf den Boden drücken und mit dem Kopf unter ein Auto zerren.
+        Als der Wagen losfährt, reißen die Beamten den Mann im letzten Moment weg.
+        In einer anderen Sequenz ist zu sehen, wie die Polizei einen 35 Jahre alten Mann aus
+        einer Sitzblockade nicht einfach weggetragen, sondern an den Armen genommen
+        und ihm die Hände nach innen gedrückt werden. Dabei habe ihm ein Polizist die Hand gebrochen.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 11 and player.article11ChosenByMajority == 1 %}
+
+
+<!-- Nr. 2 -->
+<p>
+    Sie waren sich bei der Auswahl nicht einig, die Mehrheit entschied sich für diesen Artikel:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Video dokumentiert Polizeieinsatz
+    <div class="full-article-text">
+        Am Montagabend machte ein Video die Runde, auf dem zwei Polizisten einen
+        Demonstranten der Demo von letztem Samstag auf den Boden drücken und mit dem Kopf unter ein Auto zerren.
+        Als der Wagen losfährt, reißen die Beamten den Mann im letzten Moment weg.
+        In einer anderen Sequenz ist zu sehen, wie die Polizei einen 35 Jahre alten Mann aus
+        einer Sitzblockade nicht einfach weggetragen, sondern an den Armen genommen
+        und ihm die Hände nach innen gedrückt werden. Dabei habe ihm ein Polizist die Hand gebrochen.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 11 and player.article11ChosenByChance == 1 %}
+
+
+<!-- Nr. 3 -->
+<p>
+    Sie waren sich bei der Auswahl nicht einig, dieser Artikel wurde zufällig für Sie ausgewählt:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Video dokumentiert Polizeieinsatz
+    <div class="full-article-text">
+        Am Montagabend machte ein Video die Runde, auf dem zwei Polizisten einen
+        Demonstranten der Demo von letztem Samstag auf den Boden drücken und mit dem Kopf unter ein Auto zerren.
+        Als der Wagen losfährt, reißen die Beamten den Mann im letzten Moment weg.
+        In einer anderen Sequenz ist zu sehen, wie die Polizei einen 35 Jahre alten Mann aus
+        einer Sitzblockade nicht einfach weggetragen, sondern an den Armen genommen
+        und ihm die Hände nach innen gedrückt werden. Dabei habe ihm ein Polizist die Hand gebrochen.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 11 and player.lastArticleChosenByTimeout == 1 %}
+
+
+<!-- Nr. 4 -->
+<p>
+    Sie haben sich nicht rechtzeitig entschieden, dieser Artikel wurde zufällig für Sie ausgewählt:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Video dokumentiert Polizeieinsatz
+    <div class="full-article-text">
+        Am Montagabend machte ein Video die Runde, auf dem zwei Polizisten einen
+        Demonstranten der Demo von letztem Samstag auf den Boden drücken und mit dem Kopf unter ein Auto zerren.
+        Als der Wagen losfährt, reißen die Beamten den Mann im letzten Moment weg.
+        In einer anderen Sequenz ist zu sehen, wie die Polizei einen 35 Jahre alten Mann aus
+        einer Sitzblockade nicht einfach weggetragen, sondern an den Armen genommen
+        und ihm die Hände nach innen gedrückt werden. Dabei habe ihm ein Polizist die Hand gebrochen.
+    </div>
+</div>
+
+
+{% endif %}
+
+
+
+<!-- ---------------------------------------------------------------------- -->
+{% if player.selectedSR == 12 and player.article12ChosenByChance == 0 and player.article12ChosenByMajority == 0 and player.lastArticleChosenByTimeout == 0 %}
+
+
+<!-- Nr. 1 -->
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+        Sitzblockade mit Pfefferspray aufgelöst
+    <div class="full-article-text">
+        Nach der Demonstration am Samstag hat das Polizeipräsidium interne Ermittlungen eingeleitet.
+        Grund ist ein Video, welches eine Gruppe von Demonstrant*innen zeigt.
+        Sie laufen auf eine Straße und setzen sich in der Mitte hin.
+        Dann sind rund ein Dutzend Polizist*innen zu sehen, die die Sitzblockade auflösen wollen.
+        Ein Beamter steht mit einer Sprühflasche vor der Gruppe und sprüht Pfefferspray auf die Demonstrant*innen.
+        Anschließend zerrt dieser Polizist einen Mann auf einen Grünstreifen und schlägt ihn mit einem Schlagstock.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 12 and player.article12ChosenByMajority == 1 %}
+
+
+<!-- Nr. 2 -->
+<p>
+    Sie waren sich bei der Auswahl nicht einig, die Mehrheit entschied sich für diesen Artikel:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Sitzblockade mit Pfefferspray aufgelöst
+    <div class="full-article-text">
+        Nach der Demonstration am Samstag hat das Polizeipräsidium interne Ermittlungen eingeleitet.
+        Grund ist ein Video, welches eine Gruppe von Demonstrant*innen zeigt.
+        Sie laufen auf eine Straße und setzen sich in der Mitte hin.
+        Dann sind rund ein Dutzend Polizist*innen zu sehen, die die Sitzblockade auflösen wollen.
+        Ein Beamter steht mit einer Sprühflasche vor der Gruppe und sprüht Pfefferspray auf die Demonstrant*innen.
+        Anschließend zerrt dieser Polizist einen Mann auf einen Grünstreifen und schlägt ihn mit einem Schlagstock.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 12 and player.article12ChosenByChance == 1 %}
+
+
+<!-- Nr. 3 -->
+<p>
+    Sie waren sich bei der Auswahl nicht einig, dieser Artikel wurde zufällig für Sie ausgewählt:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Sitzblockade mit Pfefferspray aufgelöst
+    <div class="full-article-text">
+        Nach der Demonstration am Samstag hat das Polizeipräsidium interne Ermittlungen eingeleitet.
+        Grund ist ein Video, welches eine Gruppe von Demonstrant*innen zeigt.
+        Sie laufen auf eine Straße und setzen sich in der Mitte hin.
+        Dann sind rund ein Dutzend Polizist*innen zu sehen, die die Sitzblockade auflösen wollen.
+        Ein Beamter steht mit einer Sprühflasche vor der Gruppe und sprüht Pfefferspray auf die Demonstrant*innen.
+        Anschließend zerrt dieser Polizist einen Mann auf einen Grünstreifen und schlägt ihn mit einem Schlagstock.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 12 and player.lastArticleChosenByTimeout == 1 %}
+
+
+<!-- Nr. 4 -->
+<p>
+    Sie haben sich nicht rechtzeitig entschieden, dieser Artikel wurde zufällig für Sie ausgewählt:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Sitzblockade mit Pfefferspray aufgelöst
+    <div class="full-article-text">
+        Nach der Demonstration am Samstag hat das Polizeipräsidium interne Ermittlungen eingeleitet.
+        Grund ist ein Video, welches eine Gruppe von Demonstrant*innen zeigt.
+        Sie laufen auf eine Straße und setzen sich in der Mitte hin.
+        Dann sind rund ein Dutzend Polizist*innen zu sehen, die die Sitzblockade auflösen wollen.
+        Ein Beamter steht mit einer Sprühflasche vor der Gruppe und sprüht Pfefferspray auf die Demonstrant*innen.
+        Anschließend zerrt dieser Polizist einen Mann auf einen Grünstreifen und schlägt ihn mit einem Schlagstock.
+    </div>
+</div>
+
+
+{% endif %}
+
+
+
+
+
+<!-- ---------------------------------------------------------------------- -->
+{% if player.selectedSR == 13 and player.article13ChosenByChance == 0 and player.article13ChosenByMajority == 0 and player.lastArticleChosenByTimeout == 0 %}
+
+
+<!-- Nr. 1 -->
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+        Vermummte Demonstrierende festgesetzt
+    <div class="full-article-text">
+        Bereits unmittelbar nach der Ankunft der Demonstrant*innen am vom Veranstalter geplanten Versammlungsort,
+        haben 150 bis 170 Störer aus den Reihen der Demonstrant*innen versucht,
+        Absperrungen zu überwinden und Sturmhauben aufgezogen. Die Polizei hat schließlich entschieden,
+        die teilweise gewaltbereiten Störenden festzusetzen. Beamte wurden mit Stöcken und Regenschirmen geschlagen,
+        getreten und als Nazis beschimpft, worauf hin sie die Demonstration gewaltsam auflösen mussten.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 13 and player.article13ChosenByMajority == 1 %}
+
+
+<!-- Nr. 2 -->
+<p>
+    Sie waren sich bei der Auswahl nicht einig, die Mehrheit entschied sich für diesen Artikel:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Vermummte Demonstrierende festgesetzt
+    <div class="full-article-text">
+        Bereits unmittelbar nach der Ankunft der Demonstrant*innen am vom Veranstalter geplanten Versammlungsort,
+        haben 150 bis 170 Störer aus den Reihen der Demonstrant*innen versucht,
+        Absperrungen zu überwinden und Sturmhauben aufgezogen. Die Polizei hat schließlich entschieden,
+        die teilweise gewaltbereiten Störenden festzusetzen. Beamte wurden mit Stöcken und Regenschirmen geschlagen,
+        getreten und als Nazis beschimpft, worauf hin sie die Demonstration gewaltsam auflösen mussten.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 13 and player.article13ChosenByChance == 1 %}
+
+
+<!-- Nr. 3 -->
+<p>
+    Sie waren sich bei der Auswahl nicht einig, dieser Artikel wurde zufällig für Sie ausgewählt:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Vermummte Demonstrierende festgesetzt
+    <div class="full-article-text">
+        Bereits unmittelbar nach der Ankunft der Demonstrant*innen am vom Veranstalter geplanten Versammlungsort,
+        haben 150 bis 170 Störer aus den Reihen der Demonstrant*innen versucht,
+        Absperrungen zu überwinden und Sturmhauben aufgezogen. Die Polizei hat schließlich entschieden,
+        die teilweise gewaltbereiten Störenden festzusetzen. Beamte wurden mit Stöcken und Regenschirmen geschlagen,
+        getreten und als Nazis beschimpft, worauf hin sie die Demonstration gewaltsam auflösen mussten.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 13 and player.lastArticleChosenByTimeout == 1 %}
+
+
+<!-- Nr. 4 -->
+<p>
+    Sie haben sich nicht rechtzeitig entschieden, dieser Artikel wurde zufällig für Sie ausgewählt:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Vermummte Demonstrierende festgesetzt
+    <div class="full-article-text">
+        Bereits unmittelbar nach der Ankunft der Demonstrant*innen am vom Veranstalter geplanten Versammlungsort,
+        haben 150 bis 170 Störer aus den Reihen der Demonstrant*innen versucht,
+        Absperrungen zu überwinden und Sturmhauben aufgezogen. Die Polizei hat schließlich entschieden,
+        die teilweise gewaltbereiten Störenden festzusetzen. Beamte wurden mit Stöcken und Regenschirmen geschlagen,
+        getreten und als Nazis beschimpft, worauf hin sie die Demonstration gewaltsam auflösen mussten.
+    </div>
+</div>
+
+
+{% endif %}
+
+
+
+<!-- ---------------------------------------------------------------------- -->
+{% if player.selectedSR == 14 and player.article14ChosenByChance == 0 and player.article14ChosenByMajority == 0 and player.lastArticleChosenByTimeout == 0 %}
+
+
+<!-- Nr. 1 -->
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+        Polizei setzt Wasserwerfer ein
+    <div class="full-article-text">
+        Nach den Ausschreitungen bei der Demonstration letzten Samstag zeigt sich der
+        Polizeipräsident fassungslos über die unglaublichen Geschehnisse. So etwas habe er noch nicht erlebt.
+        Bei dem Einsatz kam es zu mehreren Attacken von Demonstrant*innen auf Polizeibeamte.
+        Polizist*innen sind aus einer Menschenmenge heraus verbal und körperlich angegangen worden
+        und mussten sich darauf hin mit Wasserwerfern und Pfefferspray wehren.
+        Neu bei dieser Gewalt ist die Inszenierung in sozialen Medien.
+        Das aggressive Verhalten gegen die Polizei werde dort dokumentiert und gefeiert.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 14 and player.article14ChosenByMajority == 1 %}
+
+
+<!-- Nr. 2 -->
+<p>
+    Sie waren sich bei der Auswahl nicht einig, die Mehrheit entschied sich für diesen Artikel:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Polizei setzt Wasserwerfer ein
+    <div class="full-article-text">
+        Nach den Ausschreitungen bei der Demonstration letzten Samstag zeigt sich der
+        Polizeipräsident fassungslos über die unglaublichen Geschehnisse. So etwas habe er noch nicht erlebt.
+        Bei dem Einsatz kam es zu mehreren Attacken von Demonstrant*innen auf Polizeibeamte.
+        Polizist*innen sind aus einer Menschenmenge heraus verbal und körperlich angegangen worden
+        und mussten sich darauf hin mit Wasserwerfern und Pfefferspray wehren.
+        Neu bei dieser Gewalt ist die Inszenierung in sozialen Medien.
+        Das aggressive Verhalten gegen die Polizei werde dort dokumentiert und gefeiert.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 14 and player.article14ChosenByChance == 1 %}
+
+
+<!-- Nr. 3 -->
+<p>
+    Sie waren sich bei der Auswahl nicht einig, dieser Artikel wurde zufällig für Sie ausgewählt:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Polizei setzt Wasserwerfer ein
+    <div class="full-article-text">
+        Nach den Ausschreitungen bei der Demonstration letzten Samstag zeigt sich der
+        Polizeipräsident fassungslos über die unglaublichen Geschehnisse. So etwas habe er noch nicht erlebt.
+        Bei dem Einsatz kam es zu mehreren Attacken von Demonstrant*innen auf Polizeibeamte.
+        Polizist*innen sind aus einer Menschenmenge heraus verbal und körperlich angegangen worden
+        und mussten sich darauf hin mit Wasserwerfern und Pfefferspray wehren.
+        Neu bei dieser Gewalt ist die Inszenierung in sozialen Medien.
+        Das aggressive Verhalten gegen die Polizei werde dort dokumentiert und gefeiert.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 14 and player.lastArticleChosenByTimeout == 1 %}
+
+
+<!-- Nr. 4 -->
+<p>
+    Sie haben sich nicht rechtzeitig entschieden, dieser Artikel wurde zufällig für Sie ausgewählt:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Polizei setzt Wasserwerfer ein
+    <div class="full-article-text">
+        Nach den Ausschreitungen bei der Demonstration letzten Samstag zeigt sich der
+        Polizeipräsident fassungslos über die unglaublichen Geschehnisse. So etwas habe er noch nicht erlebt.
+        Bei dem Einsatz kam es zu mehreren Attacken von Demonstrant*innen auf Polizeibeamte.
+        Polizist*innen sind aus einer Menschenmenge heraus verbal und körperlich angegangen worden
+        und mussten sich darauf hin mit Wasserwerfern und Pfefferspray wehren.
+        Neu bei dieser Gewalt ist die Inszenierung in sozialen Medien.
+        Das aggressive Verhalten gegen die Polizei werde dort dokumentiert und gefeiert.
+    </div>
+</div>
+
+
+{% endif %}
+
+
+
+<!-- ---------------------------------------------------------------------- -->
+{% if player.selectedSR == 15 and player.article15ChosenByChance == 0 and player.article15ChosenByMajority == 0 and player.lastArticleChosenByTimeout == 0 %}
+
+
+<!-- Nr. 1 -->
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Eskalation verhindert
+    <div class="full-article-text">
+        Am Samstag kam es bei einer Demonstration zu Übergriffen einiger Demonstrant*innen auf die Polizei.
+        Grölende Horden gingen auf einem zentralen Platz auf Polizist*innen los.
+        Sie warfen mit Flaschen, verletzen Männer und Frauen in Uniform mit Scherben und beleidigten die Beamten.
+        Daraufhin musste die Polizei mit Hilfe von Schlagstöcken und Pfefferspray die Demonstrant*innen an weiteren Eskalationen hindern.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 15 and player.article15ChosenByMajority == 1 %}
+
+
+<!-- Nr. 2 -->
+<p>
+    Sie waren sich bei der Auswahl nicht einig, die Mehrheit entschied sich für diesen Artikel:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Eskalation verhindert
+    <div class="full-article-text">
+        Am Samstag kam es bei einer Demonstration zu Übergriffen einiger Demonstrant*innen auf die Polizei.
+        Grölende Horden gingen auf einem zentralen Platz auf Polizist*innen los.
+        Sie warfen mit Flaschen, verletzen Männer und Frauen in Uniform mit Scherben und beleidigten die Beamten.
+        Daraufhin musste die Polizei mit Hilfe von Schlagstöcken und Pfefferspray die Demonstrant*innen an weiteren Eskalationen hindern.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 15 and player.article15ChosenByChance == 1 %}
+
+
+<!-- Nr. 3 -->
+<p>
+    Sie waren sich bei der Auswahl nicht einig, dieser Artikel wurde zufällig für Sie ausgewählt:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Eskalation verhindert
+    <div class="full-article-text">
+        Am Samstag kam es bei einer Demonstration zu Übergriffen einiger Demonstrant*innen auf die Polizei.
+        Grölende Horden gingen auf einem zentralen Platz auf Polizist*innen los.
+        Sie warfen mit Flaschen, verletzen Männer und Frauen in Uniform mit Scherben und beleidigten die Beamten.
+        Daraufhin musste die Polizei mit Hilfe von Schlagstöcken und Pfefferspray die Demonstrant*innen an weiteren Eskalationen hindern.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 15 and player.lastArticleChosenByTimeout == 1 %}
+
+
+<!-- Nr. 4 -->
+<p>
+    Sie haben sich nicht rechtzeitig entschieden, dieser Artikel wurde zufällig für Sie ausgewählt:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Eskalation verhindert
+    <div class="full-article-text">
+        Am Samstag kam es bei einer Demonstration zu Übergriffen einiger Demonstrant*innen auf die Polizei.
+        Grölende Horden gingen auf einem zentralen Platz auf Polizist*innen los.
+        Sie warfen mit Flaschen, verletzen Männer und Frauen in Uniform mit Scherben und beleidigten die Beamten.
+        Daraufhin musste die Polizei mit Hilfe von Schlagstöcken und Pfefferspray die Demonstrant*innen an weiteren Eskalationen hindern.
+    </div>
+</div>
+
+
+{% endif %}
+
+
+
+<!-- ---------------------------------------------------------------------- -->
+{% if player.selectedSR == 16 and player.article16ChosenByChance == 0 and player.article16ChosenByMajority == 0 and player.lastArticleChosenByTimeout == 0 %}
+
+
+<!-- Nr. 1 -->
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+        Polizei setzt sich zur Wehr
+    <div class="full-article-text">
+        Nach schweren Ausschreitungen bei einer Demonstration letzten Samstag mussten Polizist*innen sich gegen Demonstrant*innen zur Wehr setzen.
+        Zuvor hatten diese versucht, eine Polizeiblockade zu durchbrechen und dafür Feuerwerkskörper auf Sicherheitskräfte abgeschossen
+        sowie Steine und Flaschen geworfen. Um der Lage Herr zu werden, mussten Beamte ihrerseits zu gewaltsamen Mitteln greifen,
+        bis die Situation wieder unter Kontrolle war.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 16 and player.article16ChosenByMajority == 1 %}
+
+
+<!-- Nr. 2 -->
+<p>
+    Sie waren sich bei der Auswahl nicht einig, die Mehrheit entschied sich für diesen Artikel:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Polizei setzt sich zur Wehr
+    <div class="full-article-text">
+        Nach schweren Ausschreitungen bei einer Demonstration letzten Samstag mussten Polizist*innen sich gegen Demonstrant*innen zur Wehr setzen.
+        Zuvor hatten diese versucht, eine Polizeiblockade zu durchbrechen und dafür Feuerwerkskörper auf Sicherheitskräfte abgeschossen
+        sowie Steine und Flaschen geworfen. Um der Lage Herr zu werden, mussten Beamte ihrerseits zu gewaltsamen Mitteln greifen,
+        bis die Situation wieder unter Kontrolle war.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 16 and player.article16ChosenByChance == 1 %}
+
+
+<!-- Nr. 3 -->
+<p>
+    Sie waren sich bei der Auswahl nicht einig, dieser Artikel wurde zufällig für Sie ausgewählt:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Polizei setzt sich zur Wehr
+    <div class="full-article-text">
+        Nach schweren Ausschreitungen bei einer Demonstration letzten Samstag mussten Polizist*innen sich gegen Demonstrant*innen zur Wehr setzen.
+        Zuvor hatten diese versucht, eine Polizeiblockade zu durchbrechen und dafür Feuerwerkskörper auf Sicherheitskräfte abgeschossen
+        sowie Steine und Flaschen geworfen. Um der Lage Herr zu werden, mussten Beamte ihrerseits zu gewaltsamen Mitteln greifen,
+        bis die Situation wieder unter Kontrolle war.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 16 and player.lastArticleChosenByTimeout == 1 %}
+
+
+<!-- Nr. 4 -->
+<p>
+    Sie haben sich nicht rechtzeitig entschieden, dieser Artikel wurde zufällig für Sie ausgewählt:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Polizei setzt sich zur Wehr
+    <div class="full-article-text">
+        Nach schweren Ausschreitungen bei einer Demonstration letzten Samstag mussten Polizist*innen sich gegen Demonstrant*innen zur Wehr setzen.
+        Zuvor hatten diese versucht, eine Polizeiblockade zu durchbrechen und dafür Feuerwerkskörper auf Sicherheitskräfte abgeschossen
+        sowie Steine und Flaschen geworfen. Um der Lage Herr zu werden, mussten Beamte ihrerseits zu gewaltsamen Mitteln greifen,
+        bis die Situation wieder unter Kontrolle war.
+    </div>
+</div>
+
+
+{% endif %}
+
+
+
+<!-- ---------------------------------------------------------------------- -->
+{% if player.selectedSR == 17 and player.article17ChosenByChance == 0 and player.article17ChosenByMajority == 0 and player.lastArticleChosenByTimeout == 0 %}
+
+
+<!-- Nr. 1 -->
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+        Polizei in Straßenkämpfe verwickelt
+    <div class="full-article-text">
+        Viele Verletzte auf beiden Seiten sind das Resultat der Demonstration von letztem Samstag.
+        Zum Schutz unbeteiligter Passant*innen sowie Autos und Ladenflächen, musste die Polizei gewaltsam gegen Demonstrant*innen vorgehen.
+        Dabei wurden über 100 Menschen verletzt, auch auf Seiten der Sicherheitskräfte kam es zu Verletzungen.
+        Zuvor hatten Demonstrant*innen damit begonnen, randalierend durch eine der Hauptverkehrsstraßen zu ziehen.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 17 and player.article17ChosenByMajority == 1 %}
+
+
+<!-- Nr. 2 -->
+<p>
+    Sie waren sich bei der Auswahl nicht einig, die Mehrheit entschied sich für diesen Artikel:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Polizei in Straßenkämpfe verwickelt
+    <div class="full-article-text">
+        Viele Verletzte auf beiden Seiten sind das Resultat der Demonstration von letztem Samstag.
+        Zum Schutz unbeteiligter Passant*innen sowie Autos und Ladenflächen, musste die Polizei gewaltsam gegen Demonstrant*innen vorgehen.
+        Dabei wurden über 100 Menschen verletzt, auch auf Seiten der Sicherheitskräfte kam es zu Verletzungen.
+        Zuvor hatten Demonstrant*innen damit begonnen, randalierend durch eine der Hauptverkehrsstraßen zu ziehen.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 17 and player.article17ChosenByChance == 1 %}
+
+
+<!-- Nr. 3 -->
+<p>
+    Sie waren sich bei der Auswahl nicht einig, dieser Artikel wurde zufällig für Sie ausgewählt:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Polizei in Straßenkämpfe verwickelt
+    <div class="full-article-text">
+        Viele Verletzte auf beiden Seiten sind das Resultat der Demonstration von letztem Samstag.
+        Zum Schutz unbeteiligter Passant*innen sowie Autos und Ladenflächen, musste die Polizei gewaltsam gegen Demonstrant*innen vorgehen.
+        Dabei wurden über 100 Menschen verletzt, auch auf Seiten der Sicherheitskräfte kam es zu Verletzungen.
+        Zuvor hatten Demonstrant*innen damit begonnen, randalierend durch eine der Hauptverkehrsstraßen zu ziehen.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 17 and player.lastArticleChosenByTimeout == 1 %}
+
+
+<!-- Nr. 4 -->
+<p>
+    Sie haben sich nicht rechtzeitig entschieden, dieser Artikel wurde zufällig für Sie ausgewählt:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Polizei in Straßenkämpfe verwickelt
+    <div class="full-article-text">
+        Viele Verletzte auf beiden Seiten sind das Resultat der Demonstration von letztem Samstag.
+        Zum Schutz unbeteiligter Passant*innen sowie Autos und Ladenflächen, musste die Polizei gewaltsam gegen Demonstrant*innen vorgehen.
+        Dabei wurden über 100 Menschen verletzt, auch auf Seiten der Sicherheitskräfte kam es zu Verletzungen.
+        Zuvor hatten Demonstrant*innen damit begonnen, randalierend durch eine der Hauptverkehrsstraßen zu ziehen.
+    </div>
+</div>
+
+
+{% endif %}
+
+
+
+
+
+<!-- ---------------------------------------------------------------------- -->
+{% if player.selectedSR == 18 and player.article18ChosenByChance == 0 and player.article18ChosenByMajority == 0 and player.lastArticleChosenByTimeout == 0 %}
+
+
+<!-- Nr. 1 -->
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+        Demonstration aufgelöst
+    <div class="full-article-text">
+        Am Samstag während einer Demonstration, hatten Demonstrant*innen versucht,
+        einen brennenden Einkaufswagen in eine Einheit der anwesenden Polizei zu schieben,
+        und die Polizisten „massiv mit Pyrotechnik“ beschossen.
+        Einem Polizisten wurde der Helm vom Kopf gerissen, bevor er attackiert wurde, hieß es aus Polizeikreisen.
+        Der Beamte ist so schwer verletzt worden, dass er notoperiert werden musste. Drei weitere Beamte wurden demnach leicht verletzt.
+        Daraufhin löste die Polizei die Demonstration auf.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 18 and player.article18ChosenByMajority == 1 %}
+
+
+<!-- Nr. 2 -->
+<p>
+    Sie waren sich bei der Auswahl nicht einig, die Mehrheit entschied sich für diesen Artikel:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Demonstration aufgelöst
+    <div class="full-article-text">
+        Am Samstag während einer Demonstration, hatten Demonstrant*innen versucht,
+        einen brennenden Einkaufswagen in eine Einheit der anwesenden Polizei zu schieben,
+        und die Polizisten „massiv mit Pyrotechnik“ beschossen.
+        Einem Polizisten wurde der Helm vom Kopf gerissen, bevor er attackiert wurde, hieß es aus Polizeikreisen.
+        Der Beamte ist so schwer verletzt worden, dass er notoperiert werden musste. Drei weitere Beamte wurden demnach leicht verletzt.
+        Daraufhin löste die Polizei die Demonstration auf.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 18 and player.article18ChosenByChance == 1 %}
+
+
+<!-- Nr. 3 -->
+<p>
+    Sie waren sich bei der Auswahl nicht einig, dieser Artikel wurde zufällig für Sie ausgewählt:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Demonstration aufgelöst
+    <div class="full-article-text">
+        Am Samstag während einer Demonstration, hatten Demonstrant*innen versucht,
+        einen brennenden Einkaufswagen in eine Einheit der anwesenden Polizei zu schieben,
+        und die Polizisten „massiv mit Pyrotechnik“ beschossen.
+        Einem Polizisten wurde der Helm vom Kopf gerissen, bevor er attackiert wurde, hieß es aus Polizeikreisen.
+        Der Beamte ist so schwer verletzt worden, dass er notoperiert werden musste. Drei weitere Beamte wurden demnach leicht verletzt.
+        Daraufhin löste die Polizei die Demonstration auf.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 18 and player.lastArticleChosenByTimeout == 1 %}
+
+
+<!-- Nr. 4 -->
+<p>
+    Sie haben sich nicht rechtzeitig entschieden, dieser Artikel wurde zufällig für Sie ausgewählt:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Demonstration aufgelöst
+    <div class="full-article-text">
+        Am Samstag während einer Demonstration, hatten Demonstrant*innen versucht,
+        einen brennenden Einkaufswagen in eine Einheit der anwesenden Polizei zu schieben,
+        und die Polizisten „massiv mit Pyrotechnik“ beschossen.
+        Einem Polizisten wurde der Helm vom Kopf gerissen, bevor er attackiert wurde, hieß es aus Polizeikreisen.
+        Der Beamte ist so schwer verletzt worden, dass er notoperiert werden musste. Drei weitere Beamte wurden demnach leicht verletzt.
+        Daraufhin löste die Polizei die Demonstration auf.
+    </div>
+</div>
+
+
+{% endif %}
+
+
+
+<!-- ---------------------------------------------------------------------- -->
+{% if player.selectedSR == 19 and player.article19ChosenByChance == 0 and player.article19ChosenByMajority == 0 and player.lastArticleChosenByTimeout == 0 %}
+
+
+<!-- Nr. 1 -->
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+        Polizei muss brutal reagieren
+    <div class="full-article-text">
+        Bei den Demonstrationen am Samstag wurden Polizist*innen unter anderem mit Flaschen, Steinen, Stangen, Haushaltsgegenständen und Pyrotechnik beworfen.
+        Sechs Beamte wurden verletzt. Drei von ihnen sind dadurch vorerst nicht mehr dienstfähig.
+        Als Reaktion auf die Gewalt musste die Polizei ihrerseits gegen die Demonstrant*innen vorgehen und die Demonstration gewaltsam auflösen.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 19 and player.article19ChosenByMajority == 1 %}
+
+
+<!-- Nr. 2 -->
+<p>
+    Sie waren sich bei der Auswahl nicht einig, die Mehrheit entschied sich für diesen Artikel:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Polizei muss brutal reagieren
+    <div class="full-article-text">
+        Bei den Demonstrationen am Samstag wurden Polizist*innen unter anderem mit Flaschen, Steinen, Stangen, Haushaltsgegenständen und Pyrotechnik beworfen.
+        Sechs Beamte wurden verletzt. Drei von ihnen sind dadurch vorerst nicht mehr dienstfähig.
+        Als Reaktion auf die Gewalt musste die Polizei ihrerseits gegen die Demonstrant*innen vorgehen und die Demonstration gewaltsam auflösen.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 19 and player.article19ChosenByChance == 1 %}
+
+
+<!-- Nr. 3 -->
+<p>
+    Sie waren sich bei der Auswahl nicht einig, dieser Artikel wurde zufällig für Sie ausgewählt:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Polizei muss brutal reagieren
+    <div class="full-article-text">
+        Bei den Demonstrationen am Samstag wurden Polizist*innen unter anderem mit Flaschen, Steinen, Stangen, Haushaltsgegenständen und Pyrotechnik beworfen.
+        Sechs Beamte wurden verletzt. Drei von ihnen sind dadurch vorerst nicht mehr dienstfähig.
+        Als Reaktion auf die Gewalt musste die Polizei ihrerseits gegen die Demonstrant*innen vorgehen und die Demonstration gewaltsam auflösen.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 19 and player.lastArticleChosenByTimeout == 1 %}
+
+
+<!-- Nr. 4 -->
+<p>
+    Sie haben sich nicht rechtzeitig entschieden, dieser Artikel wurde zufällig für Sie ausgewählt:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Polizei muss brutal reagieren
+    <div class="full-article-text">
+        Bei den Demonstrationen am Samstag wurden Polizist*innen unter anderem mit Flaschen, Steinen, Stangen, Haushaltsgegenständen und Pyrotechnik beworfen.
+        Sechs Beamte wurden verletzt. Drei von ihnen sind dadurch vorerst nicht mehr dienstfähig.
+        Als Reaktion auf die Gewalt musste die Polizei ihrerseits gegen die Demonstrant*innen vorgehen und die Demonstration gewaltsam auflösen.
+    </div>
+</div>
+
+
+{% endif %}
+
+
+
+<!-- ---------------------------------------------------------------------- -->
+{% if player.selectedSR == 20 and player.article20ChosenByChance == 0 and player.article20ChosenByMajority == 0 and player.lastArticleChosenByTimeout == 0 %}
+
+
+<!-- Nr. 1 -->
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+        Gewalt eskaliert bei Demonstration
+    <div class="full-article-text">
+        Bei einer Demo am Samstag eskalierte die Gewalt. Gewalttätige Demonstrant*innen bewarfen Polizist*innen mit Steinen,
+        es wurden Mülltonnen angezündet und brennende Barrikaden auf der Straße errichtet. Insgesamt wurden sechs Polizist*innenen verletzt,
+        fast alle Demonstranten waren laut Polizeiangaben schwarz gekleidet und vermummt.
+        Daraufhin nahmen die Behörden 22 Menschen fest, die sich zum Teil stark wehrten, weshalb die Polizei Tränengas und Schlagstöcke zum Einsatz bringen musste.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 20 and player.article20ChosenByMajority == 1 %}
+
+
+<!-- Nr. 2 -->
+<p>
+    Sie waren sich bei der Auswahl nicht einig, die Mehrheit entschied sich für diesen Artikel:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Gewalt eskaliert bei Demonstration
+    <div class="full-article-text">
+        Bei einer Demo am Samstag eskalierte die Gewalt. Gewalttätige Demonstrant*innen bewarfen Polizist*innen mit Steinen,
+        es wurden Mülltonnen angezündet und brennende Barrikaden auf der Straße errichtet. Insgesamt wurden sechs Polizist*innenen verletzt,
+        fast alle Demonstranten waren laut Polizeiangaben schwarz gekleidet und vermummt.
+        Daraufhin nahmen die Behörden 22 Menschen fest, die sich zum Teil stark wehrten, weshalb die Polizei Tränengas und Schlagstöcke zum Einsatz bringen musste.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 20 and player.article20ChosenByChance == 1 %}
+
+
+<!-- Nr. 3 -->
+<p>
+    Sie waren sich bei der Auswahl nicht einig, dieser Artikel wurde zufällig für Sie ausgewählt:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Gewalt eskaliert bei Demonstration
+    <div class="full-article-text">
+        Bei einer Demo am Samstag eskalierte die Gewalt. Gewalttätige Demonstrant*innen bewarfen Polizist*innen mit Steinen,
+        es wurden Mülltonnen angezündet und brennende Barrikaden auf der Straße errichtet. Insgesamt wurden sechs Polizist*innenen verletzt,
+        fast alle Demonstranten waren laut Polizeiangaben schwarz gekleidet und vermummt.
+        Daraufhin nahmen die Behörden 22 Menschen fest, die sich zum Teil stark wehrten, weshalb die Polizei Tränengas und Schlagstöcke zum Einsatz bringen musste.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 20 and player.lastArticleChosenByTimeout == 1 %}
+
+
+<!-- Nr. 4 -->
+<p>
+    Sie haben sich nicht rechtzeitig entschieden, dieser Artikel wurde zufällig für Sie ausgewählt:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Gewalt eskaliert bei Demonstration
+    <div class="full-article-text">
+        Bei einer Demo am Samstag eskalierte die Gewalt. Gewalttätige Demonstrant*innen bewarfen Polizist*innen mit Steinen,
+        es wurden Mülltonnen angezündet und brennende Barrikaden auf der Straße errichtet. Insgesamt wurden sechs Polizist*innenen verletzt,
+        fast alle Demonstranten waren laut Polizeiangaben schwarz gekleidet und vermummt.
+        Daraufhin nahmen die Behörden 22 Menschen fest, die sich zum Teil stark wehrten, weshalb die Polizei Tränengas und Schlagstöcke zum Einsatz bringen musste.
+    </div>
+</div>
+
+
+{% endif %}
+
+
+
+<!-- ---------------------------------------------------------------------- -->
+{% if player.selectedSR == 21 and player.article21ChosenByChance == 0 and player.article21ChosenByMajority == 0 and player.lastArticleChosenByTimeout == 0 %}
+
+
+<!-- Nr. 1 -->
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+        Wasserwerfer und Schlagstöcke kommen zum Einsatz
+    <div class="full-article-text">
+        Bei der Demonstration am Samstag kam es erneut zu Ausschreitungen, welche von der Polizei gewaltsam unterbunden werden mussten.
+        Nach dem aus dem Block der Demonstrant*innen mehrfach Pflastersteine und Glasflaschen auf Beamte der anwesenden Sicherheitskräfte flogen,
+        löste die Polizei mit Hilfe von Wasserwerfern und Schlagstöcken den Protest gewaltsam auf.
+        Auslöser waren Feuerwerkskörper, welche offensichtlich auf die Beamten abgefeuert werden sollten.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 21 and player.article21ChosenByMajority == 1 %}
+
+
+<!-- Nr. 2 -->
+<p>
+    Sie waren sich bei der Auswahl nicht einig, die Mehrheit entschied sich für diesen Artikel:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Wasserwerfer und Schlagstöcke kommen zum Einsatz
+    <div class="full-article-text">
+        Bei der Demonstration am Samstag kam es erneut zu Ausschreitungen, welche von der Polizei gewaltsam unterbunden werden mussten.
+        Nach dem aus dem Block der Demonstrant*innen mehrfach Pflastersteine und Glasflaschen auf Beamte der anwesenden Sicherheitskräfte flogen,
+        löste die Polizei mit Hilfe von Wasserwerfern und Schlagstöcken den Protest gewaltsam auf.
+        Auslöser waren Feuerwerkskörper, welche offensichtlich auf die Beamten abgefeuert werden sollten.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 21 and player.article21ChosenByChance == 1 %}
+
+
+<!-- Nr. 3 -->
+<p>
+    Sie waren sich bei der Auswahl nicht einig, dieser Artikel wurde zufällig für Sie ausgewählt:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Wasserwerfer und Schlagstöcke kommen zum Einsatz
+    <div class="full-article-text">
+        Bei der Demonstration am Samstag kam es erneut zu Ausschreitungen, welche von der Polizei gewaltsam unterbunden werden mussten.
+        Nach dem aus dem Block der Demonstrant*innen mehrfach Pflastersteine und Glasflaschen auf Beamte der anwesenden Sicherheitskräfte flogen,
+        löste die Polizei mit Hilfe von Wasserwerfern und Schlagstöcken den Protest gewaltsam auf.
+        Auslöser waren Feuerwerkskörper, welche offensichtlich auf die Beamten abgefeuert werden sollten.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 21 and player.lastArticleChosenByTimeout == 1 %}
+
+
+<!-- Nr. 4 -->
+<p>
+    Sie haben sich nicht rechtzeitig entschieden, dieser Artikel wurde zufällig für Sie ausgewählt:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Wasserwerfer und Schlagstöcke kommen zum Einsatz
+    <div class="full-article-text">
+        Bei der Demonstration am Samstag kam es erneut zu Ausschreitungen, welche von der Polizei gewaltsam unterbunden werden mussten.
+        Nach dem aus dem Block der Demonstrant*innen mehrfach Pflastersteine und Glasflaschen auf Beamte der anwesenden Sicherheitskräfte flogen,
+        löste die Polizei mit Hilfe von Wasserwerfern und Schlagstöcken den Protest gewaltsam auf.
+        Auslöser waren Feuerwerkskörper, welche offensichtlich auf die Beamten abgefeuert werden sollten.
+    </div>
+</div>
+
+
+{% endif %}
+
+
+
+<!-- ---------------------------------------------------------------------- -->
+{% if player.selectedSR == 22 and player.article22ChosenByChance == 0 and player.article22ChosenByMajority == 0 and player.lastArticleChosenByTimeout == 0 %}
+
+
+<!-- Nr. 1 -->
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+        Kontrolle nur mühsam erkämpft - Polizei setzt Gewalt ein
+    <div class="full-article-text">
+        Am Samstag eskalierte die Demonstration, für Stunden verlor die Polizei über einige Straßenzüge komplett die Kontrolle.
+        Ein wütender Mob zündete Barrikaden an, plünderte Geschäfte, verwüstete große Teile des Viertels in dem die Demonstration stattfand.
+        Erst mithilfe von Spezialkräften, Wasserwerfern und Tränengas erlangten die Beamten die Kontrolle zurück.
+        Die Bilanz des Polizeieinsatzes in Reaktion auf die gewaltsamen Ausschreitungen sind über 100 Verletzte.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 22 and player.article22ChosenByMajority == 1 %}
+
+
+<!-- Nr. 2 -->
+<p>
+    Sie waren sich bei der Auswahl nicht einig, die Mehrheit entschied sich für diesen Artikel:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Kontrolle nur mühsam erkämpft - Polizei setzt Gewalt ein
+    <div class="full-article-text">
+        Am Samstag eskalierte die Demonstration, für Stunden verlor die Polizei über einige Straßenzüge komplett die Kontrolle.
+        Ein wütender Mob zündete Barrikaden an, plünderte Geschäfte, verwüstete große Teile des Viertels in dem die Demonstration stattfand.
+        Erst mithilfe von Spezialkräften, Wasserwerfern und Tränengas erlangten die Beamten die Kontrolle zurück.
+        Die Bilanz des Polizeieinsatzes in Reaktion auf die gewaltsamen Ausschreitungen sind über 100 Verletzte.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 22 and player.article22ChosenByChance == 1 %}
+
+
+<!-- Nr. 3 -->
+<p>
+    Sie waren sich bei der Auswahl nicht einig, dieser Artikel wurde zufällig für Sie ausgewählt:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Kontrolle nur mühsam erkämpft - Polizei setzt Gewalt ein
+    <div class="full-article-text">
+        Am Samstag eskalierte die Demonstration, für Stunden verlor die Polizei über einige Straßenzüge komplett die Kontrolle.
+        Ein wütender Mob zündete Barrikaden an, plünderte Geschäfte, verwüstete große Teile des Viertels in dem die Demonstration stattfand.
+        Erst mithilfe von Spezialkräften, Wasserwerfern und Tränengas erlangten die Beamten die Kontrolle zurück.
+        Die Bilanz des Polizeieinsatzes in Reaktion auf die gewaltsamen Ausschreitungen sind über 100 Verletzte.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 22 and player.lastArticleChosenByTimeout == 1 %}
+
+
+<!-- Nr. 4 -->
+<p>
+    Sie haben sich nicht rechtzeitig entschieden, dieser Artikel wurde zufällig für Sie ausgewählt:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Kontrolle nur mühsam erkämpft - Polizei setzt Gewalt ein
+    <div class="full-article-text">
+        Am Samstag eskalierte die Demonstration, für Stunden verlor die Polizei über einige Straßenzüge komplett die Kontrolle.
+        Ein wütender Mob zündete Barrikaden an, plünderte Geschäfte, verwüstete große Teile des Viertels in dem die Demonstration stattfand.
+        Erst mithilfe von Spezialkräften, Wasserwerfern und Tränengas erlangten die Beamten die Kontrolle zurück.
+        Die Bilanz des Polizeieinsatzes in Reaktion auf die gewaltsamen Ausschreitungen sind über 100 Verletzte.
+    </div>
+</div>
+
+
+{% endif %}
+
+
+
+<!-- ---------------------------------------------------------------------- -->
+{% if player.selectedSR == 23 and player.article23ChosenByChance == 0 and player.article23ChosenByMajority == 0 and player.lastArticleChosenByTimeout == 0 %}
+
+
+<!-- Nr. 1 -->
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+        Polizei-Reaktion auf Flaschenwürfe
+    <div class="full-article-text">
+        Letzten Samstag war es auf dem zentralen Platz zu Ausschreitungen gekommen.
+        Nach Polizeiangaben wurden die Einsatzkräfte aus der Menge mit Flaschen angegriffen.
+        Mindestens sechs Beamte wurden verletzt, mehrere Polizeifahrzeuge beschädigt.
+        Erst nachdem die Polizei ihrerseits gewaltsam gegen die Demonstrant*innen vorging,
+        könnte sie die Situation unter Kontrolle bringen und weiteren Schaden verhindern.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 23 and player.article23ChosenByMajority == 1 %}
+
+
+<!-- Nr. 2 -->
+<p>
+    Sie waren sich bei der Auswahl nicht einig, die Mehrheit entschied sich für diesen Artikel:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Polizei-Reaktion auf Flaschenwürfe
+    <div class="full-article-text">
+        Letzten Samstag war es auf dem zentralen Platz zu Ausschreitungen gekommen.
+        Nach Polizeiangaben wurden die Einsatzkräfte aus der Menge mit Flaschen angegriffen.
+        Mindestens sechs Beamte wurden verletzt, mehrere Polizeifahrzeuge beschädigt.
+        Erst nachdem die Polizei ihrerseits gewaltsam gegen die Demonstrant*innen vorging,
+        könnte sie die Situation unter Kontrolle bringen und weiteren Schaden verhindern.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 23 and player.article23ChosenByChance == 1 %}
+
+
+<!-- Nr. 3 -->
+<p>
+    Sie waren sich bei der Auswahl nicht einig, dieser Artikel wurde zufällig für Sie ausgewählt:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Polizei-Reaktion auf Flaschenwürfe
+    <div class="full-article-text">
+        Letzten Samstag war es auf dem zentralen Platz zu Ausschreitungen gekommen.
+        Nach Polizeiangaben wurden die Einsatzkräfte aus der Menge mit Flaschen angegriffen.
+        Mindestens sechs Beamte wurden verletzt, mehrere Polizeifahrzeuge beschädigt.
+        Erst nachdem die Polizei ihrerseits gewaltsam gegen die Demonstrant*innen vorging,
+        könnte sie die Situation unter Kontrolle bringen und weiteren Schaden verhindern.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 23 and player.lastArticleChosenByTimeout == 1 %}
+
+
+<!-- Nr. 4 -->
+<p>
+    Sie haben sich nicht rechtzeitig entschieden, dieser Artikel wurde zufällig für Sie ausgewählt:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Polizei-Reaktion auf Flaschenwürfe
+    <div class="full-article-text">
+        Letzten Samstag war es auf dem zentralen Platz zu Ausschreitungen gekommen.
+        Nach Polizeiangaben wurden die Einsatzkräfte aus der Menge mit Flaschen angegriffen.
+        Mindestens sechs Beamte wurden verletzt, mehrere Polizeifahrzeuge beschädigt.
+        Erst nachdem die Polizei ihrerseits gewaltsam gegen die Demonstrant*innen vorging,
+        könnte sie die Situation unter Kontrolle bringen und weiteren Schaden verhindern.
+    </div>
+</div>
+
+
+{% endif %}
+
+
+
+<!-- ---------------------------------------------------------------------- -->
+{% if player.selectedSR == 24 and player.article24ChosenByChance == 0 and player.article24ChosenByMajority == 0 and player.lastArticleChosenByTimeout == 0 %}
+
+
+<!-- Nr. 1 -->
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+        Polizeieinsatz am Samstag: Verletzte auf beiden Seiten
+    <div class="full-article-text">
+        Erneut kam es zu gewaltsamen Auseinandersetzungen zwischen Polizei und Demonstrierenden,
+        wobei ca. 100 Demonstrierende durch den Einsatz von Gewalt seitens der Polizeikräfte verletzt wurden.
+        Letzten Samstag sahen sich Sicherheitskräfte enormer Aggressivität und auch Gewalt durch Demonstrant*innen ausgesetzt.
+        Nach dem die Beamten erst mit Flaschen und Steinen beworfen wurden,
+        widersetzten sich Demonstrierende der Auflösung der Demonstration in dem sie die Polizei mit Stangen und Stöcken direkt angriffen.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 24 and player.article24ChosenByMajority == 1 %}
+
+
+<!-- Nr. 2 -->
+<p>
+    Sie waren sich bei der Auswahl nicht einig, die Mehrheit entschied sich für diesen Artikel:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Polizeieinsatz am Samstag: Verletzte auf beiden Seiten
+    <div class="full-article-text">
+        Erneut kam es zu gewaltsamen Auseinandersetzungen zwischen Polizei und Demonstrierenden,
+        wobei ca. 100 Demonstrierende durch den Einsatz von Gewalt seitens der Polizeikräfte verletzt wurden.
+        Letzten Samstag sahen sich Sicherheitskräfte enormer Aggressivität und auch Gewalt durch Demonstrant*innen ausgesetzt.
+        Nach dem die Beamten erst mit Flaschen und Steinen beworfen wurden,
+        widersetzten sich Demonstrierende der Auflösung der Demonstration in dem sie die Polizei mit Stangen und Stöcken direkt angriffen.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 24 and player.article24ChosenByChance == 1 %}
+
+
+<!-- Nr. 3 -->
+<p>
+    Sie waren sich bei der Auswahl nicht einig, dieser Artikel wurde zufällig für Sie ausgewählt:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Polizeieinsatz am Samstag: Verletzte auf beiden Seiten
+    <div class="full-article-text">
+        Erneut kam es zu gewaltsamen Auseinandersetzungen zwischen Polizei und Demonstrierenden,
+        wobei ca. 100 Demonstrierende durch den Einsatz von Gewalt seitens der Polizeikräfte verletzt wurden.
+        Letzten Samstag sahen sich Sicherheitskräfte enormer Aggressivität und auch Gewalt durch Demonstrant*innen ausgesetzt.
+        Nach dem die Beamten erst mit Flaschen und Steinen beworfen wurden,
+        widersetzten sich Demonstrierende der Auflösung der Demonstration in dem sie die Polizei mit Stangen und Stöcken direkt angriffen.
+    </div>
+</div>
+
+
+{% elif player.selectedSR == 24 and player.lastArticleChosenByTimeout == 1 %}
+
+
+<!-- Nr. 4 -->
+<p>
+    Sie haben sich nicht rechtzeitig entschieden, dieser Artikel wurde zufällig für Sie ausgewählt:
+</p>
+
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+    Polizeieinsatz am Samstag: Verletzte auf beiden Seiten
+    <div class="full-article-text">
+        Erneut kam es zu gewaltsamen Auseinandersetzungen zwischen Polizei und Demonstrierenden,
+        wobei ca. 100 Demonstrierende durch den Einsatz von Gewalt seitens der Polizeikräfte verletzt wurden.
+        Letzten Samstag sahen sich Sicherheitskräfte enormer Aggressivität und auch Gewalt durch Demonstrant*innen ausgesetzt.
+        Nach dem die Beamten erst mit Flaschen und Steinen beworfen wurden,
+        widersetzten sich Demonstrierende der Auflösung der Demonstration in dem sie die Polizei mit Stangen und Stöcken direkt angriffen.
+    </div>
+</div>
+
+
+{% endif %}
+
+
+
+
+<!-- ---------------------------------------------------------------------- -->
+
+
+
+
+
+<!-- ------------------- Next-Button und Bottom-Line ---------------- -->
+
+<br>
+<button class="otree-btn-next btn btn-primary">Weiter</button>
+
+<hr>
+<p> <a href="mailto: lob@stud.uni-heidelberg.de" target="_blank">Aaron Lob</a>, Universität Heidelberg  - 2020</p>
+
+{% endblock %}

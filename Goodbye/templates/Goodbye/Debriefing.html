@@ -1,0 +1,75 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block content %}
+<!-- ------------------------------- Header -------------------------------- -->
+<div class="outer-head-div">
+    <span class="inner-head-div-text new-title">
+        <!-- Title -->
+    </span>
+
+    <div class="inner-head-div-logo">
+        <img src="{% static 'Hypothesentesten/hd-logo-sw.png' %}" class="logo"/>
+    </div>
+</div>
+<hr style="margin-top:1px; margin-bottom:15px;">
+<!-- ------------------------------- Header -------------------------------- -->
+
+
+<h3>
+    Der Zweck unserer Untersuchung
+</h3>
+
+<p>
+    Vorab: Die Suchergebnisse, welche Sie gesehen haben, basieren auf echten Ereignissen, wurden
+    allerdings zum Zweck dieser Untersuchung leicht verändert und gezielt ausgewählt.
+</p>
+
+<p style="color: red; font-size: 0.8rem;">
+    Diese Informationen sind nicht Teil der Untersuchung und können Sie gerne lesen, wenn Sie möchten -
+    Sie müssen allerdings nicht!
+</p>
+
+<p>
+    Nochmals vielen Dank für Ihre Teilnahme an unserer Untersuchung! Im Sinne guter
+    wissenschaftlicher Praxis möchten wir Ihnen nun noch eine kurze Erläuterung geben,
+    um was es in unserer Untersuchung ging.
+    <br>
+    Sie haben soeben entweder alleine oder in der Gruppe nach Informationen gesucht, die
+    Ihnen helfen sollten, die eingangs formulierte Hypothese zu testen. Dabei gab es
+    zwei unterschiedliche Bedingungen: In der einen Bedingung wurde Teilnehmer*innen aufgefordert,
+    die Hypothese, dass Deutschland <b>ein</b> Problem mit Polizeigewalt hat, zu testen - analog
+    dazu sollten Teilnehmer*innen in der zweiten Bedingung die Hypothese testen, dass
+    Deutschland <b>kein</b> Problem mit Polizeigewalt hat.
+    <br>
+    Aufbauend auf früheren Forschungsarbeiten von (u.a.) Klayman und Ha (1987) nehmen wir an, dass
+    Personen nach Informationen suchen, die ihre ursprüngliche Hypothese unterstützen. In
+    diesem konkreten Fall müssten Teilnehmer*innen in der ersten Bedingung (Polizeigewalt = ein Problem)
+    entsprechend unserer Annahmen hauptsächlich Informationen suchen, welche von Fällen
+    von Polizeigewalt berichten, nicht aber nach Informationen, die das Gegenteil - nämlich
+    keine Polizeigewalt oder sogar legitime Gewaltanwendung der Polizei als Reaktion auf
+    von Demonstrierenden ausgehender Gewalt - berichten. Das umgekehrte Muster müsste sich
+    in Bedingung zwei zeigen.
+    <br>
+    Das neue an unserer Untersuchung ist, dass wir Gruppen mit diese Aufgabe lösen lassen.
+    Wir nehmen an, dass auch Gruppen, obwohl in vielen Aufgaben besser als Einzelpersonen,
+    diesem Bias zum Opfer fallen und hauptsächlich bestätigende Informationen suchen.
+    <br>
+    Das Thema "Polizeigewalt" haben wir gewählt, da es ein reales Problem mit kontroversen
+    Ansichten ist und sich demnach gut dafür eignet, Gegenstand sowohl einer ausgeglichenen
+    Informationssuche, als auch einer anregenden Situation zu sein.
+</p>
+
+
+
+
+
+<!-- ------------------- Next-Button und Bottom-Line ---------------- -->
+
+<br>
+<button class="otree-btn-next btn btn-primary">Weiter</button>
+
+<hr>
+<p> <a href="mailto: lob@stud.uni-heidelberg.de" target="_blank">Aaron Lob</a>, Universität Heidelberg  - 2020</p>
+
+{% endblock %}

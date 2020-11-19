@@ -1,0 +1,140 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+{% block scripts %}
+
+<script>
+    document.querySelector('[name=berechtigungPriorsHypoPB]').value = ;
+    document.querySelector('[name=certaintyPriorsHypoPB]').value = ;
+</script>
+
+{% endblock %}
+
+{% block content %}
+<!-- ------------------------------- Header -------------------------------- -->
+<div class="outer-head-div">
+    <span class="inner-head-div-text new-title">
+        <!-- Title -->
+    </span>
+
+    <div class="inner-head-div-logo">
+        <img src="{% static 'Hypothesentesten/hd-logo-sw.png' %}" class="logo"/>
+    </div>
+</div>
+<hr style="margin-top:1px; margin-bottom:15px;">
+<!-- ------------------------------- Header -------------------------------- -->
+
+
+
+
+
+
+
+<p>
+    Nehmen Sie sich nun einen Moment und denken Sie über die These nach:
+</p>
+<h3>Deutschland hat ein Problem mit Polizeigewalt.</h3>
+
+<div class="blank-space-small">
+
+</div>
+
+<!-- Police Brutality Priors -->
+<div class="multiple-choice-div">
+    <div class="m-c-question" style="font-weight:100;">
+    Die These halte ich für:<br>
+    </div>
+    <label class="multiple-choice-label" style="margin-bottom: 0px; float:left">völlig unberechtigt</label>
+    <label class="multiple-choice-label" style="margin-bottom: 0px; float:right;">völlig berechtigt</label>
+    <br>
+    <input type="range" class="slider" style="width:100%; display:block; margin-left:1.5px;"
+    name="berechtigungPriorsHypoPB" min="1" max="9" step="1" >
+    <br>
+    <div class="" style="margin-top:-25px; width:100%">
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:1%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11.1%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11.1%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11.05%;">
+            I
+        </div>
+        <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+            I
+        </div>
+
+    </div>
+</div>
+
+
+
+
+<!-- Slider: how large is the problem? -->
+<div class="multiple-choice-div" style="overflow:visible;">
+    <div class="m-c-question" style="font-weight:100;">
+    Wie sicher sind Sie sich bei dieser Einschätzung?<br>
+    </div>
+        <label class="multiple-choice-label" style="margin-bottom: 0px; float:left">sehr unsicher</label>
+        <label class="multiple-choice-label" style="margin-bottom: 0px; float:right;">sehr sicher</label>
+        <br>
+        <input type="range" class="slider" style="width:100%; display:block; margin-left:1.5px;"
+        name="certaintyPriorsHypoPB" min="1" max="9" step="1" >
+        <br>
+        <div class="" style="margin-top:-25px; width:100%">
+            <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:1%;">
+                I
+            </div>
+            <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+                I
+            </div>
+            <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+                I
+            </div>
+            <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11.1%;">
+                I
+            </div>
+            <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+                I
+            </div>
+            <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11.1%;">
+                I
+            </div>
+            <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+                I
+            </div>
+            <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11.05%;">
+                I
+            </div>
+            <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+                I
+            </div>
+
+        </div>
+</div>
+
+
+
+<!-- ------------------- Next-Button und Bottom-Line ---------------- -->
+
+<br>
+<button class="otree-btn-next btn btn-primary">Weiter</button>
+
+<hr>
+<p> <a href="mailto: lob@stud.uni-heidelberg.de" target="_blank">Aaron Lob</a>, Universität Heidelberg  - 2020</p>
+
+{% endblock %}

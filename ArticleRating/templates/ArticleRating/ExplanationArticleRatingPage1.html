@@ -1,0 +1,241 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+{% block styles %}
+    <style>
+        a:link {
+            color:#0400ff;
+        }
+        a:hover {
+            text-color:#007bff;
+            cursor:pointer;
+        }
+        a:active {
+            color: #D11222;
+        }
+    </style>
+{% endblock %}
+{% block scripts %}
+<script>
+
+
+
+    document.querySelector('[name=ratingPreview1]').value = ;
+    document.querySelector('[name=ratingPreview2]').value = ;
+    document.querySelector('[name=ratingPreview3]').value = ;
+
+    document.querySelector('[name=ratingPreview13]').value = ;
+    document.querySelector('[name=ratingPreview14]').value = ;
+    document.querySelector('[name=ratingPreview15]').value = ;
+
+</script>
+{% endblock %}
+{% block content %}
+<!-- ------------------------------- Header -------------------------------- -->
+<div class="outer-head-div">
+    <span class="inner-head-div-text new-title">
+        <!-- Title -->
+    </span>
+
+    <div class="inner-head-div-logo">
+        <img src="{% static 'Hypothesentesten/hd-logo-sw.png' %}" class="logo"/>
+    </div>
+</div>
+<hr style="margin-top:1px; margin-bottom:15px;">
+<!-- ------------------------------- Header -------------------------------- -->
+
+
+
+
+
+<h3>
+    Abschließende Befragung
+</h3>
+
+
+<p>
+    Bevor dieses Experiment abgeschlossen ist, möchten wir Sie bitten, noch einmal
+    einen Blick auf die Suchergebnisse und Informationen zu werfen, welche Sie soeben
+    gesehen und gelesen haben.
+    <br>
+    Bitte beantworten Sie die Fragen zu den einzelnen Suchergebnissen auf Basis der
+    Definition von Polizeigewalt und Ihrer persönlichen Einschätzung. Bitte bedenken
+    Sie nochmals: Die Quellen der Suchergebnisse sind alle gleich verlässlich.
+    <br>
+</p>
+
+
+
+
+<div class="definition-box" id="definition" style=" border: 1px solid #ccc; padding: 8px; text-align:justify;
+font-size:0.8rem; margin-top: 10px; margin-bottom: 10px; width:50%; margin-left:auto; margin-right:auto;">
+    Nach deutscher Rechtslage sind Polizeivollzugsbeamte im Rahmen ihrer
+    polizeilichen Aufgabenerfüllung ermächtigt, innerhalb der Vorschriften über
+    unmittelbaren Zwang und Notwehr auch physische Gewalt anzuwenden.
+    <br>
+    Zu jeder Zeit haben Polizeivollzugsbeamte das Prinzip der Verhältnismäßigkeit
+    zu wahren. Stärke und Ausmaß der Gewalt und die eingesetzten Mittel müssen
+    im Verhältnis zur Situation und den Umständen der Gewaltanwendung stehen.
+    Sind diese Voraussetzungen nicht gegeben, wird also übermäßig starke Gewalt,
+    oder unverhältnismäßige Gewaltmittel in einem die Gewalt nicht rechtfertigenden
+    Kontext angewendet, spricht man von Polizeigewalt.
+</div>
+
+
+
+<!-- --------------------------- Preview-Abfrage --------------------------- -->
+<!-- ------------------------- Suchergebnis 1 ------------------------------ -->
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+        Polizist schlägt Demonstranten ins Gesicht
+    <div class="full-article-text">
+    ... letzten Samstag, schlug ein Polizist grundlos einem 19-Jährigen Demonstranten ...
+    </div>
+</div>
+<div class="multiple-choice-div">
+    <div class="m-c-question" style="font-weight:100;">
+    Handelt es sich bei dem in diesem Suchergebnis beschriebenen Sachverhalt um einen Fall von Polizeigewalt?<br>
+    </div>
+    <input type="radio" id="rating1" name="ratingPreview1" value="1">
+    <div class="m-c-besides-button"></div>
+    <label class="multiple-choice-label" for="rating1">Ja</label>
+    <br>
+    <input type="radio" id="rating2" name="ratingPreview1" value="2">
+    <div class="m-c-besides-button"></div>
+    <label class="multiple-choice-label" for="rating2">Nein</label>
+</div>
+<!-- ----------------------------------------------------------------------- -->
+
+
+<!-- ----------------------------- Suchergebnis 13 -------------------------- -->
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+        Vermummte Demonstrierende festgesetzt
+    <div class="full-article-text">
+    ... Demonstrant*innen versucht, Absperrungen zu überwinden und Sturmhauben aufgezogen ...
+    </div>
+</div>
+<div class="multiple-choice-div">
+    <div class="m-c-question" style="font-weight:100;">
+        Handelt es sich bei dem in diesem Suchergebnis beschriebenen Sachverhalt um einen Fall von Polizeigewalt?<br>
+    </div>
+    <input type="radio" id="rating1" name="ratingPreview13" value="1">
+    <div class="m-c-besides-button"></div>
+    <label class="multiple-choice-label" for="rating1">Ja</label>
+    <br>
+    <input type="radio" id="rating2" name="ratingPreview13" value="2">
+    <div class="m-c-besides-button"></div>
+    <label class="multiple-choice-label" for="rating2">Nein</label>
+</div>
+<!-- ----------------------------------------------------------------------- -->
+
+
+<!-- ----------------------------- Suchergebnis 2 -------------------------- -->
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+        Szenen wie in Minneapolis
+    <div class="full-article-text">
+    ... Zwei Polizisten knien auf ihm, immer wieder ist das Tackern von Elektro-Tasern ...
+    </div>
+</div>
+<div class="multiple-choice-div">
+    <div class="m-c-question" style="font-weight:100;">
+        Handelt es sich bei dem in diesem Suchergebnis beschriebenen Sachverhalt um einen Fall von Polizeigewalt?<br>
+    </div>
+    <input type="radio" id="rating1" name="ratingPreview2" value="1">
+    <div class="m-c-besides-button"></div>
+    <label class="multiple-choice-label" for="rating1">Ja</label>
+    <br>
+    <input type="radio" id="rating2" name="ratingPreview2" value="2">
+    <div class="m-c-besides-button"></div>
+    <label class="multiple-choice-label" for="rating2">Nein</label>
+</div>
+<!-- ----------------------------------------------------------------------- -->
+
+
+<!-- ----------------------------- Suchergebnis 14 -------------------------- -->
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+        Polizei setzt Wasserwerfer ein
+    <div class="full-article-text">
+    ... Attacken von Demonstrant*innen auf Polizeibeamte. Polizist*innen sind aus einer Menschenmenge ...
+    </div>
+</div>
+<div class="multiple-choice-div">
+    <div class="m-c-question" style="font-weight:100;">
+        Handelt es sich bei dem in diesem Suchergebnis beschriebenen Sachverhalt um einen Fall von Polizeigewalt?<br>
+    </div>
+    <input type="radio" id="rating1" name="ratingPreview14" value="1">
+    <div class="m-c-besides-button"></div>
+    <label class="multiple-choice-label" for="rating1">Ja</label>
+    <br>
+    <input type="radio" id="rating2" name="ratingPreview14" value="2">
+    <div class="m-c-besides-button"></div>
+    <label class="multiple-choice-label" for="rating2">Nein</label>
+</div>
+<!-- ----------------------------------------------------------------------- -->
+
+
+<!-- ----------------------------- Suchergebnis 3 -------------------------- -->
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+        Polizist*innen attackieren Demonstrierende
+    <div class="full-article-text">
+    ... über 100 Demonstrant*innen verletzt wurden, sind sieben Beamte vom Dienst suspendiert ...
+    </div>
+</div>
+<div class="multiple-choice-div">
+    <div class="m-c-question" style="font-weight:100;">
+        Handelt es sich bei dem in diesem Suchergebnis beschriebenen Sachverhalt um einen Fall von Polizeigewalt?<br>
+    </div>
+    <input type="radio" id="rating1" name="ratingPreview3" value="1">
+    <div class="m-c-besides-button"></div>
+    <label class="multiple-choice-label" for="rating1">Ja</label>
+    <br>
+    <input type="radio" id="rating2" name="ratingPreview3" value="2">
+    <div class="m-c-besides-button"></div>
+    <label class="multiple-choice-label" for="rating2">Nein</label>
+</div>
+<!-- ----------------------------------------------------------------------- -->
+
+
+<!-- ----------------------------- Suchergebnis 15 -------------------------- -->
+<div class="blank-space-medium"></div>
+
+<div class="full-article-heading">
+        Eskalation verhindert
+    <div class="full-article-text">
+    ... bei einer Demonstration zu Übergriffen einiger Demonstrant*innen auf die Polizei ...
+    </div>
+</div>
+<div class="multiple-choice-div">
+    <div class="m-c-question" style="font-weight:100;">
+        Handelt es sich bei dem in diesem Suchergebnis beschriebenen Sachverhalt um einen Fall von Polizeigewalt?<br>
+    </div>
+    <input type="radio" id="rating1" name="ratingPreview15" value="1">
+    <div class="m-c-besides-button"></div>
+    <label class="multiple-choice-label" for="rating1">Ja</label>
+    <br>
+    <input type="radio" id="rating2" name="ratingPreview15" value="2">
+    <div class="m-c-besides-button"></div>
+    <label class="multiple-choice-label" for="rating2">Nein</label>
+</div>
+<!-- ----------------------------------------------------------------------- -->
+
+
+
+
+
+<!-- ------------------- Next-Button und Bottom-Line ---------------- -->
+
+<br>
+<button class="otree-btn-next btn btn-primary">Weiter</button>
+
+<hr>
+<p> <a href="mailto: lob@stud.uni-heidelberg.de" target="_blank">Aaron Lob</a>, Universität Heidelberg  - 2020</p>
+
+{% endblock %}

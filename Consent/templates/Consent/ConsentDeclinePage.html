@@ -1,0 +1,56 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+{% block scripts %}
+
+<script>
+
+    document.querySelector('[name=consentRefused]').value = "";
+
+</script>
+
+{% endblock %}
+{% block content %}
+<!-- ------------------------------- Header -------------------------------- -->
+<div class="outer-head-div">
+    <span class="inner-head-div-text new-title">
+        <!-- Title -->
+    </span>
+
+    <div class="inner-head-div-logo">
+        <img src="{% static 'Hypothesentesten/hd-logo-sw.png' %}" class="logo"/>
+    </div>
+</div>
+<hr style="margin-top:1px; margin-bottom:15px;">
+<!-- ------------------------------- Header -------------------------------- -->
+
+
+<h4>
+    Schade!
+</h4>
+
+
+<p>
+    Schreiben Sie uns doch, warum Sie sich dazu entschieden habe, nicht an
+    unserer Studie teilzunehmen.
+</p>
+
+
+<div class="form-group">
+    <textarea name="consentRefused" rows="10" cols="100%"></textarea>
+</div>
+
+
+<p>
+    Falls dies ein Versehen war und Sie doch an der Studie teilnehmen möchten,
+    schließen Sie bitte das Fenster und klicken Sie erneut auf den Einladungslink.
+</p>
+
+<!-- ------------------- Next-Button und Bottom-Line ---------------- -->
+
+<br>
+<button class="otree-btn-next btn btn-primary">Weiter</button>
+
+<hr>
+<p> <a href="mailto: lob@stud.uni-heidelberg.de" target="_blank">Aaron Lob</a>, Universität Heidelberg  - 2020</p>
+
+{% endblock %}

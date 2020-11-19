@@ -1,0 +1,48 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+{% block scripts %}
+
+<script>
+
+    document.querySelector('[name=anmerkungen]').value = "";
+
+</script>
+
+{% endblock %}
+
+{% block content %}
+<!-- ------------------------------- Header -------------------------------- -->
+<div class="outer-head-div">
+    <span class="inner-head-div-text new-title">
+        <!-- Title -->
+    </span>
+
+    <div class="inner-head-div-logo">
+        <img src="{% static 'Hypothesentesten/hd-logo-sw.png' %}" class="logo"/>
+    </div>
+</div>
+<hr style="margin-top:1px; margin-bottom:15px;">
+<!-- ------------------------------- Header -------------------------------- -->
+
+
+<h4>Bevor die Studie zu Ende ist:</h4>
+
+<p>
+    haben Sie irgendwelche Anmerkungen oder Kommentare, die Sie uns gerne mitteilen würden?
+</p>
+
+
+<div class="form-group">
+    <textarea name="anmerkungen" rows="10" cols="100%"></textarea>
+</div>
+
+
+<!-- ------------------- Next-Button und Bottom-Line ---------------- -->
+
+<br>
+<button class="otree-btn-next btn btn-primary">Weiter</button>
+
+<hr>
+<p> <a href="mailto: lob@stud.uni-heidelberg.de" target="_blank">Aaron Lob</a>, Universität Heidelberg  - 2020</p>
+
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+{% block scripts %}
+<script type="text/javascript">
+
+    var weiterButton = document.getElementById("weiterButton");
+    var weiterDisclaimer = document.getElementById("weiterDisclaimer");
+
+    setTimeout(function(){weiterDisclaimer.setAttribute("style","display:none;");}, 20000);
+    setTimeout(function(){weiterButton.setAttribute("style","display:block;");}, 20000);
+
+</script>
+{% endblock %}
+{% block content %}
+<!-- ------------------------------- Header -------------------------------- -->
+<div class="outer-head-div">
+    <span class="inner-head-div-text new-title">
+        <!-- Title -->
+    </span>
+
+    <div class="inner-head-div-logo">
+        <img src="{% static 'Hypothesentesten/hd-logo-sw.png' %}" class="logo"/>
+    </div>
+</div>
+<hr style="margin-top:1px; margin-bottom:15px;">
+<!-- ------------------------------- Header -------------------------------- -->
+
+
+<p>
+    Das Thema Polizeigewalt ist durchaus umstritten. Eine möglichst allgemeingültige Definition finden Sie hier:
+</p>
+
+
+<div class="blank-space-small">
+
+</div>
+
+
+<h3>
+    Definition Polizeigewalt:
+</h3>
+<p>
+    Nach deutscher Rechtslage sind Polizeivollzugsbeamte im Rahmen ihrer
+    polizeilichen Aufgabenerfüllung ermächtigt, innerhalb der Vorschriften über
+    unmittelbaren Zwang und Notwehr auch physische Gewalt anzuwenden.
+    <br>
+    Zu jeder Zeit haben Polizeivollzugsbeamte das Prinzip der Verhältnismäßigkeit
+    zu wahren. Stärke und Ausmaß der Gewalt und die eingesetzten Mittel müssen
+    im Verhältnis zur Situation und den Umständen der Gewaltanwendung stehen.
+    Sind diese Voraussetzungen nicht gegeben, wird also übermäßig starke Gewalt,
+    oder unverhältnismäßige Gewaltmittel in einem die Gewalt nicht rechtfertigenden
+    Kontext angewendet, spricht man von Polizeigewalt.
+</p>
+
+
+<!-- ------------------- Next-Button und Bottom-Line ---------------- -->
+
+<br>
+<p style="display:block;float:right;color:#0400ff;" id="weiterDisclaimer"><i>Gleich erscheint der Weiter-Button</i></p>
+<button class="otree-btn-next btn btn-primary" id="weiterButton" style="display:none;">Weiter</button>
+
+<hr>
+<p> <a href="mailto: lob@stud.uni-heidelberg.de" target="_blank">Aaron Lob</a>, Universität Heidelberg  - 2020</p>
+
+{% endblock %}

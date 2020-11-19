@@ -1,0 +1,328 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+{% block scripcts %}
+<script>
+    document.querySelector('[name=age]').value = 0;
+    document.querySelector('[name=gender]').value = 0;
+    document.querySelector('[name=education]').value = 0;
+    document.querySelector('[name=student]').value = 0;
+    // document.querySelector('[name=subject]').value = "";
+    document.querySelector('[name=politicalOrientation]').value = 0;
+    document.querySelector('[name=executiveSelf]').value = 0;
+    document.querySelector('[name=executiveOther]').value = 0;
+    document.querySelector('[name=contactPoliceBrutality]').value = 0;
+    document.querySelector('[name=violentProtester]').value = 0;
+    document.querySelector('[name=GermanFluency]').value = 0;
+    document.querySelector('[name=GermanMuttersprache]').value = 0;
+
+</script>
+{% endblock %}
+{% block content %}
+<!-- ------------------------------- Header -------------------------------- -->
+<div class="outer-head-div">
+    <span class="inner-head-div-text new-title">
+        <!-- Title -->
+    </span>
+
+    <div class="inner-head-div-logo">
+        <img src="{% static 'Hypothesentesten/hd-logo-sw.png' %}" class="logo"/>
+    </div>
+</div>
+<hr style="margin-top:1px; margin-bottom:15px;">
+<!-- ------------------------------- Header -------------------------------- -->
+
+
+
+
+<h3>
+    Persönliche Angaben
+</h3>
+
+
+<p>
+    Zum Abschluss möchten wir Sie bitten, einige generelle, perönliche Fragen
+    zu beantworten.
+</p>
+
+
+
+<!-- Alter -->
+<div class="multiple-choice-div">
+    <div class="m-c-question">
+    Wie alt sind Sie?<br>
+    </div>
+    <b>Alter:</b> <input type="number" id="age" name="age" value="" min="10" max="99">
+</div>
+
+<div class="blank-space-very-small">  </div>
+
+
+<!-- Gender -->
+<div class="multiple-choice-div">
+    <div class="m-c-question">
+    Welchem Geschlecht ordnen Sie sich zu?<br>
+    </div>
+    <input type="radio" id="gend1" name="gender" value="1">
+    <div class="m-c-besides-button"></div>
+    <label class="multiple-choice-label" for="gend1">Weiblich</label>
+    <br>
+    <input type="radio" id="gend2" name="gender" value="2">
+    <div class="m-c-besides-button"></div>
+    <label class="multiple-choice-label" for="gend2">Männlich</label>
+    <br>
+    <input type="radio" id="gend3" name="gender" value="3">
+    <div class="m-c-besides-button"></div>
+    <label class="multiple-choice-label" for="gend2">Divers</label>
+    <!-- <br>
+    <label class="multiple-choice-label" for="gend3">Das möchte ich lieber selbst beschreiben:</label>
+    <input type="text" id="gend4" name="gender" value=" ">
+    <div class="m-c-besides-button"></div> -->
+</div>
+<div class="blank-space-very-small">  </div>
+
+
+<!-- education -->
+<div class="multiple-choice-div">
+    <div class="m-c-question">
+    Welcher ist ihr höchster erreichter Bildungsabschluss?<br>
+    </div>
+    <input type="radio" id="employ1" name="education" value="1">
+    <div class="m-c-besides-button"></div>
+    <label class="multiple-choice-label" for="employ1">Schule beendet ohne Abschluss</label>
+    <br>
+    <input type="radio" id="employ2" name="education" value="2">
+    <div class="m-c-besides-button"></div>
+    <label class="multiple-choice-label" for="employ2">Noch Schüler*in</label>
+    <br>
+    <input type="radio" id="employ3" name="education" value="3">
+    <div class="m-c-besides-button"></div>
+    <label class="multiple-choice-label" for="employ3">Volks-, Hauptschulabschluss</label>
+    <br>
+    <input type="radio" id="employ4" name="education" value="4">
+    <div class="m-c-besides-button"></div>
+    <label class="multiple-choice-label" for="employ4">Mittlere Reife, Realschul- oder gleichwertiger Abschluss</label>
+    <br>
+    <input type="radio" id="employ5" name="education" value="5">
+    <div class="m-c-besides-button"></div>
+    <label class="multiple-choice-label" for="employ5">Abgeschlossene Lehre</label>
+    <br>
+    <input type="radio" id="employ3" name="education" value="6">
+    <div class="m-c-besides-button"></div>
+    <label class="multiple-choice-label" for="employ6">Fachabitur, Fachhochschulreife</label>
+    <br>
+    <input type="radio" id="employ4" name="education" value="7">
+    <div class="m-c-besides-button"></div>
+    <label class="multiple-choice-label" for="employ7">Abitur, Hochschulreife</label>
+    <br>
+    <input type="radio" id="employ5" name="education" value="8">
+    <div class="m-c-besides-button"></div>
+    <label class="multiple-choice-label" for="employ8">Fachhochschul-/Hochschulabschluss</label>
+</div>
+
+<div class="blank-space-very-small">  </div>
+
+<!-- German -->
+<div class="multiple-choice-div">
+    <div class="m-c-question">
+    Studieren Sie aktuell?<br>
+    </div>
+    <input type="radio" id="student1" name="student" value="1">
+    <div class="m-c-besides-button"></div>
+    <label class="multiple-choice-label" for="student1">Ja</label>
+    <br>
+    <input type="radio" id="student2" name="student" value="2">
+    <div class="m-c-besides-button"></div>
+    <label class="multiple-choice-label" for="student2">Nein</label>
+</div>
+
+
+
+<div class="blank-space-small">  </div>
+
+
+<!-- German -->
+<div class="multiple-choice-div">
+    <div class="m-c-question">
+    Ist Deutsch Ihre Muttersprache?<br>
+    </div>
+    <input type="radio" id="GermanMuttersprache1" name="GermanMuttersprache" value="1">
+    <div class="m-c-besides-button"></div>
+    <label class="multiple-choice-label" for="GermanMuttersprache1">Ja</label>
+    <br>
+    <input type="radio" id="GermanMuttersprache2" name="GermanMuttersprache" value="2">
+    <div class="m-c-besides-button"></div>
+    <label class="multiple-choice-label" for="GermanMuttersprache2">Nein</label>
+</div>
+
+
+<div class="blank-space-very-small">  </div>
+
+
+<!-- Slider: Political Orientation -->
+<div class="multiple-choice-div">
+    <div class="m-c-question">
+    Als wie gut würden Sie Ihr Deutsch einschätzen?<br>
+    </div>
+        <label class="multiple-choice-label" style="margin-bottom: 0px; float:left">Sehr schlecht</label>
+        <label class="multiple-choice-label" style="margin-bottom: 0px; float:right;">Sehr gut</label>
+        <input type="range" class="slider" style="width:100%; display:block; margin-left:1.5px;"
+        name="GermanFluency" min="1" max="9" step="1" >
+        <br>
+        <div class="" style="margin-top:-25px; width:100%">
+            <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:1%;">
+                I
+            </div>
+            <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+                I
+            </div>
+            <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+                I
+            </div>
+            <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11.1%;">
+                I
+            </div>
+            <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+                I
+            </div>
+            <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11.1%;">
+                I
+            </div>
+            <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+                I
+            </div>
+            <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11.05%;">
+                I
+            </div>
+            <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+                I
+            </div>
+
+        </div>
+</div>
+
+
+<div class="blank-space-small">  </div>
+
+
+
+<!-- Freund oder er/sie Teil der Exekutive -->
+<div class="multiple-choice-div">
+    <div class="m-c-question">
+    Arbeiten Sie oder haben Sie je bei einer staatlichen Vollzugsbehörde (z.B. Polizei, Ordnungsamt, etc.) gearbeitet?<br>
+    </div>
+    <input type="radio" id="exS1" name="executiveSelf" value="1">
+    <div class="m-c-besides-button"></div>
+    <label class="multiple-choice-label" for="exS1">Ja</label>
+    <br>
+    <input type="radio" id="exS2" name="executiveSelf" value="2">
+    <div class="m-c-besides-button"></div>
+    <label class="multiple-choice-label" for="exS2">Nein</label>
+</div>
+<div class="multiple-choice-div">
+    <div class="m-c-question">
+    Arbeitet oder hat ein*e Freund*in/Verwandte*r je bei einer staatlichen Vollzugsbehörde (z.B. Polizei, Ordnungsamt, etc.) gearbeitet?<br>
+    </div>
+    <input type="radio" id="exO1" name="executiveOther" value="1">
+    <div class="m-c-besides-button"></div>
+    <label class="multiple-choice-label" for="exO1">Ja</label>
+    <br>
+    <input type="radio" id="exO2" name="executiveOther" value="2">
+    <div class="m-c-besides-button"></div>
+    <label class="multiple-choice-label" for="exO2">Nein</label>
+</div>
+<div class="multiple-choice-div">
+    <div class="m-c-question">
+    Waren Sie schonmal Demonstrant*in und haben Gewalt gegen Polizist*innen ausgeübt?<br>
+    </div>
+    <input type="radio" id="vP1" name="violentProtester" value="1">
+    <div class="m-c-besides-button"></div>
+    <label class="multiple-choice-label" for="vP1">Ja</label>
+    <br>
+    <input type="radio" id="vP2" name="violentProtester" value="2">
+    <div class="m-c-besides-button"></div>
+    <label class="multiple-choice-label" for="vP2">Nein</label>
+</div>
+<div class="blank-space-very-small">  </div>
+
+
+<!-- Contact with Polic Brutality -->
+<div class="multiple-choice-div">
+    <div class="m-c-question">
+    Hatten Sie schonmal Kontakt mit Polizeigewalt?<br>
+    </div>
+    <input type="radio" id="contactPB1" name="contactPoliceBrutality" value="1">
+    <div class="m-c-besides-button"></div>
+    <label class="multiple-choice-label" for="contactPB1">Ja, Ich war Zeuge von Polizeigewalt</label>
+    <br>
+    <input type="radio" id="contactPB2" name="contactPoliceBrutality" value="2">
+    <div class="m-c-besides-button"></div>
+    <label class="multiple-choice-label" for="contactPB2">Ja, Ich war Opfer von Polizeigewalt</label>
+    <br>
+    <input type="radio" id="contactPB3" name="contactPoliceBrutality" value="3">
+    <div class="m-c-besides-button"></div>
+    <label class="multiple-choice-label" for="contactPB3">Ja, Ich war sowohl Zeuge als auch Opfer von Polizeigewalt</label>
+    <br>
+    <input type="radio" id="contactPB4" name="contactPoliceBrutality" value="4">
+    <div class="m-c-besides-button"></div>
+    <label class="multiple-choice-label" for="contactPB4">Nein, Ich war weder Zeuge noch Opfer von Polizeigewalt</label>
+</div>
+
+
+
+
+
+
+<div class="blank-space-small">  </div>
+
+<!-- Slider: Political Orientation -->
+<div class="multiple-choice-div">
+    <div class="m-c-question">
+    Wo würden Sie sich, bzw. Ihre politische Einstellung, einordnen?<br>
+    </div>
+        <label class="multiple-choice-label" style="margin-bottom: 0px; float:left">Links</label>
+        <label class="multiple-choice-label" style="margin-bottom: 0px; float:right;">Rechts</label>
+        <input type="range" class="slider" style="width:100%; display:block; margin-left:1.5px;"
+        name="politicalOrientation" min="1" max="9" step="1" >
+        <br>
+        <div class="" style="margin-top:-25px; width:100%">
+            <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:1%;">
+                I
+            </div>
+            <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+                I
+            </div>
+            <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+                I
+            </div>
+            <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11.1%;">
+                I
+            </div>
+            <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+                I
+            </div>
+            <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11.1%;">
+                I
+            </div>
+            <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+                I
+            </div>
+            <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11.05%;">
+                I
+            </div>
+            <div class="" style="display:inline; color:#ccc; height:10px; width:2px; margin-bottom:10px; margin-left:11%;">
+                I
+            </div>
+
+        </div>
+</div>
+
+
+<!-- ------------------- Next-Button und Bottom-Line ---------------- -->
+
+<br>
+<button class="otree-btn-next btn btn-primary">Weiter</button>
+
+<hr>
+<p> <a href="mailto: lob@stud.uni-heidelberg.de" target="_blank">Aaron Lob</a>, Universität Heidelberg - 2020</p>
+
+{% endblock %}

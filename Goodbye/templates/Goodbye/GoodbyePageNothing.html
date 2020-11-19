@@ -1,0 +1,41 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+{% block scripcts %}
+<script>
+</script>
+{% endblock %}
+{% block content %}
+<!-- ------------------------------- Header -------------------------------- -->
+<div class="outer-head-div">
+    <span class="inner-head-div-text new-title">
+        <!-- Title -->
+    </span>
+
+    <div class="inner-head-div-logo">
+        <img src="{% static 'Hypothesentesten/hd-logo-sw.png' %}" class="logo"/>
+    </div>
+</div>
+<hr style="margin-top:1px; margin-bottom:15px;">
+<!-- ------------------------------- Header -------------------------------- -->
+
+<h4>Sie haben es geschafft! </h4>
+
+<p style="text-align:justify;">
+    Wir möchten uns vielmals bedanken, dass Sie an unserer Studie teilgenommen und dadurch unsere
+    Forschung unterstützt haben und hoffen, Sie wieder zu einer Studie der Arbeitseinheit für
+    Sozialpsychologie begrüßen zu dürfen!
+    <br>
+</p>
+
+<p>
+    Mit drücken auf <b>F11</b> können Sie den Vollbildmodus wieder verlassen.
+</p>
+
+<p>
+    Sie können das Broswerfenster nun schließen.
+</p>
+
+<hr>
+<p> <a href="mailto: lob@stud.uni-heidelberg.de" target="_blank">Aaron Lob</a>, Universität Heidelberg  - 2020</p>
+
+{% endblock %}

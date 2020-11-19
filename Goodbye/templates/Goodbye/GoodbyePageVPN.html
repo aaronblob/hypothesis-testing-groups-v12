@@ -1,0 +1,61 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+{% block scripcts %}
+<script>
+</script>
+{% endblock %}
+{% block content %}
+<!-- ------------------------------- Header -------------------------------- -->
+<div class="outer-head-div">
+    <span class="inner-head-div-text new-title">
+        <!-- Title -->
+    </span>
+
+    <div class="inner-head-div-logo">
+        <img src="{% static 'Hypothesentesten/hd-logo-sw.png' %}" class="logo"/>
+    </div>
+</div>
+<hr style="margin-top:1px; margin-bottom:15px;">
+<!-- ------------------------------- Header -------------------------------- -->
+
+
+<h4>Sie haben es fast geschafft! </h4>
+
+<p style="text-align:justify;">
+    <b>Für die halbe Versuchspersonenstunde:</b>
+    <br>
+    Benötigen Sie den unten generierten Code, welchen Sie auf der Seite, die Sie
+    über den Link erreichen, angeben müssen. Bitte notieren Sie ihn sich <b>bevor</b> Sie auf den Link
+    klicken und lassen Sie dieses Broweserfenster geöffnet, bis Sie Ihre Informationen unter dem Link angegeben haben.
+    <br>
+    Klicken Sie bitte <a href="https://www.soscisurvey.de/Simpson/?d=HMNKGL3E4GCFBPPC" target="_blank" style="color:#0400ff"><b>hier</b></a> und geben Sie dort die benötigten Informationen an.
+
+</p>
+<br>
+
+<p>
+    Ihr Code:
+    <br>
+    <b style="color:#0400ff; font-size:1.7rem">{{ participant.vars.generatedCode }}</b>
+</p>
+
+
+<p style="text-align:justify;">
+    Wir möchten uns vielmals bedanken, dass Sie an unserer Studie teilgenommen und dadurch unsere
+    Forschung unterstützt haben und hoffen, Sie wieder zu einer Studie der Arbeitseinheit für
+    Sozialpsychologie begrüßen zu dürfen!
+    <br>
+</p>
+
+<p>
+    Mit drücken auf <b>F11</b> können Sie den Vollbildmodus wieder verlassen.
+</p>
+
+<p>
+    Sie können das Broswerfenster nun schließen.
+</p>
+
+<hr>
+<p> <a href="mailto: lob@stud.uni-heidelberg.de" target="_blank">Aaron Lob</a>, Universität Heidelberg  - 2020</p>
+
+{% endblock %}

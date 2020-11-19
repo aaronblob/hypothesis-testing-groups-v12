@@ -1,0 +1,104 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+{% block scripts %}
+<script type="text/javascript">
+    document.getElementById("audio").play()
+
+    var weiterButton = document.getElementById("weiterButton");
+    var weiterDisclaimer = document.getElementById("weiterDisclaimer");
+
+    setTimeout(function(){weiterDisclaimer.setAttribute("style","display:none;");}, 40000);
+    setTimeout(function(){weiterButton.setAttribute("style","display:block;");}, 40000);
+
+</script>
+{% endblock %}
+{% block styles %}
+
+<style media="screen">
+    .otree-timer {
+        display:none;
+    }
+</style>
+
+{% endblock %}
+{% block content %}
+<!-- ------------------------------- Header -------------------------------- -->
+<div class="outer-head-div">
+    <span class="inner-head-div-text new-title">
+        <!-- Title -->
+    </span>
+
+    <div class="inner-head-div-logo">
+        <img src="{% static 'Hypothesentesten/hd-logo-sw.png' %}" class="logo"/>
+    </div>
+</div>
+<hr style="margin-top:1px; margin-bottom:15px;">
+<!-- ------------------------------- Header -------------------------------- -->
+
+
+<h3>
+    Ihre Aufgabe
+</h3>
+
+
+<h5>
+    Was Sie in den nächsten 20 Minuten tun werden:
+</h5>
+
+
+<p>
+    Auf den nächsten Seiten werden Sie eine Aussage präsentiert bekommen.
+    <br>
+    Um diese Aussage beurteilen zu können, benötigen Sie <b>zusätzliche</b> Informationen.
+    Zu diesem Zweck werden Sie aus einer Reihe von Suchergebnissen einer
+    Internetrecherche, eines auswählen, welches Ihnen zusätzliche
+    Informationen geben wird. Durch Auswahl (Klicken auf das Ergebnis und Bestätigen mit "Weiter")
+    des Suchergebnisses, bekommen Sie das Suchergebnis in voller Länge
+    auf der nächsten Seite angezeigt.
+    <br>
+    Es handelt sich hierbei um <b>echte Situationen</b> und Beschreibungen von Vorfällen, die so wirklich passiert sind!
+</p>
+<p>
+    Sie werden die Auswahl der Suchergebnisse nicht alleine durchführen, sondern
+    gemeinsam mit einer anderen Personen eines der vier auswählen. Hierfür haben Sie immer 3,5
+    Minuten Zeit miteinander zu besprechen, welches Suchergebnis Sie sich
+    anschauen möchten. Jede*r von Ihnen wird individuell auf eines der Suchergebnisse klicken und
+    die Auswahl mit "Weiter" bestätigen - danach wird überprüft, ob Sie das gleiche Suchergebnis
+    ausgewählt haben. Wenn Sie nicht das gleiche ausgewählt haben, müssen Sie nochmals auswählen, es ist
+    also sinnvoll sich möglichst gut zu einigen.
+</p>
+<p>
+    In sechs Runden erhalten Sie jeweils vier Suchergebnisse, von denen Sie
+    eines auswählen. In jeder Runde gibt es vier neue Suchergebnisse, die alten
+    sind nicht mehr zugänglich. Die Suchergebnisse unterscheiden sich nicht in
+    Ihrer Verlässlichkeit - alle Ergebnisse sind gleich vertrauenswürdig und es
+    sind keine Suchergebnisse vorhanden, die Falschinformationen beinhalten.
+</p>
+
+
+<p>
+    Die nächste Seite dient dazu, Sie mit dem Format vertraut zu machen, Sie
+    werden noch keine Auswahl von Suchergebnissen durchführen.
+</p>
+
+
+<p>
+    Wenn Sie das Vorgehen verstanden haben, klicken Sie bitte auf <b>Weiter</b>.
+</p>
+
+
+<audio src="{% static 'Hypothesentesten/Sound.mp3' %}" id="audio">
+</audio>
+
+
+
+<!-- ------------------- Next-Button und Bottom-Line ---------------- -->
+
+<br>
+<p style="display:block;float:right;color:#0400ff;" id="weiterDisclaimer"><i>Gleich erscheint der Weiter-Button</i></p>
+<button class="otree-btn-next btn btn-primary" id="weiterButton" style="display:none;">Weiter</button>
+
+<hr>
+<p> <a href="mailto: lob@stud.uni-heidelberg.de" target="_blank">Aaron Lob</a>, Universität Heidelberg  - 2020</p>
+
+{% endblock %}

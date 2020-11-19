@@ -1,0 +1,199 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+
+<!-- ----------------------------------------------------------------------- -->
+<!-- -----------------Java Script at the bottom of page!-------------------- -->
+<!-- ----------------------------------------------------------------------- -->
+
+
+{% block content %}
+<!-- ------------------------------- Header -------------------------------- -->
+<div class="outer-head-div">
+    <span class="inner-head-div-text new-title">
+        <!-- Title -->
+    </span>
+
+    <div class="inner-head-div-logo">
+        <img src="{% static 'Hypothesentesten/hd-logo-sw.png' %}" class="logo"/>
+    </div>
+</div>
+<hr style="margin-top:1px; margin-bottom:15px;">
+<!-- ------------------------------- Header -------------------------------- -->
+
+
+
+
+
+
+<div class=explanation-box>
+    Diese Seite dient dazu, Sie mit dem Format für die Auswahl der Suchergebnisse vertraut zu machen.
+    <br>
+    Am oberen Ende der Seite sehen Sie einen Timer - gleich werden Sie 3,5 Minuten Zeit haben.
+</div>
+
+
+{% if player.singleplayer == 0 %}
+
+<h5>
+    Informationssuche
+</h5>
+
+
+<h5>
+    Tauschen Sie sich aus!
+</h5>
+
+
+<!-- <p>
+    Bitte nutzen Sie den Chat, um sich über die möglichen Alternativen auszutauschen!
+    <br>
+    Informieren Sie sich über den Sachverhalt, indem Sie <b>gemeinsam</b> eines
+    der Suchergebnisse auswählen.
+    <br>
+    Sie müssen sich als Gruppe auf eines der Suchergebnisse einigen!
+</p> -->
+
+<div class="explanation-box">
+    Dies ist der Chat. Nutzen Sie die Gelegenheit jetzt,
+    um Ihr Gruppenmitglied zu begrüßen! Hier werden Sie gleich chatten und sich auf eines der
+    Suchergebnisse einigen.
+</div>
+
+    {% chat nickname=player.nickname %}
+
+
+
+{% endif %}
+
+
+<!-- <p>
+    Dies sind die verfügbaren Suchergebnisse, bedenken Sie: Es gibt keine Unterschiede in der
+    Verlässlichkeit der Artikel, die Quellen sind alle gleich vertrauenswürdig.
+    <br>
+    Wie bei der Präsentation von Suchergebnissen üblich, ist nur ein Ausschnitt
+    der vollen Information zu sehen - den gesamten Text können Sie lesen, wenn
+    Sie das Suchergebnis auswählen.
+</p> -->
+
+
+<!-- blank space -->
+<div class="blank-space-medium">
+</div>
+
+
+<!-- fake search environment -->
+<div class="heading-fake-search-page">
+    <div class="fake-search-field">
+        <div class="fake-search-word">
+            Suchen
+        </div>
+        <i class="fa fa-search"></i>
+    </div>
+    <div class="fake-options-bar-outer-div">
+        <div class="fake-options-bar"></div>
+        <div class="fake-options-bar"></div>
+        <div class="fake-options-bar"></div>
+    </div>
+</div>
+
+
+<div class="explanation-box">
+    Hier werden Ihnen gleich die Suchergebnisse, aus denen Sie eines auswählen sollen,
+    angezeigt (Durch Klicken auf ein Suchergebnis wählen Sie dieses aus - die Auswahl wird
+    erst bestätigt, wenn Sie auf "Weiter" klicken):
+</div>
+
+
+<!-- list of possible articles to choose from -->
+<div class="article-list">
+
+    <!-- Suchergebnis 1 -->
+    <div class="article-preview" onclick="selectArticle1()" id="article1">
+        <div class="article-preview-heading" id="header1">
+            Suchergebnis 1
+        </div>
+        <span class="article-preview-text" id="text1">
+            ... Text 1 ...
+
+        </span>
+        <!-- <span class="article-preview-text" id="text2" style="display:none;">
+            Text 2
+        </span>
+        <span class="article-preview-text" id="text3" style="display:none;">
+            Text 3
+        </span>
+        <span class="article-preview-text" id="text4" style="display:none;">
+            Text 4
+        </span> -->
+
+
+
+    </div>
+    <!-- Suchergebnis 2 -->
+    <div class="article-preview" onclick="selectArticle2()" id="article2">
+        <div class="article-preview-heading" id="header2">
+            Suchergebnis 2
+        </div>
+        <span class="article-preview-text" id="text2">
+            ... Text 2 ...
+        </span>
+    </div>
+
+    <!-- Suchergebnis 3 -->
+    <div class="article-preview" onclick="selectArticle3()" id="article3">
+        <div class="article-preview-heading" id="header3">
+            Suchergebnis 3
+        </div>
+        <span class="article-preview-text" id="text3">
+            ... Text 3 ...
+        </span>
+    </div>
+
+    <!-- Suchergebnis 4 -->
+    <div class="article-preview" onclick="selectArticle4()" id="article4">
+        <div class="article-preview-heading" id="header4">
+            Suchergebnis 4
+        </div>
+        <span class="article-preview-text" id="text4">
+            ... Text 4 ...
+        </span>
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="explanation-box">
+    Durch Klicken auf "Weiter", bestätigen Sie die Auswahl des Suchergebnisses.
+    <b>Achtung</b>: Klicken Sie erst auf "Weiter", wenn Sie sich sicher sind, dass
+    Sie das Suchergebnis wirklich auswählen möchten!
+{% if player.singleplayer == 0 %}
+    <br>
+    Nachdem Sie alle auf "Weiter" geklickt haben, wird überprüft, ob Sie und ihr Gruppenmitglied die selbe
+    Auswahl getroffen haben.
+{% endif %}
+</div>
+
+<br>
+<p style="display:block;float:right;color:#0400ff;" id="weiterDisclaimer"><i>Gleich erscheint der Weiter-Button</i></p>
+<button class="otree-btn-next btn btn-primary" id="weiterButton" style="display:none;">Weiter</button>
+
+
+<hr>
+<p> <a href="mailto: lob@stud.uni-heidelberg.de" target="_blank">Aaron Lob</a>, Universität Heidelberg  - 2020</p>
+
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript">
+    var weiterButton = document.getElementById("weiterButton");
+    var weiterDisclaimer = document.getElementById("weiterDisclaimer");
+
+    setTimeout(function(){weiterDisclaimer.setAttribute("style","display:none;");}, 30000);
+    setTimeout(function(){weiterButton.setAttribute("style","display:block;");}, 30000);
+</script>
+{% endblock %}
